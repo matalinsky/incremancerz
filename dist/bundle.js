@@ -3103,12 +3103,14 @@ var Incremancer;
                     common: 1,
                     rare: 2,
                     epic: 3,
-                    legendary: 4
+                    legendary: 4,
+                    ancient: 5
                 }, this.prefixes = {
                     commonQuality: ["Wooden", "Sturdy", "Rigid", "Iron", "Rusty", "Flimsy", "Battered", "Damaged", "Used", "Stained", "Training"],
                     rareQuality: ["Steel", "Shiny", "Polished", "Forged", "Plated", "Bronze", "Reinforced", "Veteran's", "Reliable"],
                     epicQuality: ["Antique", "Ancient", "Famous", "Bejeweled", "Notorious", "Historic", "Mythical", "Extraordinary"],
-                    legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"]
+                    legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"],
+                    ancientQuality: ["test", "test2"]
                 }, this.stats = {
                     respawnTime: {
                         id: 1,
@@ -3303,6 +3305,9 @@ var Incremancer;
                     break;
                 case this.rarity.legendary:
                     t = this.prefixes.legendaryQuality[e.p]
+                    break;
+                case this.rarity.ancient:
+                    t = this.prefixes.ancientQuality[e.p]
             }
             let s = "";
             switch (e.s) {
@@ -3338,7 +3343,9 @@ var Incremancer;
                 case this.rarity.epic:
                     return "epic";
                 case this.rarity.legendary:
-                    return "legendary"
+                    return "legendary";
+                case this.rarity.ancient:
+                    return "ancient"
             }
         }
         getLootStats(e) {
@@ -3381,8 +3388,12 @@ var Incremancer;
             const t = Math.round(6 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod))) {
-                s = this.rarity.legendary;
+            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < 120931904 * this.lootChanceMod)))) {
+                s = this.rarity.ancient;
+                const e = a(this.spells.spells, Math.random());
+                i.push(e.id)
+            }
+            if(s == this.rarity.legendary) {
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
@@ -3398,7 +3409,10 @@ var Incremancer;
                     r = Math.floor(Math.random() * this.prefixes.epicQuality.length);
                     break;
                 case this.rarity.legendary:
-                    r = Math.floor(Math.random() * this.prefixes.legendaryQuality.length)
+                    r = Math.floor(Math.random() * this.prefixes.legendaryQuality.length);
+                    break;
+                case this.rarity.ancient:
+                    r = Math.floor(Math.random() * this.prefixes.ancientQuality.length)
             }
             const n = [Math.random() > .5 ? this.stats.zombieHealth.id : this.stats.zombieDamage.id];
             for (let e = 0; e < s - 1; e++) {
