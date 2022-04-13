@@ -3110,7 +3110,7 @@ var Incremancer;
                     rareQuality: ["Steel", "Shiny", "Polished", "Forged", "Plated", "Bronze", "Reinforced", "Veteran's", "Reliable"],
                     epicQuality: ["Antique", "Ancient", "Famous", "Bejeweled", "Notorious", "Historic", "Mythical", "Extraordinary"],
                     legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"],
-                    ancientQuality: ["test", "test2"]
+                    ancientQuality: ["Grim", "Miserable", "Luxurious"]
                 }, this.stats = {
                     respawnTime: {
                         id: 1,
@@ -3436,7 +3436,7 @@ var Incremancer;
             for (let t = 0; t < this.persistent.items.length; t++) this.persistent.items[t].id === e.id && this.persistent.items.splice(t, 1)
         }
         destroyAllItems() {
-            this.addXp(this.xpForItems()), this.persistent.items = this.persistent.items.filter((e => e.q || e.r == this.rarity.legendary))
+            this.addXp(this.xpForItems()), this.persistent.items = this.persistent.items.filter((e => e.q || (e.r == this.rarity.legendary || e.r == this.rarity.ancient)))
         }
         xpForItems() {
             let e = 0;
