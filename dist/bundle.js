@@ -1851,7 +1851,7 @@ var Incremancer;
         canAffordUpgrade(e) {
             if (e.cap > 0 && this.currentRank(e) >= e.cap) { 
                 console.log("here 2");
-                this.upgrades[e].auto_before = !0, !0;
+                e.auto_before = !0, !0;
                 return e.auto = !1, !1;
             }
             switch (e.costType) {
