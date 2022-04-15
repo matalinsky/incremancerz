@@ -1848,8 +1848,8 @@ var Incremancer;
         }
         canAffordUpgrade(e) {
             if (e.cap > 0 && this.currentRank(e) >= e.cap) { 
+                this.upgrades[e].auto_before = !0, !0;
                 return e.auto = !1, !1;
-                return this.upgrades[e].auto_before = !0, !0;
             }
             switch (e.costType) {
                 case this.costs.energy:
