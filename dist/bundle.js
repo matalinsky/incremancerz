@@ -1849,7 +1849,7 @@ var Incremancer;
         canAffordUpgrade(e) {
             if (e.cap > 0 && this.currentRank(e) >= e.cap) { 
                 return e.auto = !1, !1;
-                return e.auto_before = !0, !0;
+                return this.upgrades[e].auto_before = !0, !0;
             }
             switch (e.costType) {
                 case this.costs.energy:
