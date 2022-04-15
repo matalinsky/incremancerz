@@ -1570,7 +1570,7 @@ var Incremancer;
                     return this.upgrades.filter((t => t.costType == e && (0 == t.cap || this.currentRank(t) < t.cap) && this.hasRequirement(t)));
                 case "completed":
                     return this.upgrades.filter((e => e.cap > 0 && this.currentRank(e) >= e.cap))
-                case this.auto_before.true
+                case this.auto_before.true:
                     return this.auto = !0
             }
         }
