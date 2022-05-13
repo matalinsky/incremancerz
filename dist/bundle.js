@@ -4837,7 +4837,9 @@ var Incremancer;
                     case i.rarity.epic:
                         return "Epic level " + e.l + " " + this.itemType(e);
                     case i.rarity.legendary:
-                        return "Legendary level " + e.l + " " + this.itemType(e)
+                        return "Legendary level " + e.l + " " + this.itemType(e);
+                    case i.rarity.ancient:
+                        return "Ancient level " + e.l + " " + this.itemType(e)
                 }
                 if (-1 == e.s) return "Click this to destroy all non-equipped items (legendary items will not be automatically destroyed). Or drag items here to destroy them."
             },
