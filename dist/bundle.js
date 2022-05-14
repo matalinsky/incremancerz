@@ -3391,7 +3391,7 @@ var Incremancer;
             const t = Math.round(6 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .5 * this.lootChanceMod)))) {
+            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod)))) {
                 s = this.rarity.ancient;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
