@@ -3651,9 +3651,6 @@ var Incremancer;
             const r = this.zmMap.graveYardLocation;
             this.fence.x = r.x, this.fence.y = r.y
         }
-
-        
-
         update(e) {
             if (this.boneCollectors.addAndRemoveBoneCollectors(), this.harpies.addAndRemoveHarpies(), this.gameModel.isBossStage(this.gameModel.level) && this.updateHealthBar(),    !this.gameModel.constructions.graveyard || this.gameModel.currentState != this.gameModel.states.playingLevel) return this.sprite.visible = !1, void(this.fence.visible = !1);
             if ((this.level < 2 && this.gameModel.constructions.crypt || this.level < 3 && this.gameModel.constructions.fort || this.level < 4 && this.gameModel.constructions.fortress || this.level < 5 && this.gameModel.constructions.citadel) && this.drawGraveyard(), this.sprite.visible = !0, this.fortSprite && (this.fortSprite.visible = !0), 5 == this.level && Math.random() > .9 && (Math.random() > .5 ? this.smoke.newFireSmoke(this.sprite.x - 20, this.sprite.y - 113) : this.smoke.newFireSmoke(this.sprite.x + 20, this.sprite.y - 113)), this.gameModel.energy >= this.gameModel.energyMax && !this.gameModel.hidden)
