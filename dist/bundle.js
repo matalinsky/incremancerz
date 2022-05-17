@@ -3652,9 +3652,7 @@ var Incremancer;
             this.fence.x = r.x, this.fence.y = r.y
         }
 
-        updateGraveyardRegen(e, t) {
-            e.regenTimer -= t, e.regenTimer < 0 && (e.regenTimer = 5, this.graveyardHealth < this.graveyardMaxHealth && (this.graveyardHealth += this.graveyardMaxHealth * this.model.runeEffects.healthRegen, this.graveyardHealth > this.graveyardMaxHealth && (this.graveyardHealth = this.graveyardMaxHealth)
-        }
+        
 
         update(e) {
             if (this.boneCollectors.addAndRemoveBoneCollectors(), this.harpies.addAndRemoveHarpies(), this.gameModel.isBossStage(this.gameModel.level) && this.updateHealthBar(),    !this.gameModel.constructions.graveyard || this.gameModel.currentState != this.gameModel.states.playingLevel) return this.sprite.visible = !1, void(this.fence.visible = !1);
