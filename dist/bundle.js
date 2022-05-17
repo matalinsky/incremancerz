@@ -3653,7 +3653,7 @@ var Incremancer;
         }
 
         updateGraveyardRegen(e, t) {
-          e.regenTimer -= t, e.regenTimer < 0 && (e.regenTimer = 5, this.graveyardHealth < this.graveyardMaxHealth && (this.graveyardHealth += this.graveyardMaxHealth * this.model.runeEffects.healthRegen, this.graveyardHealth > this.graveyardMaxHealth && (this.graveyardHealth = this.graveyardMaxHealth)
+            e.regenTimer -= t, e.regenTimer < 0 && (e.regenTimer = 5, this.graveyardHealth < this.graveyardMaxHealth && (this.graveyardHealth += this.graveyardMaxHealth * this.model.runeEffects.healthRegen, this.graveyardHealth > this.graveyardMaxHealth && (this.graveyardHealth = this.graveyardMaxHealth)
         }
 
         update(e) {
