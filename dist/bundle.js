@@ -4653,6 +4653,8 @@ var Incremancer;
             c.model.nextLevel()
         }, c.toggleAutoStart = function() {
             c.model.persistentData.autoStart ? c.model.persistentData.autoStart = !1 : c.model.persistentData.autoStart = !0
+        }, c.toggleResolution = function(e) {
+            c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
         }, c.getResolution = function() {
             return c.model.persistentData.resolution || 1
         }, c.toggleZoomButtons = function() {
