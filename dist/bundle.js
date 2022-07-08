@@ -1424,7 +1424,7 @@ var Incremancer;
                     rune: "death",
                     effect: "attackSpeed",
                     cost: "blood",
-                    logBase: 1.1,
+                    logBase: 1,
                     adjustment: -70,
                     subtract: !1,
                     cap: 0
