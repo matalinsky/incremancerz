@@ -3073,7 +3073,7 @@ var Incremancer;
                     items: [],
                     currItemId: 0,
                     talentReset: !1
-                }, this.talents = [], this.talentPoints = 0, this.killingBlowParts = 0, this.lootChanceMod = 1, this.darkorb = 0, this.darkorbTimer = 0, this.boneshield = 0, this.aliveZombies = [], this.graveyardAttackers = [], this.lootPositions = {
+                }, this.talents = [], this.talentPoints = 0, this.killingBlowParts = 0, this.lootChanceMod = 1, this.increaseChance = 0, this.darkorb = 0, this.darkorbTimer = 0, this.boneshield = 0, this.aliveZombies = [], this.graveyardAttackers = [], this.lootPositions = {
                     helmet: {
                         id: 1,
                         name: "Helmet"
@@ -3217,7 +3217,7 @@ var Incremancer;
                     const s = this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y);
                     if (s < this.attackDistance) {
                         if (e.timer.attack < 0 && !e.target.flags.dead && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.target.flags.dead && this.killingBlow(e.target), e.timer.attack = this.attackSpeed * (1 / this.model.runeEffects.attackSpeed), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod), this.randomSpells.length > 0))
-                            for (let e = 0; e < this.randomSpells.length; e++) this.spellTimer < 0 && Math.random() < .07 && (this.spells.castSpellNoMana(this.randomSpells[e]), this.spellTimer = 3);
+                            for (let e = 0; e < this.randomSpells.length; e++) this.spellTimer < 0 && Math.random() < .07 * this.increaseChance && (this.spells.castSpellNoMana(this.randomSpells[e]), this.spellTimer = 3);
                         s > this.attackDistance / 2 && this.updateCreatureSpeed(e, t)
                     } else e.state = be.movingToTarget;
                     break
@@ -4281,8 +4281,9 @@ var Incremancer;
             return e && e > 0 ? `Spell duration increased by ${e} seconds` : "Increases spell duration by 1 second"
         })), new xt(6, "Conservation", yt, 10, (function() {
             gt.costReduction = 0;
+            dt.increaseChance = 0;
             const e = dt.talents[this.id];
-            e && e > 0 && (gt.costReduction = 5 * e)
+            e && e > 0 && (dt.increaseChance = 5 * e)
         }), (function() {
             const e = dt.talents[this.id];
             return e && e > 0 ? `Spell cost reduced by ${5*e} energy` : "Reduces spell cost by 5 energy"
