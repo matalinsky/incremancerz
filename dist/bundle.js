@@ -3443,7 +3443,7 @@ var Incremancer;
         }
         xpForItems() {
             let e = 0;
-            return this.persistent.items.filter((e => !e.q && e.r != this.rarity.legendary) && (e => !e.q && e.r != this.rarity.ancient)).forEach((function(t) {
+            return this.persistent.items.filter((e => !e.q && e.r != this.rarity.legendary || this.rarity.ancient).forEach((function(t) {
                 e += t.l * t.r * 10
             })), e
         }
