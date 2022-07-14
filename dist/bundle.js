@@ -3448,12 +3448,8 @@ var Incremancer;
             })), e
         }
 
-        xpForAncient() {
-            let e = 0;
-            return this.persistent.items.filter((e => !e.q && e.r == this.rarity.ancient).forEach((function(t) {
-                e += t.l * t.r * 10
-            })), e
-        }
+    
+        
         
     }
     class Ue {
