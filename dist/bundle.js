@@ -3454,6 +3454,10 @@ var Incremancer;
                 e += t.l * t.r * 10 
             })), e 
         }
+
+        xpTotal() {
+            return (this.xpForItems() - this.xpForAncient)
+        }
     }
     class Ue {
         constructor() {
@@ -4894,7 +4898,7 @@ var Incremancer;
                 })), e.q = !0, h.applyUpgrades(), this.updateEquippedItems()
             },
             trashAll() {
-                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpForItems() - i.xpForAncient()) + " xp", c.confirmCallback = function() {
+                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpTotal()) + " xp", c.confirmCallback = function() {
                     c.confirmCallback = !1, i.destroyAllItems()
                 }
             }
