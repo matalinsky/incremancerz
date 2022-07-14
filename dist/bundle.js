@@ -4894,7 +4894,7 @@ var Incremancer;
                 })), e.q = !0, h.applyUpgrades(), this.updateEquippedItems()
             },
             trashAll() {
-                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpForItems()) + " xp", c.confirmCallback = function() {
+                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpForItems() - i.xpForAncient()) + " xp", c.confirmCallback = function() {
                     c.confirmCallback = !1, i.destroyAllItems()
                 }
             }
