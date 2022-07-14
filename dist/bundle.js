@@ -3439,13 +3439,21 @@ var Incremancer;
             for (let t = 0; t < this.persistent.items.length; t++) this.persistent.items[t].id === e.id && this.persistent.items.splice(t, 1)
         }
         destroyAllItems() {
-            this.addXp(this.xpForItems()), this.persistent.items = this.persistent.items.filter((e => e.q || (e.r == this.rarity.legendary || e.r == this.rarity.ancient)))
+            this.addXp(this.xpForItems() - this.xpForAncient()), this.persistent.items = this.persistent.items.filter((e => e.q || (e.r == this.rarity.legendary || e.r == this.rarity.ancient)))
         }
         xpForItems() {
             let e = 0;
-            return this.persistent.items.filter((e => !e.q && e.r != this.rarity.legendary || this.rarity.ancient).forEach((function(t) {
+            return this.persistent.items.filter((e => !e.q && e.r != this.rarity.legendary).forEach((function(t) {
                 e += t.l * t.r * 10
             })), e
+        }
+
+        xpForAncient() {
+            let e = 0;
+            return this.persistent.items.filter((e => !e.q && e.r == this.rarity.ancient).forEach((function(t) {
+                e += t.l * t.r * 10
+            })), e
+        }
         }
     }
     class Ue {
