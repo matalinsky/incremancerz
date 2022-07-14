@@ -3217,7 +3217,7 @@ var Incremancer;
                     const s = this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y);
                     if (s < this.attackDistance) {
                         if (e.timer.attack < 0 && !e.target.flags.dead && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.target.flags.dead && this.killingBlow(e.target), e.timer.attack = this.attackSpeed * (1 / this.model.runeEffects.attackSpeed), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod), this.randomSpells.length > 0))
-                            for (let e = 0; e < this.randomSpells.length; e++) this.spellTimer < 0 && Math.random() < .07 * this.increaseChance && (this.spells.castSpellNoMana(this.randomSpells[e]), this.spellTimer = 3);
+                            for (let e = 0; e < this.randomSpells.length; e++) this.spellTimer < 0 && Math.random() < .07 + this.increaseChance && (this.spells.castSpellNoMana(this.randomSpells[e]), this.spellTimer = 3);
                         s > this.attackDistance / 2 && this.updateCreatureSpeed(e, t)
                     } else e.state = be.movingToTarget;
                     break
@@ -4286,7 +4286,7 @@ var Incremancer;
             e && e > 0 && (dt.increaseChance = 5 * e)
         }), (function() {
             const e = dt.talents[this.id];
-            return e && e > 0 ? `Spell cost reduced by ${5*e} energy` : "Reduces spell cost by 5 energy"
+            return e && e > 0 ? `Gear spell chance increased by %${5*e}` : "Increases spell activation chance by 5%"
         })), new xt(7, "Shiny", ft, 10, (function() {
             dt.lootChanceMod = 1;
             const e = dt.talents[this.id];
