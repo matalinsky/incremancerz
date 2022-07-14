@@ -4279,14 +4279,14 @@ var Incremancer;
         }), (function() {
             const e = dt.talents[this.id];
             return e && e > 0 ? `Spell duration increased by ${e} seconds` : "Increases spell duration by 1 second"
-        })), new xt(6, "Conservation", yt, 10, (function() {
+        })), new xt(6, "Opportunist", yt, 10, (function() {
             gt.costReduction = 0;
             dt.increaseChance = 0;
             const e = dt.talents[this.id];
             e && e > 0 && (dt.increaseChance = 5 * e)
         }), (function() {
             const e = dt.talents[this.id];
-            return e && e > 0 ? `Gear spell chance increased by %${5*e}` : "Increases spell activation chance by 5%"
+            return e && e > 0 ? `Gear spell activation chance increased by ${5*e}%` : "Increases spell activation chance by 5%"
         })), new xt(7, "Shiny", ft, 10, (function() {
             dt.lootChanceMod = 1;
             const e = dt.talents[this.id];
