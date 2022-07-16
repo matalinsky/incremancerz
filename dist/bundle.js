@@ -3134,6 +3134,11 @@ var Incremancer;
                     zombieSpeed: {
                         id: 5,
                         scaling: 1
+                    },
+                    harpySpeed: {
+                        id: 6,
+                        scaling: 1
+
                     }
                 }, Xe.instance) return Xe.instance;
             Xe.instance = this
@@ -3288,6 +3293,9 @@ var Incremancer;
                             break;
                         case this.stats.zombieSpeed.id:
                             this.model.zombieSpeed++
+                            break;
+                        case this.stats.harpySpeed.id:
+                            this.model.harpySpeed += 10
                     }
                 })), e.se && e.se.forEach((e => {
                     this.randomSpells.push(e)
