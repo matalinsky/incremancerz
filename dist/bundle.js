@@ -3377,6 +3377,9 @@ var Incremancer;
                         break;
                     case this.stats.zombieSpeed.id:
                         t.push("+1 zombie speed")
+                        break;
+                    case this.stats.harpySpeed.id:
+                        t.push("+10 harpy speed")
                 }
             return t
         }
