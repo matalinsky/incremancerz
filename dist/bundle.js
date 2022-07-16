@@ -3392,7 +3392,7 @@ var Incremancer;
                 }
             return t
         }
-        testForLoot() {
+       testForLoot() {
             if (this.persistent.skeletons > 0 && Math.random() < this.lootChance) {
                 const e = this.generateLoot(this.persistent.level);
                 this.model.sendMessage(this.getLootName(e) + " collected!"), this.persistent.items.push(e)
@@ -3430,8 +3430,8 @@ var Incremancer;
             }
             const n = [Math.random() > .5 ? this.stats.zombieHealth.id : this.stats.zombieDamage.id];
             for (let e = 0; e < s - 1; e++) {
-                let e = Math.ceil(5 * Math.random());
-                for (; n.includes(e);) e = Math.ceil(5 * Math.random());
+                let e = Math.ceil(6 * Math.random());
+                for (; n.includes(e);) e = Math.ceil(6 * Math.random());
                 n.push(e)
             }
             return {
