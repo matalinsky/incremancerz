@@ -4305,10 +4305,10 @@ var Incremancer;
             gt.costReduction = 0;
             dt.increaseChance = 0;
             const e = dt.talents[this.id];
-            e && e > 0 && (dt.increaseChance = 5 * e)
+            e && e > 0 && (dt.increaseChance = 2 * e)
         }), (function() {
             const e = dt.talents[this.id];
-            return e && e > 0 ? `Gear spell activation chance increased by ${5*e}%` : "Increases spell activation chance by 5%"
+            return e && e > 0 ? `Gear spell activation chance increased by ${2*e}%` : "Increases spell activation chance by 2%"
         })), new xt(7, "Shiny", ft, 10, (function() {
             dt.lootChanceMod = 1;
             const e = dt.talents[this.id];
