@@ -4305,7 +4305,7 @@ var Incremancer;
             gt.costReduction = 0;
             dt.increaseChance = 0;
             const e = dt.talents[this.id];
-            e && e > 0 && (dt.increaseChance = 2 * e)
+            e && e > 0 && (dt.increaseChance = 0.02 * e)
         }), (function() {
             const e = dt.talents[this.id];
             return e && e > 0 ? `Gear spell activation chance increased by ${2*e}%` : "Increases spell activation chance by 2%"
