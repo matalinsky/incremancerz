@@ -1190,7 +1190,7 @@ var Incremancer;
                     damageReduction: 1,
                     healthRegen: 0,
                     damageReflection: 0
-                }, this.boneCollectors.update(.1), this.updateAutoUpgrades(), this.partFactory.generatorsApplied = [], this.creatureFactory.updateAutoBuild(), this.creatureFactory.resetLevels(), this.level = 1, this.currentState = this.states.prestiged, this.skeleton.persistent.talentReset = !0, this.setupLevel(), this.saveData();
+                }, this.boneCollectors.update(.1), this.partFactory.generatorsApplied = [], this.creatureFactory.updateAutoBuild(), this.creatureFactory.resetLevels(), this.level = 1, this.currentState = this.states.prestiged, this.skeleton.persistent.talentReset = !0, this.setupLevel(), this.saveData();
                 
             }
         }
