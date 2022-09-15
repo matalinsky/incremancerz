@@ -3108,13 +3108,15 @@ var Incremancer;
                     rare: 2,
                     epic: 3,
                     legendary: 4,
-                    ancient: 5
+                    ancient: 5,
+                    divine: 6
                 }, this.prefixes = {
                     commonQuality: ["Wooden", "Sturdy", "Rigid", "Iron", "Rusty", "Flimsy", "Battered", "Damaged", "Used", "Stained", "Training"],
                     rareQuality: ["Steel", "Shiny", "Polished", "Forged", "Plated", "Bronze", "Reinforced", "Veteran's", "Reliable"],
                     epicQuality: ["Antique", "Ancient", "Famous", "Bejeweled", "Notorious", "Historic", "Mythical", "Extraordinary"],
                     legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"],
-                    ancientQuality: ["Grim", "Miserable", "Luxurious"]
+                    ancientQuality: ["Grim", "Miserable", "Luxurious"],
+                    divineQuality: ["Divine"]
                 }, this.stats = {
                     respawnTime: {
                         id: 1,
@@ -3320,6 +3322,9 @@ var Incremancer;
                     break;
                 case this.rarity.ancient:
                     t = this.prefixes.ancientQuality[e.p]
+                    break;
+                case this.rarity.divine:
+                    t = this.prefixes.divineQuality[e.p]
             }
             let s = "";
             switch (e.s) {
@@ -3357,7 +3362,9 @@ var Incremancer;
                 case this.rarity.legendary:
                     return "legendary";
                 case this.rarity.ancient:
-                    return "ancient"
+                    return "ancient";
+                case this.rarity.divine:
+                    return "divine"
             }
         }
         getLootStats(e) {
@@ -3403,12 +3410,16 @@ var Incremancer;
             const t = Math.round(6 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod)))) {
-                s = this.rarity.ancient;
+            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
+                s = this.rarity.divine;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
             if(s == this.rarity.legendary) {
+                const e = a(this.spells.spells, Math.random());
+                i.push(e.id)
+            }
+            if(s == this.rarity.ancient) {
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
@@ -3428,6 +3439,9 @@ var Incremancer;
                     break;
                 case this.rarity.ancient:
                     r = Math.floor(Math.random() * this.prefixes.ancientQuality.length)
+                    break;
+                case this.rarity.divine:
+                    r = Math.floor(Math.random() * this.prefixes.divineQuality.length)        
             }
             const n = [Math.random() > .5 ? this.stats.zombieHealth.id : this.stats.zombieDamage.id];
             for (let e = 0; e < s - 1; e++) {
@@ -4863,7 +4877,9 @@ var Incremancer;
                     case i.rarity.legendary:
                         return "Legendary level " + e.l + " " + this.itemType(e);
                     case i.rarity.ancient:
-                        return "Ancient level " + e.l + " " + this.itemType(e)
+                        return "Ancient level " + e.l + " " + this.itemType(e);
+                    case i.rarity.divine:
+                        return "Divine level " + e.l + " " + this.itemType(e)
                 }
                 if (-1 == e.s) return "Click this to destroy all non-equipped items (legendary items will not be automatically destroyed). Or drag items here to destroy them."
             },
