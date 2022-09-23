@@ -982,7 +982,7 @@ var Incremancer;
     }
     class ne {
         constructor() {
-            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.zombieSpeed = (10 + dt.zombspeed) , this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
+            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.zombieSpeed = 10 , this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
                 percentage: 0,
                 blood: 0,
                 bones: 0,
@@ -4372,7 +4372,9 @@ var Incremancer;
             e && e > 0 && (ct.zombspeed = e)
         }), (function() {
             const e = dt.talents[this.id];
+            this.model.zombiespeed += ct.zombspeed
             return e && e > 0 ? `+ ${e} zombie speed` : "Grants 1 additional zombie speed"
+
         }))],
         Mt = [];
 
