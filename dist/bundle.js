@@ -4373,7 +4373,7 @@ var Incremancer;
         }), (function() {
             const e = dt.talents[this.id];
             //i hate
-            this.model.zombieSpeed += ct.zombspeed
+            this.gamemodel.zombieSpeed += ct.zombspeed
             return e && e > 0 ? `+ ${e} zombie speed` : "Grants 1 additional zombie speed"
 
         }))],
