@@ -987,7 +987,7 @@ var Incremancer;
                 blood: 0,
                 bones: 0,
                 brains: 0
-            }, this.gigazombies = !1, this.endLevelTimer = 3, this.endLevelDelay = (3 - this.autoStartWait), this.messageQueue = [], this.offlineMessage = "", this.runeEffects = {
+            }, this.gigazombies = !1, this.endLevelTimer = (3 - this.autoStartWait), this.endLevelDelay = (3), this.messageQueue = [], this.offlineMessage = "", this.runeEffects = {
                 attackSpeed: 1,
                 critChance: 0,
                 critDamage: 0,
