@@ -16,6 +16,11 @@
       <button ng-click="zm.toggleAutoStart();">{{zm.model.persistentData.autoStart ? "On" : "Off"}}</button>
     </div>
     <div class="upgrade">
+      <h4>Remove 3 Second Wait</h4>
+      <p>Remove the 3 second wait for autostarting a level. On: Removed, Off: Wait</p>
+      <button ng-click="zm.toggleAutoStartWait();">{{zm.model.persistentData.autoStartWait ? "On" : "Off"}}</button>
+    </div>
+    <div class="upgrade">
       <h4>Render Resolution</h4>
       <p>Choose your preferred resolution to render the game.</p>
       <p>50% will run better on slower hardware but may look blurry.</p>

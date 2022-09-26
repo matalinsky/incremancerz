@@ -987,7 +987,7 @@ var Incremancer;
                 blood: 0,
                 bones: 0,
                 brains: 0
-            }, this.gigazombies = !1, this.endLevelTimer = 3, this.endLevelDelay = 3, this.messageQueue = [], this.offlineMessage = "", this.runeEffects = {
+            }, this.gigazombies = !1, this.endLevelTimer = 3, this.endLevelDelay = (3 - this.autoStartWait), this.messageQueue = [], this.offlineMessage = "", this.runeEffects = {
                 attackSpeed: 1,
                 critChance: 0,
                 critDamage: 0,
@@ -1019,6 +1019,7 @@ var Incremancer;
                 saveCreated: Date.now(),
                 dateOfSave: Date.now(),
                 autoStart: !1,
+                autoStartWait: 0,
                 levelUnlocked: 1,
                 allTimeHighestLevel: 0,
                 blood: 0,
@@ -4691,7 +4692,9 @@ var Incremancer;
             c.model.nextLevel()
         }, c.toggleAutoStart = function() {
             c.model.persistentData.autoStart ? c.model.persistentData.autoStart = !1 : c.model.persistentData.autoStart = !0
-        }, c.toggleResolution = function(e) {
+        }, c.toggleAutoStartWait = function() {
+            c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = 3 : c.model.persistentData.autoStartWait = 0
+        },c.toggleResolution = function(e) {
             c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
         }, c.getResolution = function() {
             return c.model.persistentData.resolution || 1
