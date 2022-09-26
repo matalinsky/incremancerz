@@ -4366,16 +4366,6 @@ var Incremancer;
         }), (function() {
             const e = dt.talents[this.id];
             return e && e > 0 ? `${e} seconds of additional 50% damage reduction` : "Grants 1 second of additional 50% damage reduction to newly spawned zombies"
-        })), new xt(13, "speed", bt, 10, (function() {
-            ct.zombspeed = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (ct.zombspeed = e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            //i hate
-            this.gameModel.zombieSpeed += ct.zombspeed
-            return e && e > 0 ? `+ ${e} zombie speed` : "Grants 1 additional zombie speed"
-
         }))],
         Mt = [];
 
