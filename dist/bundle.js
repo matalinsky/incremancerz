@@ -1019,7 +1019,7 @@ var Incremancer;
                 saveCreated: Date.now(),
                 dateOfSave: Date.now(),
                 autoStart: !1,
-                autoStartWait: 0,
+                autoStartWait: !0,
                 levelUnlocked: 1,
                 allTimeHighestLevel: 0,
                 blood: 0,
@@ -1090,7 +1090,13 @@ var Incremancer;
             return this.energySpellMultiplier * this.energyRate - (this.persistentData.boneCollectors + this.persistentData.harpies)
         }
         update(e, t) {
-            this.spells.updateSpells(e), e *= this.gameSpeed, this.hidden && U(e, this.app), this.partFactory.update(e), this.autoRemoveCollectorsHarpies(), this.addEnergy(this.getEnergyRate() * e), this.currentState == this.states.playingLevel && (this.addBones(this.bonesRate * e), this.addBrains(this.brainsRate * e), this.upgrades.updateRunicSyphon(this.runicSyphon), this.lastSave + 3e4 < t && (this.saveData(), this.lastSave = t), this.lastPlayFabSave + 12e5 < t && this.saveToPlayFab(), this.getHumanCount() <= 0 && (this.endLevelTimer < 0 ? (this.isBossStage(this.level) && this.trophies.doesLevelHaveTrophy(this.level) && this.trophies.trophyAquired(this.level), this.prestigePointsEarned = this.prestigePointsForLevel(this.level), this.currentState = this.states.levelCompleted, this.levelResourcesAdded = !1, this.calculateEndLevelBones(), this.calculateEndLevelZombieCages(), this.persistentData.levelsCompleted.includes(this.level) || (this.addPrestigePoints(this.prestigePointsForLevel(this.level)), this.persistentData.levelsCompleted.push(this.level)), this.persistentData.levelUnlocked = this.level + 1, (!this.persistentData.allTimeHighestLevel || this.level > this.persistentData.allTimeHighestLevel) && (this.persistentData.allTimeHighestLevel = this.level, window.kongregate && window.kongregate.stats.submit("level", this.persistentData.allTimeHighestLevel)), this.startTimer = 2) : this.endLevelTimer -= e), this.upgrades.updateConstruction(e), this.upgrades.updateAutoUpgrades(), this.creatureFactory.update(e)), this.currentState == this.states.levelCompleted && (this.startTimer -= (e + this.persistentData.autoStartWait), this.startTimer < 0 && this.persistentData.autoStart && this.startLevel(this.level)), this.currentState == this.states.levelCompleted && (this.startTimer < 0 && this.nextLevel()), this.currentState == this.states.failed && (this.startTimer -= e, this.startTimer < 0 && this.persistentData.autoStart && this.startLevel(this.level)), this.currentState == this.states.failed && (this.startTimer -= e, this.startTimer < 0 && this.startLevel(this.level - 1)), this.updateStats()
+            if (this.persistentData.autoStartWait == !1) {
+                removetime = 3
+            }
+            else {
+                removetime = 0
+            }
+            this.spells.updateSpells(e), e *= this.gameSpeed, this.hidden && U(e, this.app), this.partFactory.update(e), this.autoRemoveCollectorsHarpies(), this.addEnergy(this.getEnergyRate() * e), this.currentState == this.states.playingLevel && (this.addBones(this.bonesRate * e), this.addBrains(this.brainsRate * e), this.upgrades.updateRunicSyphon(this.runicSyphon), this.lastSave + 3e4 < t && (this.saveData(), this.lastSave = t), this.lastPlayFabSave + 12e5 < t && this.saveToPlayFab(), this.getHumanCount() <= 0 && (this.endLevelTimer < 0 ? (this.isBossStage(this.level) && this.trophies.doesLevelHaveTrophy(this.level) && this.trophies.trophyAquired(this.level), this.prestigePointsEarned = this.prestigePointsForLevel(this.level), this.currentState = this.states.levelCompleted, this.levelResourcesAdded = !1, this.calculateEndLevelBones(), this.calculateEndLevelZombieCages(), this.persistentData.levelsCompleted.includes(this.level) || (this.addPrestigePoints(this.prestigePointsForLevel(this.level)), this.persistentData.levelsCompleted.push(this.level)), this.persistentData.levelUnlocked = this.level + 1, (!this.persistentData.allTimeHighestLevel || this.level > this.persistentData.allTimeHighestLevel) && (this.persistentData.allTimeHighestLevel = this.level, window.kongregate && window.kongregate.stats.submit("level", this.persistentData.allTimeHighestLevel)), this.startTimer = 2) : this.endLevelTimer -= e), this.upgrades.updateConstruction(e), this.upgrades.updateAutoUpgrades(), this.creatureFactory.update(e)), this.currentState == this.states.levelCompleted && (this.startTimer -= (e + this.removetime)), this.startTimer < 0 && this.persistentData.autoStart && this.startLevel(this.level); this.currentState == this.states.levelCompleted && (this.startTimer < 0 && this.nextLevel()), this.currentState == this.states.failed && (this.startTimer -= e, this.startTimer < 0 && this.persistentData.autoStart && this.startLevel(this.level)), this.currentState == this.states.failed && (this.startTimer -= e, this.startTimer < 0 && this.startLevel(this.level - 1)), this.updateStats()
         }
         calculateEndLevelBones() {
             this.endLevelBones = 0, this.persistentData.boneCollectors > 0 && this.bones.uncollected && (this.endLevelBones = this.bones.uncollected.map((e => e.value)).reduce(((e, t) => e + t), 0), this.addBones(this.endLevelBones))
@@ -4693,7 +4699,7 @@ var Incremancer;
         }, c.toggleAutoStart = function() {
             c.model.persistentData.autoStart ? c.model.persistentData.autoStart = !1 : c.model.persistentData.autoStart = !0
         }, c.toggleAutoStartWait = function() {
-            c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = 3 : c.model.persistentData.autoStartWait = 0
+            c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = !1 : c.model.persistentData.autoStartWait = !0
         },c.toggleResolution = function(e) {
             c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
         }, c.getResolution = function() {
