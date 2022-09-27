@@ -3209,7 +3209,7 @@ var Incremancer;
         update(e) {
             this.aliveHumans = this.humans.aliveHumans, this.graveyardAttackers = this.humans.graveyardAttackers, this.aliveZombies = this.zombies.aliveZombies, this.aliveSkeletons = [], this.spellTimer -= e;
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].visible && (this.updateCreature(this.skeletons[t], e), this.skeletons[t].flags.dead || (this.aliveZombies.push(this.skeletons[t]), this.aliveSkeletons.push(this.skeletons[t])));
-            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e; if (c.model.persistentData.autoSellGear == !0 && this.aliveSkeletons.length > 0) {this.destroyAllItems()}
+            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e; if (this.model.persistentData.autoSellGear == !0 && this.aliveSkeletons.length > 0) {this.destroyAllItems()}
         }
         updateCreature(e, t) {
             if (e.flags.dead) {
