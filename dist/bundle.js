@@ -4702,7 +4702,7 @@ var Incremancer;
         }, c.toggleAutoStartWait = function() {
             c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = !1 : c.model.persistentData.autoStartWait = !0
         }, c.toggleAutoSellGear = function() {
-            c.model.persistentData.autoSellGear ? c.model.persistentData.autoSellGear = !0 : c.model.persistentData.autoSellGear = !1
+            c.model.persistentData.autoSellGear ? c.model.persistentData.autoSellGear = !1 : c.model.persistentData.autoSellGear = !0
         }, c.toggleResolution = function(e) {
             c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
         }, c.getResolution = function() {
