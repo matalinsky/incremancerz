@@ -1020,6 +1020,7 @@ var Incremancer;
                 dateOfSave: Date.now(),
                 autoStart: !1,
                 autoStartWait: !0,
+                autoSellGear: !1,
                 levelUnlocked: 1,
                 allTimeHighestLevel: 0,
                 blood: 0,
@@ -3208,7 +3209,7 @@ var Incremancer;
         update(e) {
             this.aliveHumans = this.humans.aliveHumans, this.graveyardAttackers = this.humans.graveyardAttackers, this.aliveZombies = this.zombies.aliveZombies, this.aliveSkeletons = [], this.spellTimer -= e;
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].visible && (this.updateCreature(this.skeletons[t], e), this.skeletons[t].flags.dead || (this.aliveZombies.push(this.skeletons[t]), this.aliveSkeletons.push(this.skeletons[t])));
-            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e
+            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e; if (c.model.persistentData.autoSellGear == !0 && this.aliveSkeletons.length > 0) {this.destroyAllItems()}
         }
         updateCreature(e, t) {
             if (e.flags.dead) {
@@ -4700,6 +4701,8 @@ var Incremancer;
             c.model.persistentData.autoStart ? c.model.persistentData.autoStart = !1 : c.model.persistentData.autoStart = !0
         }, c.toggleAutoStartWait = function() {
             c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = !1 : c.model.persistentData.autoStartWait = !0
+        }, c.toggleAutoSellGear = function() {
+            c.model.persistentData.autoSellGear ? c.model.persistentData.autoSellGear = !0 : c.model.persistentData.autoSellGear = !1
         },c.toggleResolution = function(e) {
             c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
         }, c.getResolution = function() {
