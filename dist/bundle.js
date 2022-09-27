@@ -1020,7 +1020,7 @@ var Incremancer;
                 dateOfSave: Date.now(),
                 autoStart: !1,
                 autoStartWait: !0,
-                autoSellGear: !1,
+                autoSellGear: !0,
                 levelUnlocked: 1,
                 allTimeHighestLevel: 0,
                 blood: 0,
