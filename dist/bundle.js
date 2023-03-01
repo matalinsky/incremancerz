@@ -2,7 +2,7 @@ var Incremancer;
 (() => {
     "use strict";
     var e = {};
-//hahahah
+    //hahahah
     function t(e, t) {
         return Math.sqrt(e * e + t * t)
     }
@@ -56,10 +56,10 @@ var Incremancer;
         })
     })(e);
     let v, S, M, k, w, T, C, D = {
-            x: 800,
-            y: 600,
-            defaultScale: 1
-        },
+        x: 800,
+        y: 600,
+        defaultScale: 1
+    },
         P = {
             x: 600,
             y: 600
@@ -81,7 +81,7 @@ var Incremancer;
             const t = e.data.getLocalPosition(x);
             T.mouseOutOfBounds = t.x < 0 || t.y < 0 || t.x > x.width || t.y > x.height
         }
-        if (e.data.originalEvent.touches && e.data.originalEvent.touches.length > 1) ! function(e) {
+        if (e.data.originalEvent.touches && e.data.originalEvent.touches.length > 1) ! function (e) {
             const t = Math.abs(e.data.originalEvent.touches[0].clientX - e.data.originalEvent.touches[1].clientX);
             B ? R + 50 < Date.now() && Math.abs(t - B) > 10 && (A(t > B ? 1 : -1, null), R = Date.now(), B = t) : B = t
         }(e);
@@ -130,27 +130,27 @@ var Incremancer;
         e && (c.scale.x = D.defaultScale, c.scale.y = D.defaultScale, T.zombieCursor && (T.zombieCursor.scale.x = T.zombieCursor.scale.y = T.zombieCursorScale * D.defaultScale)), c.x = (D.x - P.x * c.scale.x) / 2, c.y = (D.y - P.y * c.scale.y) / 2
     }
     const G = {
-            x: 0,
-            y: 0,
-            width: 1e3,
-            height: 1e3,
-            hideParticle(e, t) {
-                return e < this.x || t < this.y || e > this.x + this.width || t > this.y + this.height
-            },
-            update() {
-                this.x = -c.x / c.scale.x, this.y = -c.y / c.scale.y, this.width = D.x / c.scale.x, this.height = D.y / c.scale.y
-            }
+        x: 0,
+        y: 0,
+        width: 1e3,
+        height: 1e3,
+        hideParticle(e, t) {
+            return e < this.x || t < this.y || e > this.x + this.width || t > this.y + this.height
         },
+        update() {
+            this.x = -c.x / c.scale.x, this.y = -c.y / c.scale.y, this.width = D.x / c.scale.x, this.height = D.y / c.scale.y
+        }
+    },
         X = new PIXI.Matrix;
 
     function U(e, t) {
-        ! function(e) {
+        ! function (e) {
             const t = Y;
             let s = !1;
             const i = c;
             t.w && (i.y += t.scrollSpeed * e, s = !0), t.a && (i.x += t.scrollSpeed * e, s = !0), t.s && (i.y -= t.scrollSpeed * e, s = !0), t.d && (i.x -= t.scrollSpeed * e, s = !0), s && F(i)
         }(e), G.update(), e *= v.gameSpeed, M.update(e), C.update(e), T.update(e), k.update(e), w.update(e), S.update(e),
-            function(e, t) {
+            function (e, t) {
                 if (C.vipEscaping && void 0 !== C.vip ? y.alpha += e : (y.alpha -= e, y.alpha < 0 && (y.alpha = 0)), y.alpha > 0) {
                     y.alpha > 1 && (y.alpha = 1), y.visible = !0, y.x = 5, y.y = D.y - 305;
                     const e = c.scale.x,
@@ -180,9 +180,9 @@ var Incremancer;
             defaultScale: Math.max(e, t) / 1e3
         }, Y.scrollSpeed = Math.max(e, t) / 4
     }
-    new Map, window.onload = function() {
+    new Map, window.onload = function () {
         v = ne.getInstance(), S = new Qe, M = new Oe, k = new Ue, w = new Xe, T = new Ae, C = new Se, v.loadData(), v.onReady(), O(),
-            function() {
+            function () {
                 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
                 const e = new PIXI.Application({
                     width: D.x,
@@ -193,26 +193,26 @@ var Incremancer;
                     resizeTo: window
                 });
                 document.body.appendChild(e.view), PIXI.utils.isWebGLSupported() || console.error("Warning: WebGL support not detected. Game performance may be slower."),
-                    function(e) {
+                    function (e) {
                         c = new PIXI.Container, u = new PIXI.Container, p = new PIXI.Container, g = new PIXI.Container, g.sortableChildren = !0, b = new PIXI.Container, m = new PIXI.Container, f = PIXI.RenderTexture.create({
                             width: 300,
                             height: 300
-                        }), y = new PIXI.Sprite(f), y.visible = !1, y.alpha = 0, m.addChild(y), c.addChild(u), c.addChild(p), c.addChild(g), c.addChild(b), e.stage.addChild(c), e.stage.addChild(m), c.interactive = !0, c.interactiveChildren = !1, c.on("pointerdown", z), c.on("pointerup", I), c.on("pointerupoutside", I), c.on("pointermove", H), c.on("click", E), c.on("tap", E), document.getElementsByTagName("canvas")[0].onwheel = L, document.getElementsByTagName("canvas")[0].oncontextmenu = function(e) {
+                        }), y = new PIXI.Sprite(f), y.visible = !1, y.alpha = 0, m.addChild(y), c.addChild(u), c.addChild(p), c.addChild(g), c.addChild(b), e.stage.addChild(c), e.stage.addChild(m), c.interactive = !0, c.interactiveChildren = !1, c.on("pointerdown", z), c.on("pointerup", I), c.on("pointerupoutside", I), c.on("pointermove", H), c.on("click", E), c.on("tap", E), document.getElementsByTagName("canvas")[0].onwheel = L, document.getElementsByTagName("canvas")[0].oncontextmenu = function (e) {
                             e.preventDefault()
                         }
-                    }(e), e.loader.add("sprites/ground.json").add("sprites/megagraveyard.png").add("sprites/graveyard.json").add("sprites/buildings.json").add("sprites/humans.json").add("sprites/cop.json").add("sprites/dogs.json").add("sprites/army.json").add("sprites/doctor.json").add("sprites/zombie.json").add("sprites/golem.json").add("sprites/bonecollector.json").add("sprites/harpy.json").add("sprites/objects2.json").add("sprites/fenceposts.json").add("sprites/trees2.json").add("sprites/fortress.json").add("sprites/tank.json").add("sprites/skeleton.json").load((function() {
-                        v.app = e, N(), x = new PIXI.TilingSprite(PIXI.Texture.from("grass.png")), x.texture.baseTexture.mipmap = PIXI.MIPMAP_MODES.OFF, x.width = P.x, x.height = P.y, u.addChild(x), v.setupLevel(), setTimeout((function() {
+                    }(e), e.loader.add("sprites/ground.json").add("sprites/megagraveyard.png").add("sprites/graveyard.json").add("sprites/buildings.json").add("sprites/humans.json").add("sprites/cop.json").add("sprites/dogs.json").add("sprites/army.json").add("sprites/doctor.json").add("sprites/zombie.json").add("sprites/golem.json").add("sprites/bonecollector.json").add("sprites/harpy.json").add("sprites/objects2.json").add("sprites/fenceposts.json").add("sprites/trees2.json").add("sprites/fortress.json").add("sprites/tank.json").add("sprites/skeleton.json").load((function () {
+                        v.app = e, N(), x = new PIXI.TilingSprite(PIXI.Texture.from("grass.png")), x.texture.baseTexture.mipmap = PIXI.MIPMAP_MODES.OFF, x.width = P.x, x.height = P.y, u.addChild(x), v.setupLevel(), setTimeout((function () {
                             Z(!0)
                         })), e.ticker.add((t => {
                             U(e.ticker.deltaMS / 1e3, e), v.frameRate = e.ticker.FPS
                         }))
                     }))
-            }(), window.self !== window.top && ("" != document.referrer && -1 == document.referrer.indexOf("kongregate.com") && -1 == document.referrer.indexOf("konggames.com") && -1 == document.referrer.indexOf("gti.nz") ? window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" : -1 === document.referrer.indexOf("kongregate.com") && -1 === document.referrer.indexOf("konggames.com") || kongregateAPI.loadAPI((function() {
+            }(), window.self !== window.top && ("" != document.referrer && -1 == document.referrer.indexOf("kongregate.com") && -1 == document.referrer.indexOf("konggames.com") && -1 == document.referrer.indexOf("gti.nz") ? window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" : -1 === document.referrer.indexOf("kongregate.com") && -1 === document.referrer.indexOf("konggames.com") || kongregateAPI.loadAPI((function () {
                 window.kongregate = kongregateAPI.getAPI(), v.kongregate = !0, v.loginInUsingPlayFab()
-            }))), document.addEventListener("visibilitychange", (function() {
+            }))), document.addEventListener("visibilitychange", (function () {
                 "hidden" == document.visibilityState ? v.hidden = !0 : v.hidden = !1
             }), !1)
-    }, window.onresize = function() {
+    }, window.onresize = function () {
         O()
     };
     const Y = {
@@ -223,9 +223,9 @@ var Incremancer;
         d: !1,
         shift: !1
     };
-    window.onblur = function() {
+    window.onblur = function () {
         Y.w = Y.a = Y.s = Y.d = !1, Y.shift = !1
-    }, window.onkeydown = function(e) {
+    }, window.onkeydown = function (e) {
         switch (e.keyCode) {
             case 16:
             case 17:
@@ -251,7 +251,7 @@ var Incremancer;
                 return !0
         }
         return !1
-    }, window.onkeyup = function(e) {
+    }, window.onkeyup = function (e) {
         switch (e.keyCode) {
             case 16:
             case 17:
@@ -285,37 +285,37 @@ var Incremancer;
     }
     class q {
         constructor() {
-            if (this.cooldownReduction = 0, this.timeExtension = 0, this.costReduction = 0, this.skeleton = new Xe, this.zombies = new Ae, this.humans = new Se, this.spellMap = new Map, this.spells = [new W(1, "Time Warp", "Speed up the flow of time for 30 seconds", "", 90, 30, 0, (function() {
-                    ne.getInstance().gameSpeed = 2
-                }), (function() {
-                    ne.getInstance().gameSpeed = 1
-                })), new W(2, "Energy Charge", "5x Energy rate for 20 seconds, cost 50 energy", "", 160, 20, 50, (function() {
-                    ne.getInstance().energySpellMultiplier = 5
-                }), (function() {
-                    ne.getInstance().energySpellMultiplier = 1
-                })), new W(3, "Detonate", "Turns your zombies into fast moving living bombs, cost 69 energy... nice", "", 80, 8, 69, (function() {
-                    (new q).zombies.detonate = !0
-                }), (function() {
-                    (new q).zombies.detonate = !1
-                })), new W(4, "Earth Freeze", "Freeze all humans in place preventing them from moving for 15 seconds, cost 75 energy", "", 50, 15, 75, (function() {
-                    (new q).humans.frozen = !0
-                }), (function() {
-                    (new q).humans.frozen = !1
-                })), new W(5, "Gigazombies", "For 5 seconds any zombies spawned will be giants with 10x health and attack damage, cost 100 energy", "", 260, 5, 100, (function() {
-                    (new q).zombies.super = !0
-                }), (function() {
-                    (new q).zombies.super = !1
-                })), new W(6, "Incinerate", "Burns humans near the skeleton champion", "Has a chance to cast Incinerate when attacking, burning all humans within a large radius of the Skeleton", 1, 10, 10, (function() {
-                    (new q).skeleton.incinerate(), this.timer = 1
-                }), (function() {})), new W(7, "Pandemic", "Causes plague to spread", "Has a chance to cast Pandemic when attacking, causing infected humans to spread the plague to each other for 20 seconds", 10, 20, 10, (function() {
-                    (new q).humans.pandemic = !0
-                }), (function() {
-                    (new q).humans.pandemic = !1
-                })), new W(8, "Part Storm", "Doubles parts", "Has a chance to cast Part Storm when attacking, doubling the parts production of your factory machines for 15 seconds", 10, 15, 10, (function() {
-                    (new se).storm = !0
-                }), (function() {
-                    (new se).storm = !1
-                }))], q.instance) return q.instance;
+            if (this.cooldownReduction = 0, this.timeExtension = 0, this.costReduction = 0, this.skeleton = new Xe, this.zombies = new Ae, this.humans = new Se, this.spellMap = new Map, this.spells = [new W(1, "Time Warp", "Speed up the flow of time for 30 seconds", "", 90, 30, 0, (function () {
+                ne.getInstance().gameSpeed = 2
+            }), (function () {
+                ne.getInstance().gameSpeed = 1
+            })), new W(2, "Energy Charge", "5x Energy rate for 20 seconds, cost 50 energy", "", 160, 20, 50, (function () {
+                ne.getInstance().energySpellMultiplier = 5
+            }), (function () {
+                ne.getInstance().energySpellMultiplier = 1
+            })), new W(3, "Detonate", "Turns your zombies into fast moving living bombs, cost 69 energy... nice", "", 80, 8, 69, (function () {
+                (new q).zombies.detonate = !0
+            }), (function () {
+                (new q).zombies.detonate = !1
+            })), new W(4, "Earth Freeze", "Freeze all humans in place preventing them from moving for 15 seconds, cost 75 energy", "", 50, 15, 75, (function () {
+                (new q).humans.frozen = !0
+            }), (function () {
+                (new q).humans.frozen = !1
+            })), new W(5, "Gigazombies", "For 5 seconds any zombies spawned will be giants with 10x health and attack damage, cost 100 energy", "", 260, 5, 100, (function () {
+                (new q).zombies.super = !0
+            }), (function () {
+                (new q).zombies.super = !1
+            })), new W(6, "Incinerate", "Burns humans near the skeleton champion", "Has a chance to cast Incinerate when attacking, burning all humans within a large radius of the Skeleton", 1, 10, 10, (function () {
+                (new q).skeleton.incinerate(), this.timer = 1
+            }), (function () { })), new W(7, "Pandemic", "Causes plague to spread", "Has a chance to cast Pandemic when attacking, causing infected humans to spread the plague to each other for 20 seconds", 10, 20, 10, (function () {
+                (new q).humans.pandemic = !0
+            }), (function () {
+                (new q).humans.pandemic = !1
+            })), new W(8, "Part Storm", "Doubles parts", "Has a chance to cast Part Storm when attacking, doubling the parts production of your factory machines for 15 seconds", 10, 15, 10, (function () {
+                (new se).storm = !0
+            }), (function () {
+                (new se).storm = !1
+            }))], q.instance) return q.instance;
             q.instance = this, this.spells.forEach((e => this.spellMap.set(e.id, e)))
         }
         lockAllSpells() {
@@ -403,9 +403,9 @@ var Incremancer;
     class ee {
         constructor() {
             if (this.gameModel = ne.getInstance(), this.humans = new Se, this.discardedWalls = [], this.discardedContainers = [], this.discardedFloorSprites = [], this.buildings = [], this.buildingsByPopularity = [], this.buildingMap = [], this.roadSprite = null, this.roadTexture = null, this.entranceWidth = 16, this.entranceDepth = 16, this.cornerDistance = 16, this.minBuildings = 3, this.wallWidth = 4, this.graveyardCollision = null, this.graveYardLocation = {
-                    x: 0,
-                    y: 0
-                }, this.graveYardPosition = null, this.wallCollisionBuffer = 3, this.fastDistance = i, this.pathFindStepSize = 5, this.dx = 0, this.dy = 0, this.stepsToTake = 10, this.hasHit = !1, this.vector = null, this.corner = null, this.hitbuilding = !1, this.insideBuilding = !1, this.treeSprites = [], this.treeTextures = [], this.armyTextures = [], ee.instance) return ee.instance;
+                x: 0,
+                y: 0
+            }, this.graveYardPosition = null, this.wallCollisionBuffer = 3, this.fastDistance = i, this.pathFindStepSize = 5, this.dx = 0, this.dy = 0, this.stepsToTake = 10, this.hasHit = !1, this.vector = null, this.corner = null, this.hitbuilding = !1, this.insideBuilding = !1, this.treeSprites = [], this.treeTextures = [], this.armyTextures = [], ee.instance) return ee.instance;
             ee.instance = this
         }
         getRandomBuilding() {
@@ -705,9 +705,9 @@ var Incremancer;
             if (this.dy < 0 && e.y < s.y - 4) return !1;
             if (this.dy > 0 && e.y > s.y + s.width + 4) return !1;
             for (this.step = this.pathStepCalc(e, t), this.stepsToTake = Math.min(i / this.pathFindStepSize - this.pathFindStepSize, 30), this.hasHit = !1, this.testPosition = {
-                    x: e.x,
-                    y: e.y
-                }; !this.hasHit && this.stepsToTake > 0;) this.stepsToTake--, this.testPosition.x += this.step.x, this.testPosition.y += this.step.y, this.isInsidePoi(this.testPosition.x, this.testPosition.y, s, 4) && (this.hasHit = !0);
+                x: e.x,
+                y: e.y
+            }; !this.hasHit && this.stepsToTake > 0;) this.stepsToTake--, this.testPosition.x += this.step.x, this.testPosition.y += this.step.y, this.isInsidePoi(this.testPosition.x, this.testPosition.y, s, 4) && (this.hasHit = !0);
             return this.hasHit
         }
         findNearestCorner(e, t) {
@@ -793,9 +793,9 @@ var Incremancer;
     class se {
         constructor() {
             if (this.storm = !1, this.gameModel = ne.getInstance(), this.costs = {
-                    blood: "blood",
-                    parts: "parts"
-                }, this.generatorsApplied = [], this.generators = [new ie(1, "Simple Machine", this.costs.blood, 1e6, 1.08, 1, 2, "A simple device that produces 1 part every 2 seconds"), new ie(2, "Part Duplicator", this.costs.parts, 100, 1.09, 4, 3, "A more advanced device that produces 4 parts every 3 seconds"), new ie(3, "Stamp Press", this.costs.parts, 1e3, 1.1, 16, 5, "An industrial press that produces 16 parts every 5 seconds"), new ie(4, "Conveyor", this.costs.parts, 1e4, 1.11, 64, 8, "A fantastic new invention that produces 64 parts every 8 seconds"), new ie(5, "Splitter Combiner", this.costs.parts, 1e5, 1.12, 192, 10, "A wondrous machine that produces 192 parts every 10 seconds"), new ie(6, "Batch Converter", this.costs.parts, 5e5, 1.13, 512, 12, "An astounding contraption that produces 512 parts every 12 seconds")], se.instance) return se.instance;
+                blood: "blood",
+                parts: "parts"
+            }, this.generatorsApplied = [], this.generators = [new ie(1, "Simple Machine", this.costs.blood, 1e6, 1.08, 1, 2, "A simple device that produces 1 part every 2 seconds"), new ie(2, "Part Duplicator", this.costs.parts, 100, 1.09, 4, 3, "A more advanced device that produces 4 parts every 3 seconds"), new ie(3, "Stamp Press", this.costs.parts, 1e3, 1.1, 16, 5, "An industrial press that produces 16 parts every 5 seconds"), new ie(4, "Conveyor", this.costs.parts, 1e4, 1.11, 64, 8, "A fantastic new invention that produces 64 parts every 8 seconds"), new ie(5, "Splitter Combiner", this.costs.parts, 1e5, 1.12, 192, 10, "A wondrous machine that produces 192 parts every 10 seconds"), new ie(6, "Batch Converter", this.costs.parts, 5e5, 1.13, 512, 12, "An astounding contraption that produces 512 parts every 12 seconds")], se.instance) return se.instance;
             se.instance = this
         }
         factoryStats() {
@@ -898,11 +898,11 @@ var Incremancer;
     class ae {
         constructor() {
             if (this.gameModel = ne.getInstance(), this.spawnedSavedCreatures = !1, this.types = {
-                    earthGolem: 1,
-                    airGolem: 2,
-                    fireGolem: 3,
-                    waterGolem: 4
-                }, this.creatures = [new re(1, this.types.earthGolem, "Earth Golem", 3e3, 75, 30, 800, "A golem born from rocks and mud, able to take a lot of punishment and taunt enemies to attack it"), new re(2, this.types.airGolem, "Air Golem", 1200, 110, 45, 900, "A fast moving golem able to cover large distances and chase targets down"), new re(3, this.types.fireGolem, "Fire Golem", 1200, 130, 32, 1e3, "A fireball spewing golem that ignites everything it touches"), new re(4, this.types.waterGolem, "Water Golem", 1500, 90, 30, 1100, "A calming golem that restores health to nearby units")], this.creatureScaling = 1.75, this.creatureCostScaling = 2, this.creatureCostReduction = 1, ae.instance) return ae.instance;
+                earthGolem: 1,
+                airGolem: 2,
+                fireGolem: 3,
+                waterGolem: 4
+            }, this.creatures = [new re(1, this.types.earthGolem, "Earth Golem", 3e3, 75, 30, 800, "A golem born from rocks and mud, able to take a lot of punishment and taunt enemies to attack it"), new re(2, this.types.airGolem, "Air Golem", 1200, 110, 45, 900, "A fast moving golem able to cover large distances and chase targets down"), new re(3, this.types.fireGolem, "Fire Golem", 1200, 130, 32, 1e3, "A fireball spewing golem that ignites everything it touches"), new re(4, this.types.waterGolem, "Water Golem", 1500, 90, 30, 1100, "A calming golem that restores health to nearby units")], this.creatureScaling = 1.75, this.creatureCostScaling = 2, this.creatureCostReduction = 1, ae.instance) return ae.instance;
             ae.instance = this
         }
         update(e) {
@@ -982,7 +982,7 @@ var Incremancer;
     }
     class ne {
         constructor() {
-            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.zombieSpeed = 10 , this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
+            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.zombieSpeed = 10, this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
                 percentage: 0,
                 blood: 0,
                 bones: 0,
@@ -1020,7 +1020,8 @@ var Incremancer;
                 dateOfSave: Date.now(),
                 autoStart: !1,
                 autoStartWait: !0,
-                autoSellGear: !0,
+                autoSellGear: !1,
+                autoSellGearLegendary: !1,
                 levelUnlocked: 1,
                 allTimeHighestLevel: 0,
                 blood: 0,
@@ -1191,7 +1192,7 @@ var Incremancer;
         }
         prestige() {
             if (this.persistentData.prestigePointsEarned > 0) {
-                this.persistentData.levelUnlocked = 1, this.persistentData.autoUpgrades = [], this.persistentData.blood = 0, this.persistentData.brains = 0, this.persistentData.bones = 0, this.persistentData.parts = 0, this.persistentData.generators = [], this.persistentData.bonesTotal = 0, this.persistentData.upgrades = this.persistentData.upgrades.filter((e => e.costType == this.upgrades.costs.prestigePoints)), this.persistentData.constructions = [], this.persistentData.boneCollectors = 0, this.persistentData.currentConstruction = !1, this.persistentData.harpies = 0, this.persistentData.graveyardZombies = 1, this.persistentData.prestigePointsToSpend += this.persistentData.prestigePointsEarned, this.persistentData.prestigePointsEarned = 0, this.persistentData.runes = {life: {blood: 0, brains: 0, bones: 0}, death: {blood: 0, brains: 0, bones: 0}}, this.persistentData.vipEscaped = [], this.persistentData.creatureLevels = [], this.persistentData.creatureAutobuild = [], this.persistentData.levelsCompleted = [], this.persistentData.runeshatter = 0, this.zombiesInCages = 0, this.autoconstruction = !1, this.levelResourcesAdded = !1, this.gigazombies = !1, this.runeEffects = {
+                this.persistentData.levelUnlocked = 1, this.persistentData.autoUpgrades = [], this.persistentData.blood = 0, this.persistentData.brains = 0, this.persistentData.bones = 0, this.persistentData.parts = 0, this.persistentData.generators = [], this.persistentData.bonesTotal = 0, this.persistentData.upgrades = this.persistentData.upgrades.filter((e => e.costType == this.upgrades.costs.prestigePoints)), this.persistentData.constructions = [], this.persistentData.boneCollectors = 0, this.persistentData.currentConstruction = !1, this.persistentData.harpies = 0, this.persistentData.graveyardZombies = 1, this.persistentData.prestigePointsToSpend += this.persistentData.prestigePointsEarned, this.persistentData.prestigePointsEarned = 0, this.persistentData.runes = { life: { blood: 0, brains: 0, bones: 0 }, death: { blood: 0, brains: 0, bones: 0 } }, this.persistentData.vipEscaped = [], this.persistentData.creatureLevels = [], this.persistentData.creatureAutobuild = [], this.persistentData.levelsCompleted = [], this.persistentData.runeshatter = 0, this.zombiesInCages = 0, this.autoconstruction = !1, this.levelResourcesAdded = !1, this.gigazombies = !1, this.runeEffects = {
                     attackSpeed: 1,
                     critChance: 0,
                     critDamage: 0,
@@ -1199,7 +1200,7 @@ var Incremancer;
                     healthRegen: 0,
                     damageReflection: 0
                 }, this.boneCollectors.update(.1), this.partFactory.generatorsApplied = [], this.creatureFactory.updateAutoBuild(), this.creatureFactory.resetLevels(), this.level = 1, this.currentState = this.states.prestiged, this.skeleton.persistent.talentReset = !0, this.setupLevel(), this.saveData();
-                
+
             }
         }
         //o
@@ -1262,7 +1263,7 @@ var Incremancer;
                 const t = e[0],
                     s = new FileReader,
                     i = ne.getInstance();
-                s.onload = function(e) {
+                s.onload = function (e) {
                     const t = JSON.parse(LZString.decompressFromEncodedURIComponent(e.target.result));
                     t.dateOfSave ? (t.skeleton && (i.skeleton.persistent = t.skeleton, delete t.skeleton), t.skeletonTalents ? (i.skeleton.talents = t.skeletonTalents, delete t.skeletonTalents) : i.skeleton.talents = [], i.persistentData = t, i.updatePersistentData(), i.saveToPlayFab(), i.level = i.persistentData.levelUnlocked, i.creatureFactory.spawnedSavedCreatures = !1, i.setupLevel()) : alert("Error loading save game")
                 }, s.readAsText(t)
@@ -1301,15 +1302,15 @@ var Incremancer;
             if (window.kongregate) try {
                 PlayFab.settings.titleId = this.titleId;
                 const e = {
-                        TitleId: PlayFab.settings.titleId,
-                        AuthTicket: window.kongregate.services.getGameAuthToken(),
-                        KongregateId: window.kongregate.services.getUserId(),
-                        CreateAccount: !0
-                    },
+                    TitleId: PlayFab.settings.titleId,
+                    AuthTicket: window.kongregate.services.getGameAuthToken(),
+                    KongregateId: window.kongregate.services.getUserId(),
+                    CreateAccount: !0
+                },
                     t = this;
-                PlayFabClientSDK.LoginWithKongregate(e, (function(e) {
+                PlayFabClientSDK.LoginWithKongregate(e, (function (e) {
                     e && e.data && e.data.PlayFabId && (t.playFabId = e.data.PlayFabId, t.loadFromPlayFab())
-                }), (function(e) {
+                }), (function (e) {
                     console.log(e)
                 }))
             } catch (e) {
@@ -1333,9 +1334,9 @@ var Incremancer;
                 this.persistentData.trophies = t;
                 try {
                     const t = this;
-                    PlayFab.ClientApi.UpdateUserData(s, (function(s) {
+                    PlayFab.ClientApi.UpdateUserData(s, (function (s) {
                         e ? (t.resetToBaseStats(), t.setupLevel(), window.location.reload()) : t.messageQueue.push("Game Saved to Cloud")
-                    }), (function(e) {
+                    }), (function (e) {
                         console.log(e)
                     }))
                 } catch (e) {
@@ -1352,12 +1353,12 @@ var Incremancer;
                 };
                 try {
                     const s = this;
-                    PlayFab.ClientApi.GetUserData(t, (function(t) {
+                    PlayFab.ClientApi.GetUserData(t, (function (t) {
                         if (t.data.Data.save) {
                             const i = JSON.parse(LZString.decompressFromEncodedURIComponent(t.data.Data.save.Value));
                             (e || i.saveCreated < s.persistentData.saveCreated || i.saveCreated == s.persistentData.saveCreated && i.dateOfSave > s.persistentData.dateOfSave) && (s.persistentData = i, t.data.Data.trophies && (s.persistentData.trophies = JSON.parse(LZString.decompressFromEncodedURIComponent(t.data.Data.trophies.Value))), t.data.Data.skeleton && (s.skeleton.persistent = JSON.parse(LZString.decompressFromEncodedURIComponent(t.data.Data.skeleton.Value))), t.data.Data.talents ? s.skeleton.talents = JSON.parse(LZString.decompressFromEncodedURIComponent(t.data.Data.talents.Value)) : s.skeleton.talents = [], s.level = s.persistentData.levelUnlocked, s.updatePersistentData(), s.calcOfflineProgress(), s.setupLevel(), s.messageQueue.push("Game Loaded from Cloud"))
                         }
-                    }), (function(e) {
+                    }), (function (e) {
                         console.log(e)
                     }))
                 } catch (e) {
@@ -1372,200 +1373,200 @@ var Incremancer;
     class oe {
         constructor() {
             if (this.gameModel = ne.getInstance(), this.spells = new q, this.skeleton = new Xe, this.partFactory = new se, this.types = {
-                    energyRate: "energyRate",
-                    energyCap: "energyCap",
-                    damage: "damage",
-                    health: "health",
-                    speed: "speed",
-                    brainsRate: "brainsRate",
-                    bonesRate: "bonesRate",
-                    bloodCap: "bloodCap",
-                    brainsCap: "brainsCap",
-                    brainRecoverChance: "brainRecoverChance",
-                    riseFromTheDeadChance: "riseFromTheDeadChance",
-                    boneCollectorCapacity: "boneCollectorCapacity",
-                    construction: "construction",
-                    infectedBite: "infectedBite",
-                    infectedBlast: "infectedBlast",
-                    plagueDamage: "plagueDamage",
-                    plagueTicks: "plagueTicks",
-                    burningSpeedPC: "burningSpeedPC",
-                    unlockSpell: "unlockSpell",
-                    spitDistance: "spitDistance",
-                    blastHealing: "blastHealing",
-                    plagueArmor: "plagueArmor",
-                    monsterLimit: "monsterLimit",
-                    runicSyphon: "runicSyphon",
-                    gigazombies: "gigazombies",
-                    bulletproof: "bulletproof",
-                    harpySpeed: "harpySpeed",
-                    tankBuster: "tankBuster",
-                    harpyBombs: "harpyBombs",
-                    spikeDelay: "spikeDelay",
-                    bloodGainPC: "bloodGainPC",
-                    bloodStoragePC: "bloodStoragePC",
-                    brainsGainPC: "brainsGainPC",
-                    brainsStoragePC: "brainsStoragePC",
-                    bonesGainPC: "bonesGainPC",
-                    partsGainPC: "partsGainPC",
-                    zombieDmgPC: "zombieDmgPC",
-                    zombieHealthPC: "zombieHealthPC",
-                    golemHealthPC: "golemHealthPC",
-                    golemDamagePC: "golemDamagePC",
-                    startingPC: "startingPC",
-                    energyCost: "energyCost",
-                    autoconstruction: "autoconstruction",
-                    autoshop: "autoshop",
-                    graveyardHealth: "graveyardHealth",
-                    talentPoint: "talentPoint"
-                }, this.costs = {
-                    energy: "energy",
-                    blood: "blood",
-                    brains: "brains",
-                    bones: "bones",
-                    prestigePoints: "prestigePoints",
-                    parts: "parts"
-                }, this.constructionStates = {
-                    building: "building",
-                    paused: "paused",
-                    autoPaused: "autoPaused"
-                }, this.constructionTickTimer = 1, this.angularModel = null, this.runeCalculations = [{
-                    rune: "death",
-                    effect: "attackSpeed",
-                    cost: "blood",
-                    logBase: 1.1,
-                    adjustment: -70,
-                    subtract: !1,
-                    cap: 0
-                }, {
-                    rune: "death",
-                    effect: "critChance",
-                    cost: "brains",
-                    logBase: 1.3,
-                    adjustment: -20,
-                    cap: .8
-                }, {
-                    rune: "death",
-                    effect: "critDamage",
-                    cost: "bones",
-                    logBase: 1.05,
-                    adjustment: -100,
-                    cap: 0
-                }, {
-                    rune: "life",
-                    effect: "damageReduction",
-                    cost: "blood",
-                    logBase: 1.5,
-                    adjustment: -15,
-                    subtract: !0,
-                    cap: .8
-                }, {
-                    rune: "life",
-                    effect: "healthRegen",
-                    cost: "brains",
-                    logBase: 2.9,
-                    adjustment: -5.5,
-                    cap: .5
-                }, {
-                    rune: "life",
-                    effect: "damageReflection",
-                    cost: "bones",
-                    logBase: 1.24,
-                    adjustment: -30,
-                    cap: 1
-                }], this.constructionTypes = {
-                    graveyard: "graveyard",
-                    crypt: "crypt",
-                    fort: "fort",
-                    fortress: "fortress",
-                    citadel: "citadel",
-                    fence: "fence",
-                    fenceSize: "fenceSize",
-                    plagueWorkshop: "plagueWorkshop",
-                    plagueLaboratory: "plagueLaboratory",
-                    plagueSpikes: "plagueSpikes",
-                    spellTower: "spellTower",
-                    runesmith: "runesmith",
-                    aviary: "aviary",
-                    zombieCage: "zombieCage",
-                    partFactory: "partFactory",
-                    monsterFactory: "monsterFactory",
-                    pit: "pit",
-                    harpy: "harpy"
-                }, this.constructionUpgrades = [new he(201, "Cursed Graveyard", this.constructionTypes.graveyard, {
-                    blood: 1800
-                }, 30, 1, 1, 1, null, "Construct a Cursed Graveyard in the town that will automatically spawn zombies when your energy is at its maximum!", "Graveyard menu now available!"), new he(205, "Crypt", this.constructionTypes.crypt, {
-                    blood: 21e3,
-                    bones: 2220
-                }, 60, 1, 1, 1, 201, "Construct a Crypt in your graveyard. This will give you a nice dark and quiet place to think. The additional space will also allow you to store 50% more blood and brains!", null), new he(206, "Bone Fort", this.constructionTypes.fort, {
-                    blood: 6e4,
-                    bones: 6e3,
-                    energy: 60
-                }, 60, 1, 1, 1, 205, "Turn your crypt into a fort. The additional space will also allow you to store 60% more blood and brains.", "New upgrades are available in the shop!"), new he(207, "Bone Fortress", this.constructionTypes.fortress, {
-                    blood: 1e5,
-                    bones: 9e3,
-                    energy: 90
-                }, 60, 1, 1, 1, 206, "Turn your fort into a fortress. The additional space will also allow you to store 70% more blood and brains.", null), new he(211, "Bone Citadel", this.constructionTypes.citadel, {
-                    blood: 2e5,
-                    bones: 12e3,
-                    energy: 120
-                }, 60, 1, 1, 1, 207, "Turn your fortress into a towering citadel that looms over the town. The additional space will also allow you to store 80% more blood and brains.", "New upgrades are available in the shop!"), new he(202, "Perimeter Fence", this.constructionTypes.fence, {
-                    bones: 880,
-                    energy: 22
-                }, 44, 1, 1, 1, 201, "Build a protective fence around the graveyard that will reduce damage taken by zombies inside by 50%.", null), new he(203, "Bigger Fence", this.constructionTypes.fenceSize, {
-                    bones: 880,
-                    energy: 22
-                }, 44, 1, 10, 4, 202, "Enlarge the fence so a greater area is protected.", null), new he(204, "Plague Workshop", this.constructionTypes.plagueWorkshop, {
-                    blood: 10200,
-                    brains: 600
-                }, 60, 1, 1, 1, 205, "Build a laboratory to study the effects of plague. This will unlock new upgrades in the shop.", "Plague upgrades now available!"), new he(208, "Plague Spikes", this.constructionTypes.plagueSpikes, {
-                    brains: 3e3,
-                    bones: 1e3
-                }, 30, 1, 1, 1, 204, "Booby trap the area around your graveyard with cruel spikes that infect trespassing humans with the plague.", null), new he(209, "Spell Tower", this.constructionTypes.spellTower, {
-                    brains: 3e3,
-                    blood: 3e4
-                }, 30, 1, 1, 1, 206, "Dedicate one tower of your fort to the study of spellcraft. Perhaps you can learn some new spells?", "Spells now available in the shop!"), new he(210, "Runesmith", this.constructionTypes.runesmith, {
-                    bones: 3e3,
-                    blood: 12e4,
-                    brains: 1e3
-                }, 30, 1, 1, 1, 207, "Build a runesmith's workshop in order to fortify your zombies with powerful runes.", null), new he(212, "Accursed Aviary", this.constructionTypes.aviary, {
-                    bones: 6e3,
-                    blood: 22e4,
-                    brains: 2e3
-                }, 60, 1, 1, 1, 211, "Construct an aviary on top of your citadel so you can release wicked harpies to bomb the townspeople.", "Harpies available for hire in the graveyard menu"), new he(213, "Zombie Cage", this.constructionTypes.zombieCage, {
-                    bones: 600,
-                    blood: 900
-                }, 30, 1, 5, 1, 201, "Build a cage to contain surplus zombies once a town is defeated.", null), new he(214, "Second Zombie Cage", this.constructionTypes.zombieCage, {
-                    bones: 1200,
-                    blood: 1800
-                }, 30, 1, 10, 1, 205, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(215, "Third Zombie Cage", this.constructionTypes.zombieCage, {
-                    bones: 1800,
-                    blood: 2700
-                }, 30, 1, 10, 1, 206, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(216, "Fourth Zombie Cage", this.constructionTypes.zombieCage, {
-                    bones: 2400,
-                    blood: 3600
-                }, 30, 1, 10, 1, 207, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(217, "Fifth Zombie Cage", this.constructionTypes.zombieCage, {
-                    bones: 3e3,
-                    blood: 4500
-                }, 30, 1, 15, 1, 211, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(218, "Plague Laboratory", this.constructionTypes.plagueLaboratory, {
-                    brains: 25e3,
-                    blood: 1e6
-                }, 50, 1, 1, 1, 211, "Expand the plague workshop into a well equipped laboratory in order to unlock additional plague upgrades.", null), new he(219, "Part Factory", this.constructionTypes.partFactory, {
-                    brains: 35e3,
-                    blood: 15e6
-                }, 50, 1, 1, 1, 218, "Build a factory to create parts that can be used to construct more powerful beings for your army.", "Factory menu now available!"), new he(220, "Creature Factory", this.constructionTypes.monsterFactory, {
-                    brains: 45e3,
-                    blood: 4e7
-                }, 50, 1, 1, 1, 219, "Build a factory to turn creature parts into living entities of destruction", "Creatures now available in factory menu!"), new he(221, "Bottomless Pit", this.constructionTypes.pit, {
-                    bones: 75e3,
-                    parts: 5e6
-                }, 50, 1, 1, 10, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
-                    bones: 75e3,
-                    brains: 75e3,
-                    blood: 8e7
-                }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!")], this.upgrades = [new le(1, "Bloodthirst", this.types.damage, this.costs.blood, 50, 1.2, 1, 40, "Your zombies thirst for blood and do +1 damage for each rank of Bloodthirst.", null, null), new le(9, "Sharpened Teeth", this.types.damage, this.costs.blood, 3e3, 1.23, 3, 50, "Your zombies bites do +3 damage with each rank of Sharpened Teeth.", null, 206), new le(11, "Razor Claws", this.types.damage, this.costs.blood, 28e3, 1.25, 5, 0, "Your zombies attacks do +5 damage with each rank of Razor Claws.", null, 211), new le(16, "Killer Instinct", this.types.damage, this.costs.blood, 1e6, 1.27, 8, 0, "Your zombies attacks do +8 damage with each rank of Killer Instinct.", null, 220), new le(2, "Like Leather", this.types.health, this.costs.blood, 100, 1.2, 10, 40, "Your zombies gain tougher skin and +10 health with each rank.", null, null), new le(10, "Thick Skull", this.types.health, this.costs.blood, 5e3, 1.23, 25, 50, "Your zombies gain +25 health with each rank.", null, 206), new le(12, "Battle Hardened", this.types.health, this.costs.blood, 32e3, 1.25, 40, 0, "Your zombies gain +40 health with each rank of Battle Hardened.", null, 211), new le(17, "Tough as Nails", this.types.health, this.costs.blood, 1e6, 1.27, 100, 0, "Your zombies gain +100 health with each rank of Tough as Nails.", null, 220), new le(3, "Cold Storage", this.types.brainsCap, this.costs.blood, 150, 1.2, 50, 20, "Turns out you can use all of your spare blood to store brains and keep them fresh. Each rank increases your maximum brain capacity by 50.", null, null), new le(4, "Recycling is Cool", this.types.brainRecoverChance, this.costs.blood, 1e3, 1.2, .1, 10, "Why are we wasting so many good brains on this project? Each rank increases your chance to get a brain back from a dead zombie by 10%", null, null), new le(5, "Your Soul is Mine!", this.types.riseFromTheDeadChance, this.costs.blood, 1500, 1.4, .1, 10, "Using your most powerful blood magic you command the bodies of the dead to rise as your servants! Each rank grants 10% chance that dead humans will turn into zombies.", null, null), new le(6, "Infected Bite", this.types.infectedBite, this.costs.blood, 3500, 1.4, .1, 10, "Your zombies are now infected with plague and could infect their victims too. Each rank adds 10% chance to inflict damage over time when a zombie attacks a target.", null, 204), new le(7, "Detonate", this.types.unlockSpell, this.costs.blood, 25e3, 1, 3, 1, "Learn the Detonate spell which can explode all of your zombies into a cloud of plague. Not exactly sure how useful that will be.", "New spell learned, Detonate!", 209), new le(8, "Gigazombies?", this.types.unlockSpell, this.costs.blood, 5e4, 1, 5, 1, "Learn the Gigazombies spell which will turn some of your zombies into hulking monstrosities with increased health and damage.", "New spell learned, Gigazombies!", 209), new le(13, "Blazing Speed", this.types.burningSpeedPC, this.costs.blood, 3e4, 1.25, .05, 10, "The humans are using torches to set your zombies on fire. Perhaps we can turn the tables on them? Each rank increases the movement and attack speed of burning zombies by 5%", null, 207), new le(14, "Spit it Out", this.types.spitDistance, this.costs.blood, 5e5, 1.6, 5, 10, "The first rank gives your zombies the ability to spit plague at enemies beyond normal attack range. Spit attacks do 50% zombie damage and infect the victim with plague. Subsequent ranks will increase the range of spit attacks.", null, 218), new le(15, "Runic Syphon", this.types.runicSyphon, this.costs.blood, 34e3, 1.9, .01, 10, "Infuse your runes for free! Each rank gives your Runesmith the ability to infuse 1% of your resource income, without consuming it. Additionally when blood and brains reach their storage limit, any additional resources will be infused automatically.", null, 210), new le(19, "Faster Harpies", this.types.harpySpeed, this.costs.blood, 1e8, 1.07, 2, 20, "These harpies are way too slow! We have to make them faster. Each rank increases harpy speed by 2", null, 222), new le(20, "Energy Rush", this.types.energyRate, this.costs.brains, 20, 1.8, .5, 20, "Melting brains down in your cauldron to make smoothies can be beneficial for your health. It also increases your energy rate by 0.5 per second for each rank.", null, null), new le(21, "Master Summoner", this.types.energyCap, this.costs.brains, 10, 1.5, 5, 20, "All the brains you harvested have proved fruitful in your experiments. Each rank raises your maximum energy by 5.", null, null), new le(22, "Primal Reflexes", this.types.speed, this.costs.brains, 5, 1.6, 1, 20, "The zombies retain more of their human agility increasing run speed by 1 for each rank.", null, null), new le(23, "Blood Harvest", this.types.bloodStoragePC, this.costs.brains, 50, 1.12, .1, 0, "All this brain power has enabled you to devise some superior blood storage methods. Each rank increases your maximum blood by 10%.", null, null), new le(24, "Unholy Construction", this.types.construction, this.costs.brains, 25, 1, 1, 1, "Learn the art of Unholy Construction in order to build structures that will solidify your foothold on the town.", "Construction menu now available!", null), new le(25, "Infected Corpse", this.types.infectedBlast, this.costs.brains, 500, 1.4, .1, 10, "Fill your zombies with so much plague they are ready to explode! Each rank adds 10% chance for a zombie to explode into a cloud of plague upon death.", null, 204), new le(26, "Energy Charge", this.types.unlockSpell, this.costs.brains, 2e3, 1, 2, 1, "Learn the Energy Charge spell which can drastically increase your energy rate for a short time.", "New spell learned, Energy Charge!", 209), new le(27, "What Doesn't Kill You", this.types.blastHealing, this.costs.brains, 1e4, 1.3, .1, 20, "Plague explosions from zombies and harpies will also heal nearby zombies for 10% of the explosion damage with each rank.", null, 218), new le(28, "One is Never Enough", this.types.monsterLimit, this.costs.brains, 2e4, 1.2, 1, 15, "We're definitely going to need more than one golem to finish the job. Each rank increases your creature limit by 1", null, 220), new le(29, "Tank Buster", this.types.tankBuster, this.costs.brains, 4e5, 1.2, 1, 1, "Teach your harpies some new tricks. Once bought this upgrade will make your harpies drop fire bombs on tanks during boss stages.", null, 222), new le(30, "Improved Spikes", this.types.spikeDelay, this.costs.brains, 800, 1.2, 1, 4, "Each rank reduces the delay between plague spike activation by 20%", null, 208), new le(40, "Bone Throne", this.types.energyCap, this.costs.bones, 50, 1.55, 10, 15, "Sitting atop your throne of bones you can finally think clearly. Each rank increases maximum energy by 10.", null, null), new le(41, "Crown of Bones", this.types.energyRate, this.costs.bones, 200, 1.5, .2, 25, "Not just dapper, these spikes help channel your energy. Each rank increases energy rate by 0.2 per second.", null, null), new le(42, "Bonebarrows", this.types.boneCollectorCapacity, this.costs.bones, 300, 1.2, 5, 20, "Your bone collectors are struggling to carry all these bones. Maybe it's time we gave them an upgrade? Each rank increases their carrying capacity by 5.", null, null), new le(43, "Bone Reinforced Tanks", this.types.bloodCap, this.costs.bones, 500, 1.07, 2e3, 0, "Finally! Now that we have a solid construction material we can get to work building better storage for our other resources. Each rank increases blood storage by 2000.", null, null), new le(44, "Brain Cage", this.types.brainsCap, this.costs.bones, 650, 1.07, 500, 0, "There's nothing I love more than a mind enslaved. Now we can put these brains where they belong. In cages! Each rank increases brain storage by 500.", null, null), new le(45, "Earth Freeze", this.types.unlockSpell, this.costs.bones, 5e3, 1, 4, 1, "Learn the Earth Freeze spell which can freeze all humans in place for a short time.", "New spell learned, Earth Freeze!", 209), new le(46, "Plague Armor", this.types.plagueArmor, this.costs.bones, 15e3, 1.6, .02, 10, "The best defense is a good offense? True in the case of Plague Armor which reduces the damage done by infected humans by 2% per rank.", null, 218), new le(47, "Bulletproof", this.types.bulletproof, this.costs.bones, 6e4, 1.6, .05, 5, "Craft your earth golems from much harder stone. Each rank gives them 5% chance to reflect bullets back to their source.", null, 220), new le(48, "Bombs Away", this.types.harpyBombs, this.costs.bones, 5e5, 1.6, 1, 3, "Upgrade your harpies so they can carry more than just one bomb at a time.", null, 222), new le(60, "Extra Limbs", this.types.golemDamagePC, this.costs.parts, 900, 1.3, .02, 0, "Your golems gain +2% damage with each rank of Extra Limbs.", null, 220), new le(61, "Big Boned", this.types.golemHealthPC, this.costs.parts, 1e3, 1.31, .02, 0, "Your golems gain +2% health with each rank of Big Boned.", null, 220)], this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null), new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null), new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null), new le(101, "Blood Storage", this.types.bloodStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood storage for each rank.", null, null), new le(102, "Blood Rate", this.types.bloodGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood income rate for each rank.", null, null), new le(103, "Brain Storage", this.types.brainsStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain storage for each rank.", null, null), new le(104, "Brain Rate", this.types.brainsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain income rate for each rank.", null, null), new le(105, "Bone Rate", this.types.bonesGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% bones income rate for each rank.", null, null), new le(111, "Parts Rate", this.types.partsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% creature parts income rate for each rank.", null, null), new le(112, "Auto Construction", this.types.autoconstruction, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically start construction of the cheapest available building option.", null, null), new le(114, "Auto Shop", this.types.autoshop, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically purchase items from the shop.", null, null), new le(113, "Graveyard Health", this.types.graveyardHealth, this.costs.prestigePoints, 10, 1.25, .1, 0, "Additional 10% graveyard health during boss levels with each rank.", null, null), new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 100, 1.2, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
-        
-        oe.instance = this
+                energyRate: "energyRate",
+                energyCap: "energyCap",
+                damage: "damage",
+                health: "health",
+                speed: "speed",
+                brainsRate: "brainsRate",
+                bonesRate: "bonesRate",
+                bloodCap: "bloodCap",
+                brainsCap: "brainsCap",
+                brainRecoverChance: "brainRecoverChance",
+                riseFromTheDeadChance: "riseFromTheDeadChance",
+                boneCollectorCapacity: "boneCollectorCapacity",
+                construction: "construction",
+                infectedBite: "infectedBite",
+                infectedBlast: "infectedBlast",
+                plagueDamage: "plagueDamage",
+                plagueTicks: "plagueTicks",
+                burningSpeedPC: "burningSpeedPC",
+                unlockSpell: "unlockSpell",
+                spitDistance: "spitDistance",
+                blastHealing: "blastHealing",
+                plagueArmor: "plagueArmor",
+                monsterLimit: "monsterLimit",
+                runicSyphon: "runicSyphon",
+                gigazombies: "gigazombies",
+                bulletproof: "bulletproof",
+                harpySpeed: "harpySpeed",
+                tankBuster: "tankBuster",
+                harpyBombs: "harpyBombs",
+                spikeDelay: "spikeDelay",
+                bloodGainPC: "bloodGainPC",
+                bloodStoragePC: "bloodStoragePC",
+                brainsGainPC: "brainsGainPC",
+                brainsStoragePC: "brainsStoragePC",
+                bonesGainPC: "bonesGainPC",
+                partsGainPC: "partsGainPC",
+                zombieDmgPC: "zombieDmgPC",
+                zombieHealthPC: "zombieHealthPC",
+                golemHealthPC: "golemHealthPC",
+                golemDamagePC: "golemDamagePC",
+                startingPC: "startingPC",
+                energyCost: "energyCost",
+                autoconstruction: "autoconstruction",
+                autoshop: "autoshop",
+                graveyardHealth: "graveyardHealth",
+                talentPoint: "talentPoint"
+            }, this.costs = {
+                energy: "energy",
+                blood: "blood",
+                brains: "brains",
+                bones: "bones",
+                prestigePoints: "prestigePoints",
+                parts: "parts"
+            }, this.constructionStates = {
+                building: "building",
+                paused: "paused",
+                autoPaused: "autoPaused"
+            }, this.constructionTickTimer = 1, this.angularModel = null, this.runeCalculations = [{
+                rune: "death",
+                effect: "attackSpeed",
+                cost: "blood",
+                logBase: 1.1,
+                adjustment: -70,
+                subtract: !1,
+                cap: 0
+            }, {
+                rune: "death",
+                effect: "critChance",
+                cost: "brains",
+                logBase: 1.3,
+                adjustment: -20,
+                cap: .8
+            }, {
+                rune: "death",
+                effect: "critDamage",
+                cost: "bones",
+                logBase: 1.05,
+                adjustment: -100,
+                cap: 0
+            }, {
+                rune: "life",
+                effect: "damageReduction",
+                cost: "blood",
+                logBase: 1.5,
+                adjustment: -15,
+                subtract: !0,
+                cap: .8
+            }, {
+                rune: "life",
+                effect: "healthRegen",
+                cost: "brains",
+                logBase: 2.9,
+                adjustment: -5.5,
+                cap: .5
+            }, {
+                rune: "life",
+                effect: "damageReflection",
+                cost: "bones",
+                logBase: 1.24,
+                adjustment: -30,
+                cap: 1
+            }], this.constructionTypes = {
+                graveyard: "graveyard",
+                crypt: "crypt",
+                fort: "fort",
+                fortress: "fortress",
+                citadel: "citadel",
+                fence: "fence",
+                fenceSize: "fenceSize",
+                plagueWorkshop: "plagueWorkshop",
+                plagueLaboratory: "plagueLaboratory",
+                plagueSpikes: "plagueSpikes",
+                spellTower: "spellTower",
+                runesmith: "runesmith",
+                aviary: "aviary",
+                zombieCage: "zombieCage",
+                partFactory: "partFactory",
+                monsterFactory: "monsterFactory",
+                pit: "pit",
+                harpy: "harpy"
+            }, this.constructionUpgrades = [new he(201, "Cursed Graveyard", this.constructionTypes.graveyard, {
+                blood: 1800
+            }, 30, 1, 1, 1, null, "Construct a Cursed Graveyard in the town that will automatically spawn zombies when your energy is at its maximum!", "Graveyard menu now available!"), new he(205, "Crypt", this.constructionTypes.crypt, {
+                blood: 21e3,
+                bones: 2220
+            }, 60, 1, 1, 1, 201, "Construct a Crypt in your graveyard. This will give you a nice dark and quiet place to think. The additional space will also allow you to store 50% more blood and brains!", null), new he(206, "Bone Fort", this.constructionTypes.fort, {
+                blood: 6e4,
+                bones: 6e3,
+                energy: 60
+            }, 60, 1, 1, 1, 205, "Turn your crypt into a fort. The additional space will also allow you to store 60% more blood and brains.", "New upgrades are available in the shop!"), new he(207, "Bone Fortress", this.constructionTypes.fortress, {
+                blood: 1e5,
+                bones: 9e3,
+                energy: 90
+            }, 60, 1, 1, 1, 206, "Turn your fort into a fortress. The additional space will also allow you to store 70% more blood and brains.", null), new he(211, "Bone Citadel", this.constructionTypes.citadel, {
+                blood: 2e5,
+                bones: 12e3,
+                energy: 120
+            }, 60, 1, 1, 1, 207, "Turn your fortress into a towering citadel that looms over the town. The additional space will also allow you to store 80% more blood and brains.", "New upgrades are available in the shop!"), new he(202, "Perimeter Fence", this.constructionTypes.fence, {
+                bones: 880,
+                energy: 22
+            }, 44, 1, 1, 1, 201, "Build a protective fence around the graveyard that will reduce damage taken by zombies inside by 50%.", null), new he(203, "Bigger Fence", this.constructionTypes.fenceSize, {
+                bones: 880,
+                energy: 22
+            }, 44, 1, 10, 4, 202, "Enlarge the fence so a greater area is protected.", null), new he(204, "Plague Workshop", this.constructionTypes.plagueWorkshop, {
+                blood: 10200,
+                brains: 600
+            }, 60, 1, 1, 1, 205, "Build a laboratory to study the effects of plague. This will unlock new upgrades in the shop.", "Plague upgrades now available!"), new he(208, "Plague Spikes", this.constructionTypes.plagueSpikes, {
+                brains: 3e3,
+                bones: 1e3
+            }, 30, 1, 1, 1, 204, "Booby trap the area around your graveyard with cruel spikes that infect trespassing humans with the plague.", null), new he(209, "Spell Tower", this.constructionTypes.spellTower, {
+                brains: 3e3,
+                blood: 3e4
+            }, 30, 1, 1, 1, 206, "Dedicate one tower of your fort to the study of spellcraft. Perhaps you can learn some new spells?", "Spells now available in the shop!"), new he(210, "Runesmith", this.constructionTypes.runesmith, {
+                bones: 3e3,
+                blood: 12e4,
+                brains: 1e3
+            }, 30, 1, 1, 1, 207, "Build a runesmith's workshop in order to fortify your zombies with powerful runes.", null), new he(212, "Accursed Aviary", this.constructionTypes.aviary, {
+                bones: 6e3,
+                blood: 22e4,
+                brains: 2e3
+            }, 60, 1, 1, 1, 211, "Construct an aviary on top of your citadel so you can release wicked harpies to bomb the townspeople.", "Harpies available for hire in the graveyard menu"), new he(213, "Zombie Cage", this.constructionTypes.zombieCage, {
+                bones: 600,
+                blood: 900
+            }, 30, 1, 5, 1, 201, "Build a cage to contain surplus zombies once a town is defeated.", null), new he(214, "Second Zombie Cage", this.constructionTypes.zombieCage, {
+                bones: 1200,
+                blood: 1800
+            }, 30, 1, 10, 1, 205, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(215, "Third Zombie Cage", this.constructionTypes.zombieCage, {
+                bones: 1800,
+                blood: 2700
+            }, 30, 1, 10, 1, 206, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(216, "Fourth Zombie Cage", this.constructionTypes.zombieCage, {
+                bones: 2400,
+                blood: 3600
+            }, 30, 1, 10, 1, 207, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(217, "Fifth Zombie Cage", this.constructionTypes.zombieCage, {
+                bones: 3e3,
+                blood: 4500
+            }, 30, 1, 15, 1, 211, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(218, "Plague Laboratory", this.constructionTypes.plagueLaboratory, {
+                brains: 25e3,
+                blood: 1e6
+            }, 50, 1, 1, 1, 211, "Expand the plague workshop into a well equipped laboratory in order to unlock additional plague upgrades.", null), new he(219, "Part Factory", this.constructionTypes.partFactory, {
+                brains: 35e3,
+                blood: 15e6
+            }, 50, 1, 1, 1, 218, "Build a factory to create parts that can be used to construct more powerful beings for your army.", "Factory menu now available!"), new he(220, "Creature Factory", this.constructionTypes.monsterFactory, {
+                brains: 45e3,
+                blood: 4e7
+            }, 50, 1, 1, 1, 219, "Build a factory to turn creature parts into living entities of destruction", "Creatures now available in factory menu!"), new he(221, "Bottomless Pit", this.constructionTypes.pit, {
+                bones: 75e3,
+                parts: 5e6
+            }, 50, 1, 1, 10, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
+                bones: 75e3,
+                brains: 75e3,
+                blood: 8e7
+            }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!")], this.upgrades = [new le(1, "Bloodthirst", this.types.damage, this.costs.blood, 50, 1.2, 1, 40, "Your zombies thirst for blood and do +1 damage for each rank of Bloodthirst.", null, null), new le(9, "Sharpened Teeth", this.types.damage, this.costs.blood, 3e3, 1.23, 3, 50, "Your zombies bites do +3 damage with each rank of Sharpened Teeth.", null, 206), new le(11, "Razor Claws", this.types.damage, this.costs.blood, 28e3, 1.25, 5, 0, "Your zombies attacks do +5 damage with each rank of Razor Claws.", null, 211), new le(16, "Killer Instinct", this.types.damage, this.costs.blood, 1e6, 1.27, 8, 0, "Your zombies attacks do +8 damage with each rank of Killer Instinct.", null, 220), new le(2, "Like Leather", this.types.health, this.costs.blood, 100, 1.2, 10, 40, "Your zombies gain tougher skin and +10 health with each rank.", null, null), new le(10, "Thick Skull", this.types.health, this.costs.blood, 5e3, 1.23, 25, 50, "Your zombies gain +25 health with each rank.", null, 206), new le(12, "Battle Hardened", this.types.health, this.costs.blood, 32e3, 1.25, 40, 0, "Your zombies gain +40 health with each rank of Battle Hardened.", null, 211), new le(17, "Tough as Nails", this.types.health, this.costs.blood, 1e6, 1.27, 100, 0, "Your zombies gain +100 health with each rank of Tough as Nails.", null, 220), new le(3, "Cold Storage", this.types.brainsCap, this.costs.blood, 150, 1.2, 50, 20, "Turns out you can use all of your spare blood to store brains and keep them fresh. Each rank increases your maximum brain capacity by 50.", null, null), new le(4, "Recycling is Cool", this.types.brainRecoverChance, this.costs.blood, 1e3, 1.2, .1, 10, "Why are we wasting so many good brains on this project? Each rank increases your chance to get a brain back from a dead zombie by 10%", null, null), new le(5, "Your Soul is Mine!", this.types.riseFromTheDeadChance, this.costs.blood, 1500, 1.4, .1, 10, "Using your most powerful blood magic you command the bodies of the dead to rise as your servants! Each rank grants 10% chance that dead humans will turn into zombies.", null, null), new le(6, "Infected Bite", this.types.infectedBite, this.costs.blood, 3500, 1.4, .1, 10, "Your zombies are now infected with plague and could infect their victims too. Each rank adds 10% chance to inflict damage over time when a zombie attacks a target.", null, 204), new le(7, "Detonate", this.types.unlockSpell, this.costs.blood, 25e3, 1, 3, 1, "Learn the Detonate spell which can explode all of your zombies into a cloud of plague. Not exactly sure how useful that will be.", "New spell learned, Detonate!", 209), new le(8, "Gigazombies?", this.types.unlockSpell, this.costs.blood, 5e4, 1, 5, 1, "Learn the Gigazombies spell which will turn some of your zombies into hulking monstrosities with increased health and damage.", "New spell learned, Gigazombies!", 209), new le(13, "Blazing Speed", this.types.burningSpeedPC, this.costs.blood, 3e4, 1.25, .05, 10, "The humans are using torches to set your zombies on fire. Perhaps we can turn the tables on them? Each rank increases the movement and attack speed of burning zombies by 5%", null, 207), new le(14, "Spit it Out", this.types.spitDistance, this.costs.blood, 5e5, 1.6, 5, 10, "The first rank gives your zombies the ability to spit plague at enemies beyond normal attack range. Spit attacks do 50% zombie damage and infect the victim with plague. Subsequent ranks will increase the range of spit attacks.", null, 218), new le(15, "Runic Syphon", this.types.runicSyphon, this.costs.blood, 34e3, 1.9, .01, 10, "Infuse your runes for free! Each rank gives your Runesmith the ability to infuse 1% of your resource income, without consuming it. Additionally when blood and brains reach their storage limit, any additional resources will be infused automatically.", null, 210), new le(19, "Faster Harpies", this.types.harpySpeed, this.costs.blood, 1e8, 1.07, 2, 20, "These harpies are way too slow! We have to make them faster. Each rank increases harpy speed by 2", null, 222), new le(20, "Energy Rush", this.types.energyRate, this.costs.brains, 20, 1.8, .5, 20, "Melting brains down in your cauldron to make smoothies can be beneficial for your health. It also increases your energy rate by 0.5 per second for each rank.", null, null), new le(21, "Master Summoner", this.types.energyCap, this.costs.brains, 10, 1.5, 5, 20, "All the brains you harvested have proved fruitful in your experiments. Each rank raises your maximum energy by 5.", null, null), new le(22, "Primal Reflexes", this.types.speed, this.costs.brains, 5, 1.6, 1, 20, "The zombies retain more of their human agility increasing run speed by 1 for each rank.", null, null), new le(23, "Blood Harvest", this.types.bloodStoragePC, this.costs.brains, 50, 1.12, .1, 0, "All this brain power has enabled you to devise some superior blood storage methods. Each rank increases your maximum blood by 10%.", null, null), new le(24, "Unholy Construction", this.types.construction, this.costs.brains, 25, 1, 1, 1, "Learn the art of Unholy Construction in order to build structures that will solidify your foothold on the town.", "Construction menu now available!", null), new le(25, "Infected Corpse", this.types.infectedBlast, this.costs.brains, 500, 1.4, .1, 10, "Fill your zombies with so much plague they are ready to explode! Each rank adds 10% chance for a zombie to explode into a cloud of plague upon death.", null, 204), new le(26, "Energy Charge", this.types.unlockSpell, this.costs.brains, 2e3, 1, 2, 1, "Learn the Energy Charge spell which can drastically increase your energy rate for a short time.", "New spell learned, Energy Charge!", 209), new le(27, "What Doesn't Kill You", this.types.blastHealing, this.costs.brains, 1e4, 1.3, .1, 20, "Plague explosions from zombies and harpies will also heal nearby zombies for 10% of the explosion damage with each rank.", null, 218), new le(28, "One is Never Enough", this.types.monsterLimit, this.costs.brains, 2e4, 1.2, 1, 15, "We're definitely going to need more than one golem to finish the job. Each rank increases your creature limit by 1", null, 220), new le(29, "Tank Buster", this.types.tankBuster, this.costs.brains, 4e5, 1.2, 1, 1, "Teach your harpies some new tricks. Once bought this upgrade will make your harpies drop fire bombs on tanks during boss stages.", null, 222), new le(30, "Improved Spikes", this.types.spikeDelay, this.costs.brains, 800, 1.2, 1, 4, "Each rank reduces the delay between plague spike activation by 20%", null, 208), new le(40, "Bone Throne", this.types.energyCap, this.costs.bones, 50, 1.55, 10, 15, "Sitting atop your throne of bones you can finally think clearly. Each rank increases maximum energy by 10.", null, null), new le(41, "Crown of Bones", this.types.energyRate, this.costs.bones, 200, 1.5, .2, 25, "Not just dapper, these spikes help channel your energy. Each rank increases energy rate by 0.2 per second.", null, null), new le(42, "Bonebarrows", this.types.boneCollectorCapacity, this.costs.bones, 300, 1.2, 5, 20, "Your bone collectors are struggling to carry all these bones. Maybe it's time we gave them an upgrade? Each rank increases their carrying capacity by 5.", null, null), new le(43, "Bone Reinforced Tanks", this.types.bloodCap, this.costs.bones, 500, 1.07, 2e3, 0, "Finally! Now that we have a solid construction material we can get to work building better storage for our other resources. Each rank increases blood storage by 2000.", null, null), new le(44, "Brain Cage", this.types.brainsCap, this.costs.bones, 650, 1.07, 500, 0, "There's nothing I love more than a mind enslaved. Now we can put these brains where they belong. In cages! Each rank increases brain storage by 500.", null, null), new le(45, "Earth Freeze", this.types.unlockSpell, this.costs.bones, 5e3, 1, 4, 1, "Learn the Earth Freeze spell which can freeze all humans in place for a short time.", "New spell learned, Earth Freeze!", 209), new le(46, "Plague Armor", this.types.plagueArmor, this.costs.bones, 15e3, 1.6, .02, 10, "The best defense is a good offense? True in the case of Plague Armor which reduces the damage done by infected humans by 2% per rank.", null, 218), new le(47, "Bulletproof", this.types.bulletproof, this.costs.bones, 6e4, 1.6, .05, 5, "Craft your earth golems from much harder stone. Each rank gives them 5% chance to reflect bullets back to their source.", null, 220), new le(48, "Bombs Away", this.types.harpyBombs, this.costs.bones, 5e5, 1.6, 1, 3, "Upgrade your harpies so they can carry more than just one bomb at a time.", null, 222), new le(60, "Extra Limbs", this.types.golemDamagePC, this.costs.parts, 900, 1.3, .02, 0, "Your golems gain +2% damage with each rank of Extra Limbs.", null, 220), new le(61, "Big Boned", this.types.golemHealthPC, this.costs.parts, 1e3, 1.31, .02, 0, "Your golems gain +2% health with each rank of Big Boned.", null, 220)], this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null), new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null), new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null), new le(101, "Blood Storage", this.types.bloodStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood storage for each rank.", null, null), new le(102, "Blood Rate", this.types.bloodGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood income rate for each rank.", null, null), new le(103, "Brain Storage", this.types.brainsStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain storage for each rank.", null, null), new le(104, "Brain Rate", this.types.brainsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain income rate for each rank.", null, null), new le(105, "Bone Rate", this.types.bonesGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% bones income rate for each rank.", null, null), new le(111, "Parts Rate", this.types.partsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% creature parts income rate for each rank.", null, null), new le(112, "Auto Construction", this.types.autoconstruction, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically start construction of the cheapest available building option.", null, null), new le(114, "Auto Shop", this.types.autoshop, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically purchase items from the shop.", null, null), new le(113, "Graveyard Health", this.types.graveyardHealth, this.costs.prestigePoints, 10, 1.25, .1, 0, "Additional 10% graveyard health during boss levels with each rank.", null, null), new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 100, 1.2, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
+
+            oe.instance = this
         }
         hasRequirement(e) {
             return !e.requires || 0 != this.gameModel.persistentData.constructions.filter((t => t.id == e.requires)).length
@@ -1595,119 +1596,119 @@ var Incremancer;
         applyUpgrade(e, t) {
             switch (e.type) {
                 case this.types.energyRate:
-                    return void(this.gameModel.energyRate += e.effect * t);
+                    return void (this.gameModel.energyRate += e.effect * t);
                 case this.types.brainsRate:
-                    return void(this.gameModel.brainsRate += e.effect * t);
+                    return void (this.gameModel.brainsRate += e.effect * t);
                 case this.types.bonesRate:
-                    return void(this.gameModel.bonesRate += e.effect * t);
+                    return void (this.gameModel.bonesRate += e.effect * t);
                 case this.types.energyCap:
-                    return void(this.gameModel.energyMax += e.effect * t);
+                    return void (this.gameModel.energyMax += e.effect * t);
                 case this.types.bloodCap:
-                    return void(this.gameModel.bloodMax += e.effect * t);
+                    return void (this.gameModel.bloodMax += e.effect * t);
                 case this.types.brainsCap:
-                    return void(this.gameModel.brainsMax += e.effect * t);
+                    return void (this.gameModel.brainsMax += e.effect * t);
                 case this.types.damage:
-                    return void(this.gameModel.zombieDamage += e.effect * t);
+                    return void (this.gameModel.zombieDamage += e.effect * t);
                 case this.types.speed:
-                    return void(this.gameModel.zombieSpeed += e.effect * t);
+                    return void (this.gameModel.zombieSpeed += e.effect * t);
                 case this.types.health:
-                    return void(this.gameModel.zombieHealth += e.effect * t);
+                    return void (this.gameModel.zombieHealth += e.effect * t);
                 case this.types.brainRecoverChance:
-                    return void(this.gameModel.brainRecoverChance += e.effect * t);
+                    return void (this.gameModel.brainRecoverChance += e.effect * t);
                 case this.types.riseFromTheDeadChance:
-                    return void(this.gameModel.riseFromTheDeadChance += e.effect * t);
+                    return void (this.gameModel.riseFromTheDeadChance += e.effect * t);
                 case this.types.infectedBite:
-                    return void(this.gameModel.infectedBiteChance += e.effect * t);
+                    return void (this.gameModel.infectedBiteChance += e.effect * t);
                 case this.types.infectedBlast:
-                    return void(this.gameModel.infectedBlastChance += e.effect * t);
+                    return void (this.gameModel.infectedBlastChance += e.effect * t);
                 case this.types.plagueDamage:
-                    return void(this.gameModel.plagueDamageMod += e.effect);
+                    return void (this.gameModel.plagueDamageMod += e.effect);
                 case this.types.plagueTicks:
-                    return void(this.gameModel.plagueticks += e.effect);
+                    return void (this.gameModel.plagueticks += e.effect);
                 case this.types.burningSpeedPC:
-                    return void(this.gameModel.burningSpeedMod += e.effect * t);
+                    return void (this.gameModel.burningSpeedMod += e.effect * t);
                 case this.types.construction:
-                    return void(this.gameModel.construction = 1);
+                    return void (this.gameModel.construction = 1);
                 case this.types.boneCollectorCapacity:
-                    return void(this.gameModel.boneCollectorCapacity += e.effect * t);
+                    return void (this.gameModel.boneCollectorCapacity += e.effect * t);
                 case this.types.unlockSpell:
                     return void this.spells.unlockSpell(e.effect);
                 case this.types.spitDistance:
-                    return void(this.gameModel.spitDistance = 30 + e.effect * t);
+                    return void (this.gameModel.spitDistance = 30 + e.effect * t);
                 case this.types.blastHealing:
-                    return void(this.gameModel.blastHealing += e.effect * t);
+                    return void (this.gameModel.blastHealing += e.effect * t);
                 case this.types.plagueArmor:
-                    return void(this.gameModel.plagueDmgReduction -= e.effect * t);
+                    return void (this.gameModel.plagueDmgReduction -= e.effect * t);
                 case this.types.monsterLimit:
-                    return void(this.gameModel.creatureLimit += e.effect * t);
+                    return void (this.gameModel.creatureLimit += e.effect * t);
                 case this.types.runicSyphon:
-                    return void(this.gameModel.runicSyphon.percentage += e.effect * t);
+                    return void (this.gameModel.runicSyphon.percentage += e.effect * t);
                 case this.types.bulletproof:
-                    return void(this.gameModel.bulletproofChance += e.effect * t);
+                    return void (this.gameModel.bulletproofChance += e.effect * t);
                 case this.types.harpySpeed:
-                    return void(this.gameModel.harpySpeed += e.effect * t);
+                    return void (this.gameModel.harpySpeed += e.effect * t);
                 case this.types.tankBuster:
-                    return void(this.gameModel.tankBuster = !0);
+                    return void (this.gameModel.tankBuster = !0);
                 case this.types.harpyBombs:
-                    return void(this.gameModel.harpyBombs += e.effect * t);
+                    return void (this.gameModel.harpyBombs += e.effect * t);
                 case this.types.spikeDelay:
-                    return void(this.gameModel.spikeDelay -= e.effect * t);
+                    return void (this.gameModel.spikeDelay -= e.effect * t);
                 case this.types.bonesGainPC:
-                    return void(this.gameModel.bonesPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.bonesPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.partsGainPC:
-                    return void(this.gameModel.partsPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.partsPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.bloodGainPC:
-                    return void(this.gameModel.bloodPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.bloodPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.bloodStoragePC:
-                    return void(this.gameModel.bloodStorePCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.bloodStorePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.brainsGainPC:
-                    return void(this.gameModel.brainsPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.brainsPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.brainsStoragePC:
-                    return void(this.gameModel.brainsStorePCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.brainsStorePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.zombieDmgPC:
-                    return void(this.gameModel.zombieDamagePCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.zombieDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.zombieHealthPC:
-                    return void(this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemDamagePC:
-                    return void(this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
-                    return void(this.gameModel.golemHealthPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.golemHealthPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.startingPC:
-                    return void(this.gameModel.startingResources += e.effect * t);
+                    return void (this.gameModel.startingResources += e.effect * t);
                 case this.types.energyCost:
-                    return void(this.gameModel.zombieCost -= e.effect * t);
+                    return void (this.gameModel.zombieCost -= e.effect * t);
                 case this.types.autoconstruction:
-                    return void(this.gameModel.autoconstructionUnlocked = !0);
+                    return void (this.gameModel.autoconstructionUnlocked = !0);
                 case this.types.autoshop:
-                    return void(this.gameModel.autoUpgrades = !0);
+                    return void (this.gameModel.autoUpgrades = !0);
                 case this.types.graveyardHealth:
-                    return void(this.gameModel.graveyardHealthMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.graveyardHealthMod *= Math.pow(1 + e.effect, t));
                 case this.types.talentPoint:
-                    return void(this.skeleton.talentPoints = t)
+                    return void (this.skeleton.talentPoints = t)
             }
         }
         applyConstructionUpgrade(e) {
             switch (e.type) {
                 case this.constructionTypes.graveyard:
-                    return void(this.gameModel.constructions.graveyard = 1);
+                    return void (this.gameModel.constructions.graveyard = 1);
                 case this.constructionTypes.crypt:
-                    return this.gameModel.constructions.crypt = 1, this.gameModel.brainsStorePCMod *= 1.5, void(this.gameModel.bloodStorePCMod *= 1.5);
+                    return this.gameModel.constructions.crypt = 1, this.gameModel.brainsStorePCMod *= 1.5, void (this.gameModel.bloodStorePCMod *= 1.5);
                 case this.constructionTypes.fort:
-                    return this.gameModel.constructions.fort = 1, this.gameModel.brainsStorePCMod *= 1.6, void(this.gameModel.bloodStorePCMod *= 1.6);
+                    return this.gameModel.constructions.fort = 1, this.gameModel.brainsStorePCMod *= 1.6, void (this.gameModel.bloodStorePCMod *= 1.6);
                 case this.constructionTypes.fortress:
-                    return this.gameModel.constructions.fortress = 1, this.gameModel.brainsStorePCMod *= 1.7, void(this.gameModel.bloodStorePCMod *= 1.7);
+                    return this.gameModel.constructions.fortress = 1, this.gameModel.brainsStorePCMod *= 1.7, void (this.gameModel.bloodStorePCMod *= 1.7);
                 case this.constructionTypes.citadel:
-                    return this.gameModel.constructions.citadel = 1, this.gameModel.brainsStorePCMod *= 1.8, void(this.gameModel.bloodStorePCMod *= 1.8);
+                    return this.gameModel.constructions.citadel = 1, this.gameModel.brainsStorePCMod *= 1.8, void (this.gameModel.bloodStorePCMod *= 1.8);
                 case this.constructionTypes.plagueSpikes:
-                    return void(this.gameModel.constructions.plagueSpikes = 1);
+                    return void (this.gameModel.constructions.plagueSpikes = 1);
                 case this.constructionTypes.fence:
-                    return void(this.gameModel.constructions.fence = 1);
+                    return void (this.gameModel.constructions.fence = 1);
                 case this.constructionTypes.fenceSize:
-                    return void(this.gameModel.fenceRadius += e.effect * e.rank);
+                    return void (this.gameModel.fenceRadius += e.effect * e.rank);
                 case this.constructionTypes.pit:
-                    return this.gameModel.bloodMax += 1e6 * e.rank, void(this.gameModel.brainsMax += 1e5 * e.rank);
+                    return this.gameModel.bloodMax += 1e6 * e.rank, void (this.gameModel.brainsMax += 1e5 * e.rank);
                 case this.constructionTypes.runesmith:
-                    return this.gameModel.constructions.runesmith = 1, void(this.gameModel.persistentData.runes || (this.gameModel.persistentData.runes = {
+                    return this.gameModel.constructions.runesmith = 1, void (this.gameModel.persistentData.runes || (this.gameModel.persistentData.runes = {
                         life: {
                             blood: 0,
                             brains: 0,
@@ -1720,13 +1721,13 @@ var Incremancer;
                         }
                     }));
                 case this.constructionTypes.aviary:
-                    return void(this.gameModel.constructions.aviary = 1);
+                    return void (this.gameModel.constructions.aviary = 1);
                 case this.constructionTypes.zombieCage:
-                    return void(this.gameModel.zombieCages += e.effect * e.rank);
+                    return void (this.gameModel.zombieCages += e.effect * e.rank);
                 case this.constructionTypes.partFactory:
-                    return this.gameModel.constructions.partFactory = !0, void(this.gameModel.constructions.factory = !0);
+                    return this.gameModel.constructions.partFactory = !0, void (this.gameModel.constructions.factory = !0);
                 case this.constructionTypes.monsterFactory:
-                    return this.gameModel.constructions.monsterFactory = !0, void(this.gameModel.constructions.factory = !0)
+                    return this.gameModel.constructions.monsterFactory = !0, void (this.gameModel.constructions.factory = !0)
             }
         }
         displayStatValue(e) {
@@ -1856,8 +1857,8 @@ var Incremancer;
             return l(e.basePrice, e.multiplier, this.currentRank(e), t)
         }
         canAffordUpgrade(e) {
-            if (e.cap > 0 && this.currentRank(e) >= e.cap) { 
-                return e.auto = !1, !1;                
+            if (e.cap > 0 && this.currentRank(e) >= e.cap) {
+                return e.auto = !1, !1;
             }
             switch (e.costType) {
                 case this.costs.energy:
@@ -1914,13 +1915,13 @@ var Incremancer;
                         }, i && (this.gameModel.persistentData.upgrades[t].costType = this.costs.prestigePoints);
                         break
                     } if (!s) {
-                    const t = {
-                        id: e.id,
-                        rank: 1,
-                        costType: null
-                    };
-                    i && (t.costType = this.costs.prestigePoints), this.gameModel.persistentData.upgrades.push(t)
-                }
+                        const t = {
+                            id: e.id,
+                            rank: 1,
+                            costType: null
+                        };
+                        i && (t.costType = this.costs.prestigePoints), this.gameModel.persistentData.upgrades.push(t)
+                    }
                 t && this.gameModel.saveData(), this.applyUpgrades(), e.purchaseMessage && this.gameModel.sendMessage(e.purchaseMessage)
             }
         }
@@ -1962,16 +1963,16 @@ var Incremancer;
             if ((this.gameModel.persistentData.currentConstruction || this.gameModel.autoconstruction) && this.gameModel.persistentData.currentConstruction.state != this.constructionStates.paused)
                 if (this.gameModel.persistentData.currentConstruction) this.constructionTickTimer -= e, this.constructionTickTimer < 0 && (this.constructionTickTimer = 1, this.consumeResources(this.gameModel.persistentData.currentConstruction.costPerTick) ? (this.gameModel.persistentData.currentConstruction.state = this.constructionStates.building, this.gameModel.persistentData.currentConstruction.timeRemaining -= 1, this.gameModel.persistentData.currentConstruction.timeRemaining <= 0 && this.completeConstruction()) : this.gameModel.persistentData.currentConstruction.state = this.constructionStates.autoPaused);
                 else if (this.gameModel.autoconstruction) {
-                const e = this.getAvailableConstructions();
-                if (!e || 0 == e.length) return void(this.gameModel.autoconstruction = !1);
-                let t = null,
-                    s = 0;
-                for (let i = 0; i < e.length; i++) {
-                    const a = (e[i].costs.energy || 0) + (e[i].costs.blood || 0) + (e[i].costs.brains || 0) + (e[i].costs.bones || 0) + 100 * (e[i].costs.parts || 0);
-                    (a < s || !t) && (s = a, t = e[i])
+                    const e = this.getAvailableConstructions();
+                    if (!e || 0 == e.length) return void (this.gameModel.autoconstruction = !1);
+                    let t = null,
+                        s = 0;
+                    for (let i = 0; i < e.length; i++) {
+                        const a = (e[i].costs.energy || 0) + (e[i].costs.blood || 0) + (e[i].costs.brains || 0) + (e[i].costs.bones || 0) + 100 * (e[i].costs.parts || 0);
+                        (a < s || !t) && (s = a, t = e[i])
+                    }
+                    t && setTimeout((() => this.startConstruction(t)))
                 }
-                t && setTimeout((() => this.startConstruction(t)))
-            }
         }
         startConstruction(e) {
             if (this.gameModel.persistentData.currentConstruction) return;
@@ -2012,11 +2013,11 @@ var Incremancer;
         }
         upgradeIdCheck() {
             const e = [];
-            this.upgrades.forEach((function(t) {
+            this.upgrades.forEach((function (t) {
                 e[t.id] && console.error("ID " + t.id + " already used"), e[t.id] = !0
-            })), this.prestigeUpgrades.forEach((function(t) {
+            })), this.prestigeUpgrades.forEach((function (t) {
                 e[t.id] && console.error("ID " + t.id + " already used"), e[t.id] = !0
-            })), this.constructionUpgrades.forEach((function(t) {
+            })), this.constructionUpgrades.forEach((function (t) {
                 e[t.id] && console.error("ID " + t.id + " already used"), e[t.id] = !0
             }))
         }
@@ -2087,51 +2088,51 @@ var Incremancer;
     class de {
         constructor() {
             if (this.gameModel = ne.getInstance(), this.upgrades = new oe, this.trophyStats = [{
-                    type: this.upgrades.types.health,
-                    value: 50,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.damage,
-                    value: 7,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.energyCap,
-                    value: 10,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.energyRate,
-                    value: .5,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.plagueTicks,
-                    value: 1,
-                    percentage: !1,
-                    static: !0
-                }, {
-                    type: this.upgrades.types.plagueDamage,
-                    value: 50,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.bloodCap,
-                    value: 5e3,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.brainsRate,
-                    value: 2,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.zombieHealthPC,
-                    value: .02,
-                    percentage: !0
-                }, {
-                    type: this.upgrades.types.bonesRate,
-                    value: 2,
-                    percentage: !1
-                }, {
-                    type: this.upgrades.types.zombieDmgPC,
-                    value: .02,
-                    percentage: !0
-                }], de.instance) return de.instance;
+                type: this.upgrades.types.health,
+                value: 50,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.damage,
+                value: 7,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.energyCap,
+                value: 10,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.energyRate,
+                value: .5,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.plagueTicks,
+                value: 1,
+                percentage: !1,
+                static: !0
+            }, {
+                type: this.upgrades.types.plagueDamage,
+                value: 50,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.bloodCap,
+                value: 5e3,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.brainsRate,
+                value: 2,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.zombieHealthPC,
+                value: .02,
+                percentage: !0
+            }, {
+                type: this.upgrades.types.bonesRate,
+                value: 2,
+                percentage: !1
+            }, {
+                type: this.upgrades.types.zombieDmgPC,
+                value: .02,
+                percentage: !0
+            }], de.instance) return de.instance;
             de.instance = this
         }
         isPercentage(e) {
@@ -2179,7 +2180,7 @@ var Incremancer;
         }
     }
     var ce, ue, pe, ge, me, be;
-    ! function(e) {
+    ! function (e) {
         e[e.standing = 0] = "standing", e[e.walking = 1] = "walking", e[e.attacking = 2] = "attacking", e[e.fleeing = 3] = "fleeing", e[e.escaping = 4] = "escaping"
     }(ce || (ce = {}));
     class fe extends PIXI.Text {
@@ -2289,7 +2290,7 @@ var Incremancer;
         }
         updateHumanSpeed(e, t) {
             if (this.frozen) return void e.gotoAndStop(0);
-            if (e.playing || e.play(), e.timer.dogStun && e.timer.dogStun > 0) return void(e.timer.dogStun -= t);
+            if (e.playing || e.play(), e.timer.dogStun && e.timer.dogStun > 0) return void (e.timer.dogStun -= t);
             0 == e.timer.target && e.targetVector || (e.timer.target = 0), e.timer.target -= t, e.timer.target <= 0 && (e.targetVector = this.map.howDoIGetToMyTarget(e, e.target), e.timer.target = .2);
             const s = e.speedMod * e.maxSpeed;
             e.xSpeed = e.targetVector.x * s, e.ySpeed = e.targetVector.y * s, (isNaN(e.xSpeed) || isNaN(e.ySpeed)) && (e.xSpeed = 0, e.ySpeed = 0), e.position.x += e.xSpeed * t, e.position.y += e.ySpeed * t, e.zIndex = e.position.y, Math.abs(e.xSpeed) > 1 && !e.flags.tank && (e.scale.x = e.xSpeed > 0 ? this.scaling : -this.scaling)
@@ -2384,7 +2385,7 @@ var Incremancer;
         constructor() {
             super(...arguments), this.radioTime = 0, this.followTimer = 0
         }
-    }! function(e) {
+    } ! function (e) {
         e[e.shooting = 0] = "shooting", e[e.attacking = 1] = "attacking", e[e.walking = 2] = "walking", e[e.running = 3] = "running", e[e.standing = 4] = "standing", e[e.following = 5] = "following", e[e.hunting = 6] = "hunting"
     }(ue || (ue = {}));
     class ke {
@@ -2523,7 +2524,7 @@ var Incremancer;
         constructor() {
             super(...arguments), this.minigun = !1, this.rocketlauncher = !1, this.attackingGraveyard = !1, this.shotsLeft = 0, this.shotTimer = 0
         }
-    }! function(e) {
+    } ! function (e) {
         e[e.shooting = 0] = "shooting", e[e.attacking = 1] = "attacking", e[e.walking = 2] = "walking", e[e.running = 3] = "running", e[e.standing = 4] = "standing"
     }(pe || (pe = {}));
     class Te {
@@ -2646,16 +2647,16 @@ var Incremancer;
         updateDroneStrike(e, t) {
             if (this.droneStrike) {
                 if (this.droneStrike.timer -= e, this.droneStrike.startedBombing || (this.droneStrike.text || (this.droneStrike.text = new PIXI.Text("3", {
-                        fontFamily: "sans-serif",
-                        fontSize: 40,
-                        fill: "#F00",
-                        stroke: "#000",
-                        strokeThickness: 0,
-                        align: "center"
-                    }), this.droneStrike.text.anchor = {
-                        x: .5,
-                        y: 1
-                    }, this.droneStrike.text.scale.x = .5, this.droneStrike.text.scale.y = .5, b.addChild(this.droneStrike.text), this.droneStrike.laser = new PIXI.Graphics, b.addChild(this.droneStrike.laser)), this.droneStrike.text.text = Math.ceil(this.droneStrike.timer), this.droneStrike.text.x = this.droneStrike.target.x, this.droneStrike.text.y = this.droneStrike.target.y - 30, this.droneStrike.laser.clear(), this.droneStrike.laser.lineStyle(1, 16711680), this.droneStrike.laser.moveTo(this.droneStrike.caller.x, this.droneStrike.caller.y - 10), this.droneStrike.laser.lineTo(this.droneStrike.target.x, this.droneStrike.target.y - 10)), (this.droneStrike.caller.dead || this.droneStrike.target.dead) && !this.droneStrike.startedBombing) return b.removeChild(this.droneStrike.text), b.removeChild(this.droneStrike.laser), this.droneStrike = !1, void(this.droneStrikeTimer = 0);
+                    fontFamily: "sans-serif",
+                    fontSize: 40,
+                    fill: "#F00",
+                    stroke: "#000",
+                    strokeThickness: 0,
+                    align: "center"
+                }), this.droneStrike.text.anchor = {
+                    x: .5,
+                    y: 1
+                }, this.droneStrike.text.scale.x = .5, this.droneStrike.text.scale.y = .5, b.addChild(this.droneStrike.text), this.droneStrike.laser = new PIXI.Graphics, b.addChild(this.droneStrike.laser)), this.droneStrike.text.text = Math.ceil(this.droneStrike.timer), this.droneStrike.text.x = this.droneStrike.target.x, this.droneStrike.text.y = this.droneStrike.target.y - 30, this.droneStrike.laser.clear(), this.droneStrike.laser.lineStyle(1, 16711680), this.droneStrike.laser.moveTo(this.droneStrike.caller.x, this.droneStrike.caller.y - 10), this.droneStrike.laser.lineTo(this.droneStrike.target.x, this.droneStrike.target.y - 10)), (this.droneStrike.caller.dead || this.droneStrike.target.dead) && !this.droneStrike.startedBombing) return b.removeChild(this.droneStrike.text), b.removeChild(this.droneStrike.laser), this.droneStrike = !1, void (this.droneStrikeTimer = 0);
                 this.droneStrike.timer < 0 && (this.droneStrike.startedBombing || (b.removeChild(this.droneStrike.text), b.removeChild(this.droneStrike.laser), this.droneStrike.startedBombing = !0), this.droneBomb(t), this.droneStrike.bombsLeft <= 0 && (this.droneStrike = !1))
             }
         }
@@ -2664,12 +2665,12 @@ var Incremancer;
         constructor() {
             super(...arguments), this.attackingGraveyard = !1
         }
-    }! function(e) {
+    } ! function (e) {
         e[e.shooting = 0] = "shooting", e[e.attacking = 1] = "attacking", e[e.patrolling = 2] = "patrolling"
     }(ge || (ge = {})),
-    function(e) {
-        e[e.horizontal = 0] = "horizontal", e[e.vertical = 1] = "vertical"
-    }(me || (me = {}));
+        function (e) {
+            e[e.horizontal = 0] = "horizontal", e[e.vertical = 1] = "vertical"
+        }(me || (me = {}));
     class De {
         constructor() {
             if (this.speed = 20, this.tanks = [], this.aliveTanks = [], this.attackDamage = 0, this.attackSpeed = 3, this.scaling = 3, this.moveTargetDistance = 20, this.shootDistance = 300, this.aliveZombies = null, De.instance) return De.instance;
@@ -2763,7 +2764,7 @@ var Incremancer;
                 dead: []
             }
         }
-    }! function(e) {
+    } ! function (e) {
         e[e.lookingForTarget = 0] = "lookingForTarget", e[e.movingToTarget = 1] = "movingToTarget", e[e.attackingTarget = 2] = "attackingTarget"
     }(be || (be = {}));
     class ze extends PIXI.Text {
@@ -2778,9 +2779,9 @@ var Incremancer;
         }
     }
     const Ie = new PIXI.TextStyle({
-            fill: "#ef0",
-            fontSize: 64
-        }),
+        fill: "#ef0",
+        fontSize: 64
+    }),
         Be = [],
         Re = [];
 
@@ -2907,7 +2908,7 @@ var Incremancer;
             var s;
             if (e.flags.dead) {
                 if (!e.visible) return;
-                return e.alpha -= this.fadeSpeed * t, void(e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
+                return e.alpha -= this.fadeSpeed * t, void (e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
             }
             switch (1 == e.mod && this.gigamutationTimer < 0 && (e.mod = 10, e.scaling *= 1.5, e.scale.set(e.scaling, e.scaling), e.maxHealth *= 10, e.health *= 10, this.gigamutationTimer = this.gigamutagen, this.smoke.newZombieSpawnCloud(e.x, e.y - 2)), e.bloodbornTimer -= t, e.timer.attack -= t, e.timer.scan -= t, this.model.runeEffects.healthRegen > 0 && this.updateZombieRegen(e, t), this.detonate && this.detonateZombie(e), e.flags.burning && this.updateBurns(e, t), (!e.target || e.target.flags.dead) && e.timer.scan < 0 && (e.state = be.lookingForTarget), e.state) {
                 case be.lookingForTarget:
@@ -2958,27 +2959,27 @@ var Incremancer;
                         const i = this.fastDistance(e.x, e.y, this.graveyardAttackers[s].x, this.graveyardAttackers[s].y);
                         i < t && (e.target = this.graveyardAttackers[s], t = i)
                     } if (300 == t) {
-                t = 1e4;
-                for (let s = 0; s < this.aliveHumans.length; s++)
-                    if (Math.abs(this.aliveHumans[s].x - e.x) < t && Math.abs(this.aliveHumans[s].y - e.y) < t) {
-                        const i = this.fastDistance(e.x, e.y, this.aliveHumans[s].x, this.aliveHumans[s].y);
-                        i < t && (e.target = this.aliveHumans[s], t = i)
+                        t = 1e4;
+                        for (let s = 0; s < this.aliveHumans.length; s++)
+                            if (Math.abs(this.aliveHumans[s].x - e.x) < t && Math.abs(this.aliveHumans[s].y - e.y) < t) {
+                                const i = this.fastDistance(e.x, e.y, this.aliveHumans[s].x, this.aliveHumans[s].y);
+                                i < t && (e.target = this.aliveHumans[s], t = i)
+                            }
                     }
-            }
         }
         assignRandomTarget(e) {
             if (0 == this.aliveHumans.length) return;
             const t = this.map.findBuilding(e);
             if (t && this.map.isInsidePoi(e.x, e.y, t, 0))
                 for (let s = 0; s < this.aliveHumans.length; s++)
-                    if (this.map.isInsidePoi(this.aliveHumans[s].x, this.aliveHumans[s].y, t, 0)) return void(e.target = this.aliveHumans[s]);
+                    if (this.map.isInsidePoi(this.aliveHumans[s].x, this.aliveHumans[s].y, t, 0)) return void (e.target = this.aliveHumans[s]);
             e.target = a(this.aliveHumans, Math.random())
         }
         dotProduct(e, t) {
             return e * e + t * t
         }
         updateZombieSpeed(e, t) {
-            if (e.timer.dogStun && e.timer.dogStun > 0) return void(e.timer.dogStun -= t);
+            if (e.timer.dogStun && e.timer.dogStun > 0) return void (e.timer.dogStun -= t);
             if (e.timer.target && e.targetVector || (e.timer.target = 0), e.timer.target -= t, e.timer.target <= 0 && (e.targetVector = this.map.howDoIGetToMyTarget(e, e.target), e.timer.target = this.reactionTime), this.model.gameSpeed > 1 || e.flags.dog) {
                 const t = e.flags.dog ? 1.5 : 1,
                     s = Math.max(this.maxSpeed * e.speedMultiplier * t, 8);
@@ -3062,96 +3063,96 @@ var Incremancer;
     class Xe {
         constructor() {
             if (this.skeletons = [], this.aliveSkeletons = [], this.discardedSprites = [], this.aliveHumans = [], this.scaling = 1, this.moveTargetDistance = 15, this.attackDistance = 25, this.attackSpeed = 3, this.targetDistance = 100, this.fadeSpeed = .1, this.currId = 1, this.scanTime = 3, this.spawnTimer = 0, this.respawnTime = 10, this.moveSpeed = 40, this.lastKillingBlow = 0, this.randomSpells = [], this.lootChance = .001, this.spellTimer = 3, this.textures = {
-                    set: !1,
-                    up: [],
-                    down: [],
-                    left: [],
-                    right: [],
-                    dead: []
-                }, this.directions = {
-                    down: 1,
-                    up: 2,
-                    right: 3,
-                    left: 4,
-                    dead: 5
-                }, this.burnTickTimer = 5, this.smokeTimer = .3, this.fastDistance = i, this.magnitude = t, this.damageZombie = null, this.searchClosestTarget = null, this.updateBurns = null, this.updateZombieRegen = null, this.causePlagueExplosion = null, this.inflictPlague = null, this.healZombie = null, this.setSpeedMultiplier = null, this.storageName = "incremancerskele", this.talentsStorageName = "incremancertalents", this.persistent = {
-                    xpRate: 0,
-                    skeletons: 0,
-                    level: 1,
-                    xp: 0,
-                    items: [],
-                    currItemId: 0,
-                    talentReset: !1
-                }, this.talents = [], this.talentPoints = 0, this.killingBlowParts = 0, this.lootChanceMod = 1, this.increaseChance = 0, this.darkorb = 0, this.darkorbTimer = 0, this.boneshield = 0, this.aliveZombies = [], this.graveyardAttackers = [], this.lootPositions = {
-                    helmet: {
-                        id: 1,
-                        name: "Helmet"
-                    },
-                    chest: {
-                        id: 2,
-                        name: "Chest"
-                    },
-                    legs: {
-                        id: 3,
-                        name: "Legs"
-                    },
-                    gloves: {
-                        id: 4,
-                        name: "Gloves"
-                    },
-                    boots: {
-                        id: 5,
-                        name: "Boots"
-                    },
-                    sword: {
-                        id: 6,
-                        name: "Sword"
-                    },
-                    shield: {
-                        id: 7,
-                        name: "Shield"
-                    }
-                }, this.rarity = {
-                    common: 1,
-                    rare: 2,
-                    epic: 3,
-                    legendary: 4,
-                    ancient: 5,
-                    divine: 6
-                }, this.prefixes = {
-                    commonQuality: ["Wooden", "Sturdy", "Rigid", "Iron", "Rusty", "Flimsy", "Battered", "Damaged", "Used", "Stained", "Training"],
-                    rareQuality: ["Steel", "Shiny", "Polished", "Forged", "Plated", "Bronze", "Reinforced", "Veteran's", "Reliable"],
-                    epicQuality: ["Antique", "Ancient", "Famous", "Bejeweled", "Notorious", "Historic", "Mythical", "Extraordinary"],
-                    legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"],
-                    ancientQuality: ["Grim", "Miserable", "Luxurious"],
-                    divineQuality: ["Divine"]
-                }, this.stats = {
-                    respawnTime: {
-                        id: 1,
-                        scaling: 1
-                    },
-                    speed: {
-                        id: 2,
-                        scaling: 1
-                    },
-                    zombieHealth: {
-                        id: 3,
-                        scaling: 24
-                    },
-                    zombieDamage: {
-                        id: 4,
-                        scaling: 3
-                    },
-                    zombieSpeed: {
-                        id: 5,
-                        scaling: 1
-                    },
-                    harpySpeed: {
-                        id: 6,
-                        scaling: 1
+                set: !1,
+                up: [],
+                down: [],
+                left: [],
+                right: [],
+                dead: []
+            }, this.directions = {
+                down: 1,
+                up: 2,
+                right: 3,
+                left: 4,
+                dead: 5
+            }, this.burnTickTimer = 5, this.smokeTimer = .3, this.fastDistance = i, this.magnitude = t, this.damageZombie = null, this.searchClosestTarget = null, this.updateBurns = null, this.updateZombieRegen = null, this.causePlagueExplosion = null, this.inflictPlague = null, this.healZombie = null, this.setSpeedMultiplier = null, this.storageName = "incremancerskele", this.talentsStorageName = "incremancertalents", this.persistent = {
+                xpRate: 0,
+                skeletons: 0,
+                level: 1,
+                xp: 0,
+                items: [],
+                currItemId: 0,
+                talentReset: !1
+            }, this.talents = [], this.talentPoints = 0, this.killingBlowParts = 0, this.lootChanceMod = 1, this.increaseChance = 0, this.darkorb = 0, this.darkorbTimer = 0, this.boneshield = 0, this.aliveZombies = [], this.graveyardAttackers = [], this.lootPositions = {
+                helmet: {
+                    id: 1,
+                    name: "Helmet"
+                },
+                chest: {
+                    id: 2,
+                    name: "Chest"
+                },
+                legs: {
+                    id: 3,
+                    name: "Legs"
+                },
+                gloves: {
+                    id: 4,
+                    name: "Gloves"
+                },
+                boots: {
+                    id: 5,
+                    name: "Boots"
+                },
+                sword: {
+                    id: 6,
+                    name: "Sword"
+                },
+                shield: {
+                    id: 7,
+                    name: "Shield"
+                }
+            }, this.rarity = {
+                common: 1,
+                rare: 2,
+                epic: 3,
+                legendary: 4,
+                ancient: 5,
+                divine: 6
+            }, this.prefixes = {
+                commonQuality: ["Wooden", "Sturdy", "Rigid", "Iron", "Rusty", "Flimsy", "Battered", "Damaged", "Used", "Stained", "Training"],
+                rareQuality: ["Steel", "Shiny", "Polished", "Forged", "Plated", "Bronze", "Reinforced", "Veteran's", "Reliable"],
+                epicQuality: ["Antique", "Ancient", "Famous", "Bejeweled", "Notorious", "Historic", "Mythical", "Extraordinary"],
+                legendaryQuality: ["Monstrous", "Diabolical", "Withering", "Terrible", "Demoniacal"],
+                ancientQuality: ["Grim", "Miserable", "Luxurious"],
+                divineQuality: ["Divine"]
+            }, this.stats = {
+                respawnTime: {
+                    id: 1,
+                    scaling: 1
+                },
+                speed: {
+                    id: 2,
+                    scaling: 1
+                },
+                zombieHealth: {
+                    id: 3,
+                    scaling: 24
+                },
+                zombieDamage: {
+                    id: 4,
+                    scaling: 3
+                },
+                zombieSpeed: {
+                    id: 5,
+                    scaling: 1
+                },
+                harpySpeed: {
+                    id: 6,
+                    scaling: 1
 
-                    }
-                }, Xe.instance) return Xe.instance;
+                }
+            }, Xe.instance) return Xe.instance;
             Xe.instance = this
         }
         getUsedPoints() {
@@ -3167,7 +3168,7 @@ var Incremancer;
             if (this.isAlive() && (this.persistent.xp += e * this.persistent.xpRate, this.persistent.xp > this.xpForNextLevel())) {
                 this.persistent.xp -= this.xpForNextLevel(), this.persistent.level++, this.upgrades.applyUpgrades(), this.model.sendMessage("Skeleton Champion reached level " + this.persistent.level + "!");
                 const e = document.getElementById("skeleton");
-                e && (e.classList.toggle("levelup"), setTimeout((function() {
+                e && (e.classList.toggle("levelup"), setTimeout((function () {
                     e.classList.toggle("levelup")
                 }), 3e3))
             }
@@ -3209,12 +3210,12 @@ var Incremancer;
         update(e) {
             this.aliveHumans = this.humans.aliveHumans, this.graveyardAttackers = this.humans.graveyardAttackers, this.aliveZombies = this.zombies.aliveZombies, this.aliveSkeletons = [], this.spellTimer -= e;
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].visible && (this.updateCreature(this.skeletons[t], e), this.skeletons[t].flags.dead || (this.aliveZombies.push(this.skeletons[t]), this.aliveSkeletons.push(this.skeletons[t])));
-            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e; if (this.model.persistentData.autoSellGear == !0 && this.aliveSkeletons.length > 0) {this.destroyAllItems()}
+            this.aliveSkeletons.length < this.persistent.skeletons && (this.spawnTimer -= e, this.spawnTimer < 0 && (this.spawnCreature(), this.spawnTimer = this.respawnTime)), this.lastKillingBlow -= e; if (this.model.persistentData.autoSellGear == !0 && this.aliveSkeletons.length > 0) { this.destroyAllItems() }; if (this.model.persistentData.autoSellGearLegendary == !0 && this.aliveSkeletons.length > 0) { this.destroyAllItemsLegendary() };
         }
         updateCreature(e, t) {
             if (e.flags.dead) {
                 if (!e.visible) return;
-                return e.alpha -= this.fadeSpeed * t, void(e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
+                return e.alpha -= this.fadeSpeed * t, void (e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
             }
             switch (this.boneshield > 0 && e.boneshield < this.boneshield && (e.boneshieldTimer -= t, e.boneshieldTimer < 0 && (e.boneshieldTimer = 10 / this.boneshield, e.boneshield++)), this.boneshield ? (e.boneshieldContainer.visible = !0, e.boneshieldContainer.update(e.boneshield), e.boneshieldContainer.rotation += t) : e.boneshieldContainer.visible = !1, this.darkorb > 0 && (this.darkorbTimer -= t, this.darkorbTimer < 0 && e.target && !e.target.flags.dead && (this.darkorbTimer = this.darkorb, this.bullets.newBullet(e, e.target, this.calculateDamage(e), !1, !1, !1, !0))), e.timer.attack -= t, e.timer.scan -= t, e.timer.ability -= t, this.model.runeEffects.healthRegen > 0 && this.updateZombieRegen(e, t), e.flags.burning && !e.immuneToBurns && this.updateBurns(e, t), e.timer.ability < 0 && (e.timer.ability = 4), e.target && !e.target.flags.dead || (e.state = be.lookingForTarget, e.timer.target = 0, e.timer.scan = 0), e.state) {
                 case be.lookingForTarget:
@@ -3276,7 +3277,7 @@ var Incremancer;
             }
         }
         updateCreatureSpeed(e, t) {
-            if (e.timer.dogStun > 0) return void(e.timer.dogStun -= t);
+            if (e.timer.dogStun > 0) return void (e.timer.dogStun -= t);
             e.timer.target && e.targetVector || (e.timer.target = 0), e.timer.target -= t, e.timer.target <= 0 && (e.targetVector = this.map.howDoIGetToMyTarget(e, e.target), e.timer.target = .2);
             const s = 4 * this.fastDistance(e.x, e.y, e.target.x, e.target.y),
                 i = Math.min(e.speedMultiplier * e.maxSpeed, s);
@@ -3408,7 +3409,7 @@ var Incremancer;
                 }
             return t
         }
-       testForLoot() {
+        testForLoot() {
             if (this.persistent.skeletons > 0 && Math.random() < this.lootChance) {
                 const e = this.generateLoot(this.persistent.level);
                 this.model.sendMessage(this.getLootName(e) + " collected!"), this.persistent.items.push(e)
@@ -3423,11 +3424,11 @@ var Incremancer;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
-            if(s == this.rarity.legendary) {
+            if (s == this.rarity.legendary) {
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
-            if(s == this.rarity.ancient) {
+            if (s == this.rarity.ancient) {
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
             }
@@ -3449,7 +3450,7 @@ var Incremancer;
                     r = Math.floor(Math.random() * this.prefixes.ancientQuality.length)
                     break;
                 case this.rarity.divine:
-                    r = Math.floor(Math.random() * this.prefixes.divineQuality.length)        
+                    r = Math.floor(Math.random() * this.prefixes.divineQuality.length)
             }
             const n = [Math.random() > .5 ? this.stats.zombieHealth.id : this.stats.zombieDamage.id];
             for (let e = 0; e < s - 1; e++) {
@@ -3475,24 +3476,34 @@ var Incremancer;
         destroyAllItems() {
             this.addXp(this.xpForItems() - this.xpForAncient() - this.xpForDivine()), this.persistent.items = this.persistent.items.filter((e => e.q || (e.r == this.rarity.legendary || e.r == this.rarity.ancient || e.r == this.rarity.divine)))
         }
+        destroyAllItemsLegendary() {
+            this.addXp(this.xpForLegendary()), this.persistent.items = this.persistent.items.filter((e => e.q || (e.r == this.rarity.common || e.r == this.rarity.rare || e.r == this.rarity.epic || e.r == this.rarity.ancient || e.r == this.rarity.divine)))
+        }
         xpForItems() {
             let e = 0;
-            return this.persistent.items.filter(e => !e.q && e.r != this.rarity.legendary).forEach((function(t) {
+            return this.persistent.items.filter(e => !e.q && e.r != this.rarity.legendary).forEach((function (t) {
                 e += t.l * t.r * 10
             })), e
         }
-        
-        xpForAncient() { 
-            let e = 0; 
-            return this.persistent.items.filter(e => !e.q && e.r == this.rarity.ancient).forEach((function(t) { 
-                e += t.l * t.r * 10 
-            })), e 
+
+        xpForLegendary() {
+            let e = 0;
+            return this.persistent.items.filter(e => !e.q && e.r == this.rarity.legendary).forEach((function (t) {
+                e += t.l * t.r * 10
+            })), e
         }
-        xpForDivine() { 
-            let e = 0; 
-            return this.persistent.items.filter(e => !e.q && e.r == this.rarity.divine).forEach((function(t) { 
-                e += t.l * t.r * 10 
-            })), e 
+
+        xpForAncient() {
+            let e = 0;
+            return this.persistent.items.filter(e => !e.q && e.r == this.rarity.ancient).forEach((function (t) {
+                e += t.l * t.r * 10
+            })), e
+        }
+        xpForDivine() {
+            let e = 0;
+            return this.persistent.items.filter(e => !e.q && e.r == this.rarity.divine).forEach((function (t) {
+                e += t.l * t.r * 10
+            })), e
         }
 
         xpTotal() {
@@ -3502,19 +3513,19 @@ var Incremancer;
     class Ue {
         constructor() {
             if (this.creatureFactory = new ae, this.zombies = new Ae, this.creatures = [], this.creatureCount = [], this.aliveCreatures = [], this.aliveZombies = [], this.graveyardAttackers = [], this.discardedSprites = [], this.aliveHumans = [], this.scaling = 1.6, this.moveTargetDistance = 15, this.attackDistance = 20, this.attackSpeed = 3, this.targetDistance = 100, this.fadeSpeed = .1, this.currId = 1, this.scanTime = 3, this.refundChance = 0, this.creatureTypes = this.creatureFactory.types, this.golemTextures = {
-                    set: !1,
-                    down: [],
-                    up: [],
-                    left: [],
-                    right: [],
-                    dead: []
-                }, this.directions = {
-                    down: 1,
-                    up: 2,
-                    right: 3,
-                    left: 4,
-                    dead: 5
-                }, this.burnTickTimer = 5, this.smokeTimer = .3, this.fastDistance = i, this.magnitude = t, this.damageZombie = this.zombies.damageZombie, this.searchClosestTarget = this.zombies.searchClosestTarget, this.updateBurns = this.zombies.updateBurns, this.updateZombieRegen = this.zombies.updateZombieRegen, this.causePlagueExplosion = this.zombies.causePlagueExplosion, this.inflictPlague = this.zombies.inflictPlague, this.healZombie = this.zombies.healZombie, this.setSpeedMultiplier = this.zombies.setSpeedMultiplier, Ue.instance) return Ue.instance;
+                set: !1,
+                down: [],
+                up: [],
+                left: [],
+                right: [],
+                dead: []
+            }, this.directions = {
+                down: 1,
+                up: 2,
+                right: 3,
+                left: 4,
+                dead: 5
+            }, this.burnTickTimer = 5, this.smokeTimer = .3, this.fastDistance = i, this.magnitude = t, this.damageZombie = this.zombies.damageZombie, this.searchClosestTarget = this.zombies.searchClosestTarget, this.updateBurns = this.zombies.updateBurns, this.updateZombieRegen = this.zombies.updateZombieRegen, this.causePlagueExplosion = this.zombies.causePlagueExplosion, this.inflictPlague = this.zombies.inflictPlague, this.healZombie = this.zombies.healZombie, this.setSpeedMultiplier = this.zombies.setSpeedMultiplier, Ue.instance) return Ue.instance;
             Ue.instance = this
         }
         populate() {
@@ -3562,7 +3573,7 @@ var Incremancer;
         updateCreature(e, t) {
             if (e.flags.dead) {
                 if (!e.visible) return;
-                return e.alpha -= this.fadeSpeed * t, void(e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
+                return e.alpha -= this.fadeSpeed * t, void (e.alpha < 0 && (e.visible = !1, g.removeChild(e)))
             }
             if (e.timer.attack -= t, e.timer.scan -= t, e.timer.ability -= t, this.model.runeEffects.healthRegen > 0 && this.updateZombieRegen(e, t), e.flags.burning && !e.immuneToBurns && this.updateBurns(e, t), e.timer.ability < 0) switch (e.timer.ability = 4, e.creatureType) {
                 case this.creatureTypes.earthGolem:
@@ -3617,7 +3628,7 @@ var Incremancer;
             }
         }
         updateCreatureSpeed(e, t) {
-            if (e.timer.dogStun && e.timer.dogStun > 0) return void(e.timer.dogStun -= t);
+            if (e.timer.dogStun && e.timer.dogStun > 0) return void (e.timer.dogStun -= t);
             e.timer.target && e.targetVector || (e.timer.target = 0), e.timer.target -= t, e.timer.target <= 0 && (e.targetVector = this.map.howDoIGetToMyTarget(e, e.target), e.timer.target = .2);
             const s = e.speedMultiplier * e.maxSpeed;
             e.xSpeed = e.targetVector.x * s, e.ySpeed = e.targetVector.y * s, e.position.x += e.xSpeed * t, e.position.y += e.ySpeed * t, e.zIndex = e.position.y, this.changeTextureDirection(e)
@@ -3647,10 +3658,10 @@ var Incremancer;
     class Oe {
         constructor() {
             if (this.spikeSprites = [], this.level = 1, this.spikeTimer = 5, this.fenceRadius = 50, this.fastDistance = i, this.graveyardHealth = 0, this.graveyardMaxHealth = 0, this.target = {
-                    graveyard: !0,
-                    x: 0,
-                    y: 0
-                }, this.healthBar = null, this.fence = null, this.fencePosts = [], Oe.instance) return Oe.instance;
+                graveyard: !0,
+                x: 0,
+                y: 0
+            }, this.healthBar = null, this.fence = null, this.fencePosts = [], Oe.instance) return Oe.instance;
             Oe.instance = this
         }
         initialize() {
@@ -3703,7 +3714,7 @@ var Incremancer;
             this.fence.x = r.x, this.fence.y = r.y
         }
         update(e) {
-            if (this.boneCollectors.addAndRemoveBoneCollectors(), this.harpies.addAndRemoveHarpies(), this.gameModel.isBossStage(this.gameModel.level) && this.updateHealthBar(),    !this.gameModel.constructions.graveyard || this.gameModel.currentState != this.gameModel.states.playingLevel) return this.sprite.visible = !1, void(this.fence.visible = !1);
+            if (this.boneCollectors.addAndRemoveBoneCollectors(), this.harpies.addAndRemoveHarpies(), this.gameModel.isBossStage(this.gameModel.level) && this.updateHealthBar(), !this.gameModel.constructions.graveyard || this.gameModel.currentState != this.gameModel.states.playingLevel) return this.sprite.visible = !1, void (this.fence.visible = !1);
             if ((this.level < 2 && this.gameModel.constructions.crypt || this.level < 3 && this.gameModel.constructions.fort || this.level < 4 && this.gameModel.constructions.fortress || this.level < 5 && this.gameModel.constructions.citadel) && this.drawGraveyard(), this.sprite.visible = !0, this.fortSprite && (this.fortSprite.visible = !0), 5 == this.level && Math.random() > .9 && (Math.random() > .5 ? this.smoke.newFireSmoke(this.sprite.x - 20, this.sprite.y - 113) : this.smoke.newFireSmoke(this.sprite.x + 20, this.sprite.y - 113)), this.gameModel.energy >= this.gameModel.energyMax && !this.gameModel.hidden)
                 for (let e = 0; e < this.gameModel.persistentData.graveyardZombies; e++) this.zombies.spawnZombie(this.sprite.x, this.sprite.y + (this.level > 2 ? 8 : 0));
             this.bones.update(e), this.boneCollectors.update(e), this.harpies.update(e), this.gameModel.constructions.fence && this.gameModel.currentState == this.gameModel.states.playingLevel ? (this.fenceRadius !== this.gameModel.fenceRadius && this.drawFence(), this.fence.visible = !0) : this.fence.visible = !1, this.updatePlagueSpikes(e), this.updateSpikeSprites(e)
@@ -3736,7 +3747,7 @@ var Incremancer;
         }
     }
     var We, qe;
-    ! function(e) {
+    ! function (e) {
         e[e.collecting = 0] = "collecting", e[e.returning = 1] = "returning", e[e.waiting = 2] = "waiting"
     }(We || (We = {}));
     class Ve {
@@ -3786,7 +3797,7 @@ var Incremancer;
         updateBoneCollector(e, t) {
             switch (!e.target || e.target.graveyard && e.state == We.collecting || this.updateSpeed(e, t), e.state) {
                 case We.collecting:
-                    if (e.target && e.target.value && e.target.visible || this.findNearestBone(e), e.target && e.target.value > 0 && this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y) < this.collectDistance && (e.bones += e.target.value, e.target.value = 0, e.speedFactor = 0), e.bones >= this.gameModel.boneCollectorCapacity || !e.target) return e.state = We.returning, void(e.target = this.graveyard.sprite);
+                    if (e.target && e.target.value && e.target.visible || this.findNearestBone(e), e.target && e.target.value > 0 && this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y) < this.collectDistance && (e.bones += e.target.value, e.target.value = 0, e.speedFactor = 0), e.bones >= this.gameModel.boneCollectorCapacity || !e.target) return e.state = We.returning, void (e.target = this.graveyard.sprite);
                     break;
                 case We.returning:
                     e.target || (e.target = this.graveyard.sprite), this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y) < this.collectDistance && (e.target = !1, this.gameModel.addBones(e.bones), e.bones = 0, e.state = We.collecting, e.speedFactor = 0)
@@ -3802,7 +3813,7 @@ var Incremancer;
             let n = 1 / Math.max(a, r);
             n *= 1.29289 - (a + r) * n * .29289, e.xSpeed = s * n * this.maxSpeed * e.speedFactor, e.ySpeed = i * n * this.maxSpeed * e.speedFactor, e.position.x += e.xSpeed * t, e.position.y += e.ySpeed * t, e.zIndex = e.position.y
         }
-    }! function(e) {
+    } ! function (e) {
         e[e.bombing = 0] = "bombing", e[e.returning = 1] = "returning"
     }(qe || (qe = {}));
     class je extends PIXI.AnimatedSprite {
@@ -3855,7 +3866,7 @@ var Incremancer;
                         else {
                             for (let t = 0; t < 8 && (e.target = a(this.humans.aliveHumans, Math.random()), e.target && !(this.fastDistance(e.x, e.y, e.target.x, e.target.y - this.bombHeight) < 500)); t++);
                             e.bomb.fire = !1
-                        } if (!e.target) return void(e.state = qe.returning);
+                        } if (!e.target) return void (e.state = qe.returning);
                     this.fastDistance(e.x, e.y, e.target.x, e.target.y - this.bombHeight) < 10 ? (e.bombs--, e.bomb.dropped = !0, e.bomb.floor = e.target.y, e.bomb.target = e.target, e.bomb = null, e.speedFactor = 0, e.target = !1, e.bombs <= 0 ? e.state = qe.returning : this.getBomb(e)) : this.updateHarpySpeed(e, t);
                     break;
                 case qe.returning:
@@ -3887,7 +3898,7 @@ var Incremancer;
         }
         update(e) {
             this.blood.update(e), this.bullets.update(e), this.exclamations.update(e), this.blasts.update(e), this.smoke.update(e), this.fragments.update(e), this.prestigePoints.update(e),
-                function(e) {
+                function (e) {
                     for (let t = 0; t < Be.length; t++) Be[t].updateCritText(e)
                 }(e)
         }
@@ -3901,7 +3912,7 @@ var Incremancer;
             this.gameModel = ne.getInstance(), this.container || (this.setup(new PIXI.Container, PIXI.Texture.from("pp.png")), b.addChild(this.container)), this.targetElement = document.getElementById("prestige-button"), this.animElement = document.getElementById("prestige-bg")
         }
         update(e) {
-            if (!this.gameModel.persistentData.particles) return void(this.container.visible = !1);
+            if (!this.gameModel.persistentData.particles) return void (this.container.visible = !1);
             this.container.visible = !0;
             let t = {
                 x: 0,
@@ -3918,14 +3929,14 @@ var Incremancer;
         }
         updatePart(e, t, s) {
             const a = this.zmMap.normalizeVector({
-                    x: s.x - e.x,
-                    y: s.y - e.y
-                }),
+                x: s.x - e.x,
+                y: s.y - e.y
+            }),
                 r = 300 * a.x - e.xSpeed,
                 n = 300 * a.y - e.ySpeed;
             if (e.xSpeed += r * t, e.ySpeed += n * t, e.x += e.xSpeed * t, e.y += e.ySpeed * t, i(e.x, e.y, s.x, s.y) < 30 && (e.visible = !1, e.x = 100, e.y = 100, this.animElement)) {
                 const e = this.animElement;
-                e.classList.toggle("levelup"), setTimeout((function() {
+                e.classList.toggle("levelup"), setTimeout((function () {
                     e.classList.toggle("levelup")
                 }), 3e3)
             }
@@ -4277,15 +4288,15 @@ var Incremancer;
         yt = "Spell Mastery";
     class xt {
         constructor(e, t, s, i, a, r) {
-            this.id = 0, this.maxPoints = 0, this.active = function() {
+            this.id = 0, this.maxPoints = 0, this.active = function () {
                 return dt.talents[this.id] && dt.talents[this.id] > 0
-            }, this.full = function() {
+            }, this.full = function () {
                 return dt.talents[this.id] && 10 == dt.talents[this.id]
-            }, this.reset = function() {
+            }, this.reset = function () {
                 dt.talents[this.id] = 0
-            }, this.max = function() {
+            }, this.max = function () {
                 dt.talents[this.id] = this.maxPoints, dt.getAvailablePoints() < 0 && (dt.talents[this.id] += dt.getAvailablePoints())
-            }, this.set = function(e) {
+            }, this.set = function (e) {
                 dt.talents[this.id] || (dt.talents[this.id] = 0), (e < 0 || e > 0 && dt.getAvailablePoints() > 0) && (dt.talents[this.id] += e, dt.talents[this.id] < 0 && (dt.talents[this.id] = 0), dt.talents[this.id] > this.maxPoints && (dt.talents[this.id] = this.maxPoints))
             }, this.id = e, this.name = t, this.description = r, this.group = s, this.maxPoints = i, this.apply = a
         }
@@ -4295,92 +4306,92 @@ var Incremancer;
             this.talents = [], this.name = e, this.class = t
         }
     }
-    const St = [new xt(1, "Efficiency", mt, 10, (function() {
-            pt.creatureCostReduction = 1;
-            const e = dt.talents[this.id];
-            e && e > 0 && (pt.creatureCostReduction -= .05 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Golem upgrade and summoning cost reduced by ${5*e}%` : "Reduces golem upgrade and summoning cost by 5%"
-        })), new xt(2, "Thrifty", mt, 10, (function() {
-            dt.killingBlowParts = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (dt.killingBlowParts = 10 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Skeleton killing blows reward ${10*e}% of your current parts per second` : "Skeleton killing blows reward 10% of your current parts per second"
-        })), new xt(3, "Fatal Bargain", mt, 10, (function() {
-            ut.refundChance = 0, ct.refundChance = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (ut.refundChance = .08 * e, ct.refundChance = .08 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? 8 * e + "% parts refund on golem death" : "Grants 8% parts refund on golem death"
-        })), new xt(4, "Recovery", yt, 10, (function() {
-            gt.cooldownReduction = 1;
-            const e = dt.talents[this.id];
-            e && e > 0 && (gt.cooldownReduction = 1 - .05 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Spell cooldown time reduced by ${5*e}%` : "Reduces spell cooldown time by 5%"
-        })), new xt(5, "Endurance", yt, 10, (function() {
-            gt.timeExtension = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (gt.timeExtension = e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Spell duration increased by ${e} seconds` : "Increases spell duration by 1 second"
-        })), new xt(6, "Opportunist", yt, 10, (function() {
-            gt.costReduction = 0;
-            dt.increaseChance = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (dt.increaseChance = 0.02 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Gear spell activation chance increased by ${2*e}%` : "Increases spell activation chance by 2%"
-        })), new xt(7, "Shiny", ft, 10, (function() {
-            dt.lootChanceMod = 1;
-            const e = dt.talents[this.id];
-            e && e > 0 && (dt.lootChanceMod = 1 + .1 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Rare loot chance increased by ${10*e}%` : "Increases the chance for rare loot by 10%"
-        })), new xt(8, "Dark Orb", ft, 10, (function() {
-            dt.darkorb = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (dt.darkorb = 12 - e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Dark orb released every ${12-e} seconds` : "Releases a dark orb of energy every 11 seconds"
-        })), new xt(9, "Bone Shield", ft, 10, (function() {
-            dt.boneshield = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (dt.boneshield = e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Gains a shield of ${e} bones every 10 seconds` : "Gain a shield of 1 bone to protect the skeleton every 10 seconds"
-        })), new xt(10, "Gigamutagen", bt, 10, (function() {
-            ct.gigamutagen = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (ct.gigamutagen = 14 - e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `Gigazombie mutation every ${14-e} seconds` : "Mutates a random zombie into a gigazombie every 13 seconds"
-        })), new xt(11, "Blood Pact", bt, 10, (function() {
-            ct.bloodpact = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (ct.bloodpact = .05 * e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? 5 * e + "% of zombie damage converted to blood" : "Converts an additional 5% of zombie damage to blood"
-        })), new xt(12, "Blood Born", bt, 10, (function() {
-            ct.bloodborn = 0;
-            const e = dt.talents[this.id];
-            e && e > 0 && (ct.bloodborn = e)
-        }), (function() {
-            const e = dt.talents[this.id];
-            return e && e > 0 ? `${e} seconds of additional 50% damage reduction` : "Grants 1 second of additional 50% damage reduction to newly spawned zombies"
-        }))],
+    const St = [new xt(1, "Efficiency", mt, 10, (function () {
+        pt.creatureCostReduction = 1;
+        const e = dt.talents[this.id];
+        e && e > 0 && (pt.creatureCostReduction -= .05 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Golem upgrade and summoning cost reduced by ${5 * e}%` : "Reduces golem upgrade and summoning cost by 5%"
+    })), new xt(2, "Thrifty", mt, 10, (function () {
+        dt.killingBlowParts = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (dt.killingBlowParts = 10 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Skeleton killing blows reward ${10 * e}% of your current parts per second` : "Skeleton killing blows reward 10% of your current parts per second"
+    })), new xt(3, "Fatal Bargain", mt, 10, (function () {
+        ut.refundChance = 0, ct.refundChance = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (ut.refundChance = .08 * e, ct.refundChance = .08 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? 8 * e + "% parts refund on golem death" : "Grants 8% parts refund on golem death"
+    })), new xt(4, "Recovery", yt, 10, (function () {
+        gt.cooldownReduction = 1;
+        const e = dt.talents[this.id];
+        e && e > 0 && (gt.cooldownReduction = 1 - .05 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Spell cooldown time reduced by ${5 * e}%` : "Reduces spell cooldown time by 5%"
+    })), new xt(5, "Endurance", yt, 10, (function () {
+        gt.timeExtension = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (gt.timeExtension = e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Spell duration increased by ${e} seconds` : "Increases spell duration by 1 second"
+    })), new xt(6, "Opportunist", yt, 10, (function () {
+        gt.costReduction = 0;
+        dt.increaseChance = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (dt.increaseChance = 0.02 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Gear spell activation chance increased by ${2 * e}%` : "Increases spell activation chance by 2%"
+    })), new xt(7, "Shiny", ft, 10, (function () {
+        dt.lootChanceMod = 1;
+        const e = dt.talents[this.id];
+        e && e > 0 && (dt.lootChanceMod = 1 + .1 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Rare loot chance increased by ${10 * e}%` : "Increases the chance for rare loot by 10%"
+    })), new xt(8, "Dark Orb", ft, 10, (function () {
+        dt.darkorb = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (dt.darkorb = 12 - e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Dark orb released every ${12 - e} seconds` : "Releases a dark orb of energy every 11 seconds"
+    })), new xt(9, "Bone Shield", ft, 10, (function () {
+        dt.boneshield = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (dt.boneshield = e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Gains a shield of ${e} bones every 10 seconds` : "Gain a shield of 1 bone to protect the skeleton every 10 seconds"
+    })), new xt(10, "Gigamutagen", bt, 10, (function () {
+        ct.gigamutagen = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (ct.gigamutagen = 14 - e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `Gigazombie mutation every ${14 - e} seconds` : "Mutates a random zombie into a gigazombie every 13 seconds"
+    })), new xt(11, "Blood Pact", bt, 10, (function () {
+        ct.bloodpact = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (ct.bloodpact = .05 * e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? 5 * e + "% of zombie damage converted to blood" : "Converts an additional 5% of zombie damage to blood"
+    })), new xt(12, "Blood Born", bt, 10, (function () {
+        ct.bloodborn = 0;
+        const e = dt.talents[this.id];
+        e && e > 0 && (ct.bloodborn = e)
+    }), (function () {
+        const e = dt.talents[this.id];
+        return e && e > 0 ? `${e} seconds of additional 50% damage reduction` : "Grants 1 second of additional 50% damage reduction to newly spawned zombies"
+    }))],
         Mt = [];
 
     function kt() {
@@ -4399,13 +4410,13 @@ var Incremancer;
             e.group == mt && (t = "parts"), e.group == ft && (t = "bones"), e.group == yt && (t = "energy"), e.group == bt && (t = "brains"), Mt.push(new vt(e.group, t))
         }
         Mt.filter((t => t.name == e.group))[0].talents.push(e), dt.talents[e.id] || (dt.talents[e.id] = 0)
-    })), angular.module("zombieApp", []).filter("decimal", (function() {
+    })), angular.module("zombieApp", []).filter("decimal", (function () {
         return r
-    })).filter("whole", (function() {
+    })).filter("whole", (function () {
         return n
-    })).config(["$compileProvider", function(e) {
+    })).config(["$compileProvider", function (e) {
         e.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|javascript|data|blob):/), e.debugInfoEnabled(!1)
-    }]).controller("ZombieController", ["$scope", "$interval", "$document", function(e, t, s) {
+    }]).controller("ZombieController", ["$scope", "$interval", "$document", function (e, t, s) {
         const i = new Xe,
             a = new q,
             r = new se,
@@ -4416,17 +4427,17 @@ var Incremancer;
 
         function u() {
             const e = (new Date).getTime();
-            ! function(e, t) {
+            ! function (e, t) {
                 c.model.update(e, t), c.updateMessages(e), c.sidePanels.factory && (c.factoryStats = r.factoryStats())
             }(Math.min(1e3, Math.max(e - c.lastUpdate, 0)) / 1e3, e), c.lastUpdate = e
         }
-        c.model = ne.getInstance(), c.skeleton = function() {
+        c.model = ne.getInstance(), c.skeleton = function () {
             return i.persistent
-        }, c.spells = a, c.keysPressed = Y, c.files = [], c.messageTimer = 4, c.message = !1, c.lastUpdate = 0, c.sidePanels = {}, c.upgrades = [], c.currentShopFilter = "blood", c.currentConstructionFilter = "available", c.graveyardTab = "minions", c.trophyTab = "all", c.factoryTab = "parts", c.factoryStats = {}, c.moveTooltip = d, c.confirmMessage = "", c.confirmCancel = function() {
+        }, c.spells = a, c.keysPressed = Y, c.files = [], c.messageTimer = 4, c.message = !1, c.lastUpdate = 0, c.sidePanels = {}, c.upgrades = [], c.currentShopFilter = "blood", c.currentConstructionFilter = "available", c.graveyardTab = "minions", c.trophyTab = "all", c.factoryTab = "parts", c.factoryStats = {}, c.moveTooltip = d, c.confirmMessage = "", c.confirmCancel = function () {
             c.confirmCallback = !1
-        }, c.closeSidePanels = function() {
+        }, c.closeSidePanels = function () {
             c.currentShopFilter = "blood", c.currentConstructionFilter = "available", c.graveyardTab = "minions", c.factoryTab = "parts", c.sidePanels.options = !1, c.sidePanels.graveyard = !1, c.sidePanels.runesmith = !1, c.sidePanels.prestige = !1, c.sidePanels.construction = !1, c.sidePanels.shop = !1, c.sidePanels.open = !1, c.sidePanels.factory = !1, c.levelSelect.shown = !1
-        }, c.openSidePanel = function(e) {
+        }, c.openSidePanel = function (e) {
             switch (c.closeSidePanels(), e) {
                 case "shop":
                     c.filterShop(c.currentShopFilter), c.sidePanels.shop = !0;
@@ -4450,9 +4461,9 @@ var Incremancer;
                     c.sidePanels.options = !0, c.model.downloadSaveGame()
             }
             c.sidePanels.open = !0
-        }, c.graveyardTabSelect = function(e) {
+        }, c.graveyardTabSelect = function (e) {
             c.graveyardTab = e, "trophies" == e && (c.trophies = l.getTrophyList(), c.trophyTab = "all")
-        }, c.trophyTabSelect = function(e) {
+        }, c.trophyTabSelect = function (e) {
             switch (c.trophyTab = e, e) {
                 case "all":
                     c.trophies = l.getTrophyList();
@@ -4466,9 +4477,9 @@ var Incremancer;
                 case "totals":
                     c.trophies = l.getTrophyTotals()
             }
-        }, c.filterShop = function(e) {
+        }, c.filterShop = function (e) {
             c.currentShopFilter = e, c.upgrades = h.getUpgrades(e)
-        }, c.filterConstruction = function(e) {
+        }, c.filterConstruction = function (e) {
             switch (c.currentConstructionFilter = e, e) {
                 case "available":
                     c.upgrades = h.getAvailableConstructions();
@@ -4476,27 +4487,27 @@ var Incremancer;
                 case "completed":
                     c.upgrades = h.getCompletedConstructions()
             }
-        }, c.resetGame = function() {
-            c.confirmMessage = "Are you sure you want to reset everything? If you have a cloud save it will also be deleted. Make sure you export your save game first.", c.confirmCallback = function() {
+        }, c.resetGame = function () {
+            c.confirmMessage = "Are you sure you want to reset everything? If you have a cloud save it will also be deleted. Make sure you export your save game first.", c.confirmCallback = function () {
                 c.model.resetData(), c.confirmCallback = !1
             }
-        }, c.addBoneCollector = function() {
+        }, c.addBoneCollector = function () {
             c.model.getEnergyRate() >= 1 && c.model.persistentData.boneCollectors++
-        }, c.subtractBoneCollector = function() {
+        }, c.subtractBoneCollector = function () {
             c.model.persistentData.boneCollectors > 0 && c.model.persistentData.boneCollectors--
-        }, c.maxBoneCollectors = function() {
+        }, c.maxBoneCollectors = function () {
             return Math.floor(c.model.getEnergyRate() + c.model.persistentData.boneCollectors)
-        }, c.setBoneCollectors = function(e) {
+        }, c.setBoneCollectors = function (e) {
             e >= 0 && c.model.getEnergyRate() >= e - c.model.persistentData.boneCollectors && (c.model.persistentData.boneCollectors = e)
-        }, c.setHarpies = function(e) {
+        }, c.setHarpies = function (e) {
             (e >= 0 && e < c.model.persistentData.harpies || c.model.getEnergyRate() >= 1 && e > 0) && (c.model.persistentData.harpies = e)
-        }, c.maxHarpies = function() {
+        }, c.maxHarpies = function () {
             return Math.floor(c.model.getEnergyRate() + c.model.persistentData.harpies)
-        }, c.setGraveyardZombies = function(e) {
+        }, c.setGraveyardZombies = function (e) {
             e <= c.maxGraveyardZombies() && e >= 0 && (c.model.persistentData.graveyardZombies = e)
-        }, c.maxGraveyardZombies = function() {
+        }, c.maxGraveyardZombies = function () {
             return Math.floor(c.model.energyMax / c.model.zombieCost)
-        }, c.upgradePrice = function(e) {
+        }, c.upgradePrice = function (e) {
             return c.sidePanels.factory && "prestigePoints" != e.costType ? r.purchasePrice(e) : h.upgradePrice(e)
         }, c.factory = {
             delays: [],
@@ -4563,25 +4574,25 @@ var Incremancer;
             startLevel() {
                 c.model.startLevel(this.level.level), this.shown = !1
             }
-        }, c.addToHomeScreen = function() {
+        }, c.addToHomeScreen = function () {
             c.model.deferredPrompt
-        }, c.constructionPercent = function() {
+        }, c.constructionPercent = function () {
             if (c.model.persistentData.currentConstruction) {
                 const e = c.model.persistentData.currentConstruction.time - c.model.persistentData.currentConstruction.timeRemaining;
                 return Math.round(e / c.model.persistentData.currentConstruction.time * 100)
             }
             return 0
-        }, c.updateConstructionUpgrades = function() {
+        }, c.updateConstructionUpgrades = function () {
             1 == c.sidePanels.construction && (c.upgrades = h.getAvailableConstructions())
-        }, c.startConstruction = function(e) {
+        }, c.startConstruction = function (e) {
             h.startConstruction(e), c.upgrades = h.getAvailableConstructions()
-        }, c.playPauseConstruction = function() {
+        }, c.playPauseConstruction = function () {
             h.playPauseConstruction()
-        }, c.cancelConstruction = function() {
-            c.confirmMessage = "Are you sure you want to cancel construction? Used materials will not be refunded", c.confirmCallback = function() {
+        }, c.cancelConstruction = function () {
+            c.confirmMessage = "Are you sure you want to cancel construction? Used materials will not be refunded", c.confirmCallback = function () {
                 h.cancelConstruction(), c.upgrades = h.getAvailableConstructions(), c.confirmCallback = !1
             }
-        }, c.upgradeSubtitle = function(e) {
+        }, c.upgradeSubtitle = function (e) {
             switch (e.type) {
                 case h.types.energyRate:
                     return "+" + e.effect + " energy per second";
@@ -4657,13 +4668,13 @@ var Incremancer;
                     return "-20% spike delay"
             }
             return ""
-        }, c.currentRank = function(e) {
+        }, c.currentRank = function (e) {
             return c.sidePanels.factory ? r.currentRank(e) : h.currentRank(e)
-        }, c.currentRankConstruction = function(e) {
+        }, c.currentRankConstruction = function (e) {
             return h.currentRankConstruction(e)
-        }, c.upgradeTooExpensive = function(e) {
+        }, c.upgradeTooExpensive = function (e) {
             return c.sidePanels.factory ? !r.canAffordGenerator(e) : !h.canAffordUpgrade(e) || 0 != e.cap && h.currentRank(e) >= e.cap
-        }, c.requiredForUpgrade = function(e) {
+        }, c.requiredForUpgrade = function (e) {
             const t = c.upgradePrice(e);
             switch (e.costType) {
                 case h.costs.energy:
@@ -4680,7 +4691,7 @@ var Incremancer;
                 case r.costs.parts:
                     return n(t - c.model.persistentData.parts) + " parts required"
             }
-        }, c.purchaseText = function(e) {
+        }, c.purchaseText = function (e) {
             if (c.keysPressed.shift) {
                 if (c.sidePanels.factory) {
                     const t = r.upgradeMaxAffordable(e);
@@ -4691,49 +4702,51 @@ var Incremancer;
                 }
             }
             return "Purchase (" + n(c.upgradePrice(e)) + " " + c.costTranslate(e.costType) + ")"
-        }, c.costTranslate = function(e) {
+        }, c.costTranslate = function (e) {
             return e == h.costs.prestigePoints ? "points" : e
-        }, c.buyUpgrade = function(e) {
+        }, c.buyUpgrade = function (e) {
             c.keysPressed.shift ? h.purchaseMaxUpgrades(e) : h.purchaseUpgrade(e)
-        }, c.destroyUpgrade = function(e) {
+        }, c.destroyUpgrade = function (e) {
             h.removeUpgrade(e)
-        }, c.upgradeStatInfo = function(e) {
+        }, c.upgradeStatInfo = function (e) {
             return h.displayStatValue(e)
-        }, c.startGame = function() {
+        }, c.startGame = function () {
             c.model.startGame()
-        }, c.nextLevel = function() {
+        }, c.nextLevel = function () {
             c.model.nextLevel()
-        }, c.toggleAutoStart = function() {
+        }, c.toggleAutoStart = function () {
             c.model.persistentData.autoStart ? c.model.persistentData.autoStart = !1 : c.model.persistentData.autoStart = !0
-        }, c.toggleAutoStartWait = function() {
+        }, c.toggleAutoStartWait = function () {
             c.model.persistentData.autoStartWait ? c.model.persistentData.autoStartWait = !1 : c.model.persistentData.autoStartWait = !0
-        }, c.toggleAutoSellGear = function() {
+        }, c.toggleAutoSellGear = function () {
             c.model.persistentData.autoSellGear ? c.model.persistentData.autoSellGear = !1 : c.model.persistentData.autoSellGear = !0
-        }, c.toggleResolution = function(e) {
+        }, c.toggleAutoSellGearLegendary = function () {
+            c.model.persistentData.autoSellGearLegendary ? c.model.persistentData.autoSellGearLegendary = !1 : c.model.persistentData.autoSellGearLegendary = !0
+        }, c.toggleResolution = function (e) {
             c.model.persistentData.resolution = e, c.model.setResolution(c.model.persistentData.resolution)
-        }, c.getResolution = function() {
+        }, c.getResolution = function () {
             return c.model.persistentData.resolution || 1
-        }, c.toggleZoomButtons = function() {
+        }, c.toggleZoomButtons = function () {
             c.model.persistentData.zoomButtons = !c.model.persistentData.zoomButtons
-        }, c.zoom = function(e) {
+        }, c.zoom = function (e) {
             c.model.zoom(e)
-        }, c.resetZoom = function() {
+        }, c.resetZoom = function () {
             c.model.centerGameContainer(!0)
-        }, c.toggleShowFps = function() {
+        }, c.toggleShowFps = function () {
             c.model.persistentData.showfps = !c.model.persistentData.showfps
-        }, c.toggleParticles = function() {
+        }, c.toggleParticles = function () {
             c.model.persistentData.particles = !c.model.persistentData.particles
-        }, c.isShowPrestige = function() {
+        }, c.isShowPrestige = function () {
             return void 0 !== c.model.persistentData.prestigePointsEarned && c.model.persistentData.allTimeHighestLevel > 5
-        }, c.doPrestige = function() {
-            c.confirmMessage = "Are you sure you want to prestige now?", c.confirmCallback = function() {
+        }, c.doPrestige = function () {
+            c.confirmMessage = "Are you sure you want to prestige now?", c.confirmCallback = function () {
                 c.model.prestige(), c.confirmCallback = !1
             }
-        }, c.constructionLeadsTo = function(e) {
+        }, c.constructionLeadsTo = function (e) {
             return h.constructionLeadsTo(e)
-        }, c.howToPlay = ["Energy refills over time. You need 10 energy to spawn a zombie by clicking on the ground.", "Hold shift or control to spawn multiple zombies with a single click.", "Whenever one of your zombies attacks a human you will collect some blood.", "Killing a human or turning them into a zombie will earn you 1 brain.", "You can spend these currencies in the shop to purchase upgrades for your zombie horde.", "Hold shift to buy the maximum affordable number of upgrades.", "The world can be dragged with the mouse to explore it. Or by using the WASD or arrow keys.", "You can zoom in and out using your mouse wheel. Pinch to zoom on mobile."], c.updateMessages = function(e) {
+        }, c.howToPlay = ["This is my (Chalice) mod for incremancer I hope you enjoy the qol changes!", "Energy refills over time. You need 10 energy to spawn a zombie by clicking on the ground.", "Hold shift or control to spawn multiple zombies with a single click.", "Whenever one of your zombies attacks a human you will collect some blood.", "Killing a human or turning them into a zombie will earn you 1 brain.", "You can spend these currencies in the shop to purchase upgrades for your zombie horde.", "Hold shift to buy the maximum affordable number of upgrades.", "The world can be dragged with the mouse to explore it. Or by using the WASD or arrow keys.", "You can zoom in and out using your mouse wheel. Pinch to zoom on mobile."], c.updateMessages = function (e) {
             c.message ? (c.messageTimer -= e, c.model.messageQueue.length > 0 && (c.messageTimer -= e), c.messageTimer < 0 && (c.message = !1, c.messageTimer = 4)) : c.model.messageQueue.length > 0 && (c.message = c.model.messageQueue.shift(), c.messageTimer = 4)
-        }, c.infusionAmount = 1e3, c.infusionMax = !1, c.infuseRune = function(e, t) {
+        }, c.infusionAmount = 1e3, c.infusionMax = !1, c.infuseRune = function (e, t) {
             if (c.infusionMax) switch (t) {
                 case "blood":
                     h.infuseRune(e, t, c.model.persistentData.blood);
@@ -4744,27 +4757,27 @@ var Incremancer;
                 case "bones":
                     h.infuseRune(e, t, c.model.persistentData.bones)
             } else h.infuseRune(e, t, c.infusionAmount)
-        }, c.shatterPercent = function(e) {
+        }, c.shatterPercent = function (e) {
             return h.shatterPercent(e)
-        }, c.shatterBloodCost = function(e) {
+        }, c.shatterBloodCost = function (e) {
             return h.shatterBloodCost(e)
-        }, c.shatterSatiate = function(e, t) {
+        }, c.shatterSatiate = function (e, t) {
             h.infuseRune(e, "blood", this.shatterBloodCost(t))
-        }, c.canShatter = function() {
+        }, c.canShatter = function () {
             return h.canShatter()
-        }, c.doShatter = function() {
+        }, c.doShatter = function () {
             h.doShatter()
-        }, c.shatterEffect = function() {
+        }, c.shatterEffect = function () {
             return 100 * h.shatterEffect()
-        }, c.infuseButtonText = function() {
+        }, c.infuseButtonText = function () {
             return c.infusionMax ? "Max" : n(c.infusionAmount)
-        }, c.energyPercent = function() {
+        }, c.energyPercent = function () {
             return Math.min(Math.round(c.model.energy / c.model.energyMax * 100), 100)
-        }, c.bloodPercent = function() {
+        }, c.bloodPercent = function () {
             return Math.min(Math.round(c.model.persistentData.blood / c.model.bloodMax * 100), 100)
-        }, c.brainsPercent = function() {
+        }, c.brainsPercent = function () {
             return Math.min(Math.round(c.model.persistentData.brains / c.model.brainsMax * 100), 100)
-        }, c.costAboveCap = function(e, t) {
+        }, c.costAboveCap = function (e, t) {
             switch (e.costType) {
                 case "blood":
                     if (t > c.model.bloodMax) return "Blood capacity too low";
@@ -4773,14 +4786,14 @@ var Incremancer;
                     if (t > c.model.brainsMax) return "Brains capacity too low"
             }
             return !1
-        }, c.upgradeButtonText = function(e) {
+        }, c.upgradeButtonText = function (e) {
             if (0 != e.cap && c.currentRank(e) >= e.cap) return "Sold Out";
             const t = c.upgradePrice(e);
             if (c.upgradeTooExpensive(e)) {
                 return c.costAboveCap(e, t) || c.requiredForUpgrade(e)
             }
             return c.purchaseText(e, t)
-        }, c.upgradePercent = function(e) {
+        }, c.upgradePercent = function (e) {
             switch (e.costType) {
                 case "blood":
                     return Math.round(100 * Math.min(1, c.model.persistentData.blood / c.upgradePrice(e)));
@@ -4793,7 +4806,7 @@ var Incremancer;
                 case "prestigePoints":
                     return Math.round(100 * Math.min(1, c.model.persistentData.prestigePointsToSpend / c.upgradePrice(e)))
             }
-        }, c.skeletonTimer = function() {
+        }, c.skeletonTimer = function () {
             return i.skeletonTimer()
         }, c.skeletonMenu = {
             isShown: !1,
@@ -4809,7 +4822,7 @@ var Incremancer;
                 i.acceptOffer(), this.isShown = !1
             },
             anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= 20 * i.persistent.xpRate,
-            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${20*i.persistent.xpRate} Trophies` : "",
+            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${20 * i.persistent.xpRate} Trophies` : "",
             talentPoints: () => i.talentPoints,
             talentsAssigned: () => i.getUsedPoints(),
             talentValue: e => i.talents[e.id] + " / " + e.maxPoints,
@@ -4926,109 +4939,109 @@ var Incremancer;
             itemClass: e => e.name ? "empty" : i.getLootClass(e),
             itemById(e) {
                 let t = null;
-                return i.persistent.items.forEach((function(s) {
+                return i.persistent.items.forEach((function (s) {
                     s.id == e && (t = s)
                 })), t
             },
             itemDropped(e, t) {
                 let s = null;
-                i.persistent.items.forEach((function(t) {
+                i.persistent.items.forEach((function (t) {
                     t.id == e && (s = t)
-                })), -1 == t ? i.destroyItem(s) : (s.s == t && (i.persistent.items.forEach((function(e) {
+                })), -1 == t ? i.destroyItem(s) : (s.s == t && (i.persistent.items.forEach((function (e) {
                     e.s == t && (e.q = !1)
                 })), s.q = !0, h.applyUpgrades()), this.updateEquippedItems())
             },
             equipItem(e) {
-                i.persistent.items.forEach((function(t) {
+                i.persistent.items.forEach((function (t) {
                     t.s == e.s && (t.q = !1)
                 })), e.q = !0, h.applyUpgrades(), this.updateEquippedItems()
             },
             trashAll() {
-                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpTotal()) + " xp", c.confirmCallback = function() {
+                c.confirmMessage = "Are you sure you want to destroy all non-equipped items? You will earn " + n(i.xpTotal()) + " xp", c.confirmCallback = function () {
                     c.confirmCallback = !1, i.destroyAllItems()
                 }
             }
-        }, s.ready((function() {
+        }, s.ready((function () {
             e.updatePromise = t(u, 200), h.angularModel = c, kt()
         }))
-    }]).directive("levelSelect", (function() {
+    }]).directive("levelSelect", (function () {
         return {
             templateUrl: "./templates/levelselect.html"
         }
-    })).directive("levelStats", (function() {
+    })).directive("levelStats", (function () {
         return {
             templateUrl: "./templates/levelstats.html"
         }
-    })).directive("graveyardMenu", (function() {
+    })).directive("graveyardMenu", (function () {
         return {
             templateUrl: "./templates/graveyardmenu.html"
         }
-    })).directive("runesmithMenu", (function() {
+    })).directive("runesmithMenu", (function () {
         return {
             templateUrl: "./templates/runesmithmenu.html"
         }
-    })).directive("optionsMenu", (function() {
+    })).directive("optionsMenu", (function () {
         return {
             templateUrl: "./templates/optionsmenu.html"
         }
-    })).directive("shopMenu", (function() {
+    })).directive("shopMenu", (function () {
         return {
             templateUrl: "./templates/shopmenu.html"
         }
-    })).directive("constructionMenu", (function() {
+    })).directive("constructionMenu", (function () {
         return {
             templateUrl: "./templates/constructionmenu.html"
         }
-    })).directive("prestigeMenu", (function() {
+    })).directive("prestigeMenu", (function () {
         return {
             templateUrl: "./templates/prestigemenu.html"
         }
-    })).directive("championsHoldMenu", (function() {
+    })).directive("championsHoldMenu", (function () {
         return {
             templateUrl: "./templates/championshold.html"
         }
-    })).directive("factoryMenu", (function() {
+    })).directive("factoryMenu", (function () {
         return {
             templateUrl: "./templates/factorymenu.html"
         }
-    })).directive("customOnChange", (function() {
+    })).directive("customOnChange", (function () {
         return {
             restrict: "A",
-            link: function(e, t, s) {
+            link: function (e, t, s) {
                 const i = e.$eval(s.customOnChange);
-                t.on("change", i), t.on("$destroy", (function() {
+                t.on("change", i), t.on("$destroy", (function () {
                     t.off()
                 }))
             }
         }
-    })).directive("draggableItem", ["$rootScope", function(e) {
+    })).directive("draggableItem", ["$rootScope", function (e) {
         return {
             restrict: "A",
-            link: function(t, s, i, a) {
+            link: function (t, s, i, a) {
                 const r = t.item.id;
-                "true" == i.draggableItem && (angular.element(s).attr("draggable", "true"), s.bind("dragstart", (function(t) {
+                "true" == i.draggableItem && (angular.element(s).attr("draggable", "true"), s.bind("dragstart", (function (t) {
                     document.getElementById("champ-hold").classList.toggle("no-tooltip"), t.dataTransfer.setData("text", r);
                     const i = s[0].getBoundingClientRect();
-                    t.dataTransfer.setDragImage(s[0], i.width / 2, i.height / 2), e.$emit("item-drag-start", r), setTimeout((function() {
+                    t.dataTransfer.setDragImage(s[0], i.width / 2, i.height / 2), e.$emit("item-drag-start", r), setTimeout((function () {
                         angular.element(s)[0].style.opacity = "0.3"
                     }))
-                })), s.bind("dragend", (function(t) {
+                })), s.bind("dragend", (function (t) {
                     document.getElementById("champ-hold").classList.toggle("no-tooltip"), angular.element(s)[0].style.opacity = "", e.$emit("item-drag-end", r)
                 })))
             }
         }
-    }]).directive("droppableTarget", ["$rootScope", function(e) {
+    }]).directive("droppableTarget", ["$rootScope", function (e) {
         return {
             restrict: "A",
-            link: function(t, s, i, a) {
+            link: function (t, s, i, a) {
                 const r = t.item.s;
-                s.bind("dragover", (function(e) {
+                s.bind("dragover", (function (e) {
                     return e.preventDefault && e.preventDefault(), e.dataTransfer.dropEffect = "move", !1
-                })), s.bind("dragenter", (function(e) {
+                })), s.bind("dragenter", (function (e) {
                     e.target && e.target.classList && e.target.classList.contains("icon") && angular.element(e.target.parentElement).addClass("over")
-                })), s.bind("dragleave", (function(e) {
+                })), s.bind("dragleave", (function (e) {
                     e.target && e.target.classList && e.target.classList.contains("icon") && angular.element(e.target.parentElement).removeClass("over")
-                })), s.bind("drop", (function(e) {
+                })), s.bind("drop", (function (e) {
                     e.preventDefault && e.preventDefault(), e.stopPropagation && e.stopPropagation(), e.target.classList.contains("icon") && angular.element(e.target.parentElement).removeClass("over");
                     const s = e.dataTransfer.getData("text"),
                         i = t.zm.skeletonMenu.itemById(s);
@@ -5037,13 +5050,13 @@ var Incremancer;
                         document.getElementsByClassName("equipped")[0].classList.remove(e)
                     }
                     t.zm.skeletonMenu.itemDropped(s, r)
-                })), e.$on("item-drag-start", (function(e, s) {
+                })), e.$on("item-drag-start", (function (e, s) {
                     const i = t.zm.skeletonMenu.itemById(s);
                     if (i) {
                         const e = t.zm.skeletonMenu.itemType(i);
                         document.getElementsByClassName("equipped")[0].classList.add(e)
                     }
-                })), e.$on("item-drag-end", (function(e, s) {
+                })), e.$on("item-drag-end", (function (e, s) {
                     const i = t.zm.skeletonMenu.itemById(s);
                     if (i) {
                         const e = t.zm.skeletonMenu.itemType(i);
