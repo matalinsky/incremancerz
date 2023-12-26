@@ -2235,7 +2235,7 @@ var Incremancer;
             return this.gameModel.level < 10 ? 0 : .02 * Math.min(this.gameModel.level - 10, 40)
         }
         getMaxHealth(e) {
-            return e < 7 ? 10 * (e + 4) : e < 12 ? 20 * (e - 1) : e < 16 ? 25 * (e - 3) : e < 29 ? 50 * (e - 9) : e < 49 ? 100 * (e - 19) : e < 64 ? 300 * (e - 39) : e < 85 ? 500 * (e - 49) : e > 499 ? 85e5 * Math.pow(1.03, e - 499) : 17800 * Math.pow(1.015, e - 84)
+            return e < 7 ? 10 * (e + 4) : e < 12 ? 20 * (e - 1) : e < 16 ? 25 * (e - 3) : e < 29 ? 50 * (e - 9) : e < 49 ? 100 * (e - 19) : e < 64 ? 300 * (e - 39) : e < 85 ? 500 * (e - 49) : e > 499 ? 85e5 * Math.pow(1.03, e - 499) : e > 999 ? 85e5 * Math.pow(1.025, e - 999) : e > 1499 ? 85e5 * Math.pow(1.02, e - 1499) : 17800 * Math.pow(1.015, e - 84)
         }
         getAttackDamage() {
             1 != this.gameModel.level ? 2 != this.gameModel.level ? 3 != this.gameModel.level ? this.attackDamage = Math.round(this.getMaxHealth(this.gameModel.level) / 10) : this.attackDamage = 5 : this.attackDamage = 4 : this.attackDamage = 2
