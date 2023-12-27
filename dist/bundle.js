@@ -4821,7 +4821,7 @@ var Incremancer;
             acceptOffer() {
                 i.acceptOffer(), this.isShown = !1
             },
-            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= i.persistent.xpRate < 9 ? 20 * i.persistent.xpRate : 80 + (Math.log2(i.persistent.xpRate)-3) * 80,
+            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= (i.persistent.xpRate < 9 ? 20 * i.persistent.xpRate : 80 + (Math.log2(i.persistent.xpRate)-3) * 80),
             trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 9 ? 20 * i.persistent.xpRate : 80 + (Math.log2(i.persistent.xpRate)-3) * 80 } Trophies` : "",
             talentPoints: () => i.talentPoints,
             talentsAssigned: () => i.getUsedPoints(),
