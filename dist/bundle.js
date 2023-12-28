@@ -1560,7 +1560,7 @@ var Incremancer;
             }, 50, 1, 1, 1, 219, "Build a factory to turn creature parts into living entities of destruction", "Creatures now available in factory menu!"), new he(221, "Bottomless Pit", this.constructionTypes.pit, {
                 bones: 75e3,
                 parts: 5e6
-            }, 50, 1, 1, 10, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
+            }, 50, 1, 1, 12, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
                 bones: 75e3,
                 brains: 75e3,
                 blood: 8e7
