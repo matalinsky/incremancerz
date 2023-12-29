@@ -1494,79 +1494,107 @@ var Incremancer;
                 partFactory: "partFactory",
                 monsterFactory: "monsterFactory",
                 pit: "pit",
-                harpy: "harpy"
+                harpy: "harpy",
+                HybridLab: "HybridLab"                
             }, this.constructionUpgrades = [new he(201, "Cursed Graveyard", this.constructionTypes.graveyard, {
                 blood: 1800
-            }, 30, 1, 1, 1, null, "Construct a Cursed Graveyard in the town that will automatically spawn zombies when your energy is at its maximum!", "Graveyard menu now available!"), new he(205, "Crypt", this.constructionTypes.crypt, {
+            }, 30, 1, 1, 1, null, "Construct a Cursed Graveyard in the town that will automatically spawn zombies when your energy is at its maximum!", "Graveyard menu now available!"), 
+            new he(205, "Crypt", this.constructionTypes.crypt, {
                 blood: 21e3,
                 bones: 2220
-            }, 60, 1, 1, 1, 201, "Construct a Crypt in your graveyard. This will give you a nice dark and quiet place to think. The additional space will also allow you to store 50% more blood and brains!", null), new he(206, "Bone Fort", this.constructionTypes.fort, {
+            }, 60, 1, 1, 1, 201, "Construct a Crypt in your graveyard. This will give you a nice dark and quiet place to think. The additional space will also allow you to store 50% more blood and brains!", null), 
+            new he(206, "Bone Fort", this.constructionTypes.fort, {
                 blood: 6e4,
                 bones: 6e3,
                 energy: 60
-            }, 60, 1, 1, 1, 205, "Turn your crypt into a fort. The additional space will also allow you to store 60% more blood and brains.", "New upgrades are available in the shop!"), new he(207, "Bone Fortress", this.constructionTypes.fortress, {
+            }, 60, 1, 1, 1, 205, "Turn your crypt into a fort. The additional space will also allow you to store 60% more blood and brains.", "New upgrades are available in the shop!"), 
+            new he(207, "Bone Fortress", this.constructionTypes.fortress, {
                 blood: 1e5,
                 bones: 9e3,
                 energy: 90
-            }, 60, 1, 1, 1, 206, "Turn your fort into a fortress. The additional space will also allow you to store 70% more blood and brains.", null), new he(211, "Bone Citadel", this.constructionTypes.citadel, {
+            }, 60, 1, 1, 1, 206, "Turn your fort into a fortress. The additional space will also allow you to store 70% more blood and brains.", null), 
+            new he(211, "Bone Citadel", this.constructionTypes.citadel, {
                 blood: 2e5,
                 bones: 12e3,
                 energy: 120
-            }, 60, 1, 1, 1, 207, "Turn your fortress into a towering citadel that looms over the town. The additional space will also allow you to store 80% more blood and brains.", "New upgrades are available in the shop!"), new he(202, "Perimeter Fence", this.constructionTypes.fence, {
+            }, 60, 1, 1, 1, 207, "Turn your fortress into a towering citadel that looms over the town. The additional space will also allow you to store 80% more blood and brains.", "New upgrades are available in the shop!"), 
+            new he(202, "Perimeter Fence", this.constructionTypes.fence, {
                 bones: 880,
                 energy: 22
-            }, 44, 1, 1, 1, 201, "Build a protective fence around the graveyard that will reduce damage taken by zombies inside by 50%.", null), new he(203, "Bigger Fence", this.constructionTypes.fenceSize, {
+            }, 44, 1, 1, 1, 201, "Build a protective fence around the graveyard that will reduce damage taken by zombies inside by 50%.", null), 
+            new he(203, "Bigger Fence", this.constructionTypes.fenceSize, {
                 bones: 880,
                 energy: 22
-            }, 44, 1, 10, 4, 202, "Enlarge the fence so a greater area is protected.", null), new he(204, "Plague Workshop", this.constructionTypes.plagueWorkshop, {
+            }, 44, 1, 10, 4, 202, "Enlarge the fence so a greater area is protected.", null), 
+            new he(204, "Plague Workshop", this.constructionTypes.plagueWorkshop, {
                 blood: 10200,
                 brains: 600
-            }, 60, 1, 1, 1, 205, "Build a laboratory to study the effects of plague. This will unlock new upgrades in the shop.", "Plague upgrades now available!"), new he(208, "Plague Spikes", this.constructionTypes.plagueSpikes, {
+            }, 60, 1, 1, 1, 205, "Build a laboratory to study the effects of plague. This will unlock new upgrades in the shop.", "Plague upgrades now available!"), 
+            new he(208, "Plague Spikes", this.constructionTypes.plagueSpikes, {
                 brains: 3e3,
                 bones: 1e3
-            }, 30, 1, 1, 1, 204, "Booby trap the area around your graveyard with cruel spikes that infect trespassing humans with the plague.", null), new he(209, "Spell Tower", this.constructionTypes.spellTower, {
+            }, 30, 1, 1, 1, 204, "Booby trap the area around your graveyard with cruel spikes that infect trespassing humans with the plague.", null), 
+            new he(209, "Spell Tower", this.constructionTypes.spellTower, {
                 brains: 3e3,
                 blood: 3e4
-            }, 30, 1, 1, 1, 206, "Dedicate one tower of your fort to the study of spellcraft. Perhaps you can learn some new spells?", "Spells now available in the shop!"), new he(210, "Runesmith", this.constructionTypes.runesmith, {
+            }, 30, 1, 1, 1, 206, "Dedicate one tower of your fort to the study of spellcraft. Perhaps you can learn some new spells?", "Spells now available in the shop!"), 
+            new he(210, "Runesmith", this.constructionTypes.runesmith, {
                 bones: 3e3,
                 blood: 12e4,
                 brains: 1e3
-            }, 30, 1, 1, 1, 207, "Build a runesmith's workshop in order to fortify your zombies with powerful runes.", null), new he(212, "Accursed Aviary", this.constructionTypes.aviary, {
+            }, 30, 1, 1, 1, 207, "Build a runesmith's workshop in order to fortify your zombies with powerful runes.", null), 
+            new he(212, "Accursed Aviary", this.constructionTypes.aviary, {
                 bones: 6e3,
                 blood: 22e4,
                 brains: 2e3
-            }, 60, 1, 1, 1, 211, "Construct an aviary on top of your citadel so you can release wicked harpies to bomb the townspeople.", "Harpies available for hire in the graveyard menu"), new he(213, "Zombie Cage", this.constructionTypes.zombieCage, {
+            }, 60, 1, 1, 1, 211, "Construct an aviary on top of your citadel so you can release wicked harpies to bomb the townspeople.", "Harpies available for hire in the graveyard menu"), 
+            new he(213, "Zombie Cage", this.constructionTypes.zombieCage, {
                 bones: 600,
                 blood: 900
-            }, 30, 1, 5, 1, 201, "Build a cage to contain surplus zombies once a town is defeated.", null), new he(214, "Second Zombie Cage", this.constructionTypes.zombieCage, {
+            }, 30, 1, 5, 1, 201, "Build a cage to contain surplus zombies once a town is defeated.", null), 
+            new he(214, "Second Zombie Cage", this.constructionTypes.zombieCage, {
                 bones: 1200,
                 blood: 1800
-            }, 30, 1, 10, 1, 205, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(215, "Third Zombie Cage", this.constructionTypes.zombieCage, {
+            }, 30, 1, 10, 1, 205, "Build an additional cage to contain surplus zombies once a town is defeated.", null), 
+            new he(215, "Third Zombie Cage", this.constructionTypes.zombieCage, {
                 bones: 1800,
                 blood: 2700
-            }, 30, 1, 10, 1, 206, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(216, "Fourth Zombie Cage", this.constructionTypes.zombieCage, {
+            }, 30, 1, 10, 1, 206, "Build an additional cage to contain surplus zombies once a town is defeated.", null), 
+            new he(216, "Fourth Zombie Cage", this.constructionTypes.zombieCage, {
                 bones: 2400,
                 blood: 3600
-            }, 30, 1, 10, 1, 207, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(217, "Fifth Zombie Cage", this.constructionTypes.zombieCage, {
+            }, 30, 1, 10, 1, 207, "Build an additional cage to contain surplus zombies once a town is defeated.", null), 
+            new he(217, "Fifth Zombie Cage", this.constructionTypes.zombieCage, {
                 bones: 3e3,
                 blood: 4500
-            }, 30, 1, 15, 1, 211, "Build an additional cage to contain surplus zombies once a town is defeated.", null), new he(218, "Plague Laboratory", this.constructionTypes.plagueLaboratory, {
+            }, 30, 1, 15, 1, 211, "Build an additional cage to contain surplus zombies once a town is defeated.", null), 
+            new he(218, "Plague Laboratory", this.constructionTypes.plagueLaboratory, {
                 brains: 25e3,
                 blood: 1e6
-            }, 50, 1, 1, 1, 211, "Expand the plague workshop into a well equipped laboratory in order to unlock additional plague upgrades.", null), new he(219, "Part Factory", this.constructionTypes.partFactory, {
+            }, 50, 1, 1, 1, 211, "Expand the plague workshop into a well equipped laboratory in order to unlock additional plague upgrades.", null), 
+            new he(219, "Part Factory", this.constructionTypes.partFactory, {
                 brains: 35e3,
                 blood: 15e6
-            }, 50, 1, 1, 1, 218, "Build a factory to create parts that can be used to construct more powerful beings for your army.", "Factory menu now available!"), new he(220, "Creature Factory", this.constructionTypes.monsterFactory, {
+            }, 50, 1, 1, 1, 218, "Build a factory to create parts that can be used to construct more powerful beings for your army.", "Factory menu now available!"), 
+            new he(220, "Creature Factory", this.constructionTypes.monsterFactory, {
                 brains: 45e3,
                 blood: 4e7
-            }, 50, 1, 1, 1, 219, "Build a factory to turn creature parts into living entities of destruction", "Creatures now available in factory menu!"), new he(221, "Bottomless Pit", this.constructionTypes.pit, {
+            }, 50, 1, 1, 1, 219, "Build a factory to turn creature parts into living entities of destruction", "Creatures now available in factory menu!"), 
+            new he(221, "Bottomless Pit", this.constructionTypes.pit, {
                 bones: 75e3,
                 parts: 5e6
-            }, 50, 1, 1, 25, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
+            }, 50, 1, 1, 25, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), 
+            new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
                 bones: 75e3,
                 brains: 75e3,
                 blood: 8e7
-            }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!")], 
+            }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!")
+           new he(301, "Hybrid Laboratory", this.constructionTypes.HybridLab, {
+                bones: 75e6,
+                parts: 9e12
+            }, 240, 1, 1, 1, 222, "Build a new laboratory to unlock the potential of Zombie-Golem Hybrids.  Deep storage tanks for Blood and Brains are needed for research, increase storage by 10x", "New upgrades are available in the shop!")
+        ],
+                
                 this.upgrades = [new le(1, "Bloodthirst", this.types.damage, this.costs.blood, 50, 1.2, 1, 40, "Your zombies thirst for blood and do +1 damage for each rank of Bloodthirst.", null, null),
                                  new le(9, "Sharpened Teeth", this.types.damage, this.costs.blood, 3e3, 1.23, 3, 50, "Your zombies bites do +3 damage with each rank of Sharpened Teeth.", null, 206), 
                                  new le(11, "Razor Claws", this.types.damage, this.costs.blood, 28e3, 1.25, 5, 0, "Your zombies attacks do +5 damage with each rank of Razor Claws.", null, 211), 
@@ -1793,7 +1821,9 @@ var Incremancer;
                 case this.constructionTypes.partFactory:
                     return this.gameModel.constructions.partFactory = !0, void (this.gameModel.constructions.factory = !0);
                 case this.constructionTypes.monsterFactory:
-                    return this.gameModel.constructions.monsterFactory = !0, void (this.gameModel.constructions.factory = !0)
+                    return this.gameModel.constructions.monsterFactory = !0, void (this.gameModel.constructions.factory = !0);
+                case this.constructionTypes.HybridLab:
+                    return this.gameModel.constructions.HybridLab = 1, this.gameModel.brainsStorePCMod *= 10, void (this.gameModel.bloodStorePCMod *= 10);   
             }
         }
         displayStatValue(e) {
