@@ -4705,11 +4705,7 @@ var Incremancer;
                 case h.types.zombieDmgPC:
                     return "+" + n(Math.round(100 * e.effect)) + "% zombie damage";
                 case h.types.zombieHealthPC:
-                    return "+" + n(Math.round(100 * e.effect)) + "% zombie health";
-                case h.types.HstrengthDmgPC:
-                    return "+" + n(Math.round(100 * e.effect)) + "% hybrid zombie damage";
-                case h.types.HshellHealthPC:
-                    return "+" + n(Math.round(100 * e.effect)) + "% hybrid zombie health";                    
+                    return "+" + n(Math.round(100 * e.effect)) + "% zombie health";                
                 case h.types.bonesRate:
                     return "+" + e.effect + " bones per second";
                 case h.types.brainsRate:
