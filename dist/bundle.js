@@ -1588,7 +1588,7 @@ var Incremancer;
                 bones: 75e3,
                 brains: 75e3,
                 blood: 8e7
-            }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!")
+            }, 50, 1, 1, 1, 220, "Build an outfitter to upgrade the abilities of your harpies.", "Harpy upgrades now available in the shop!"),
            new he(301, "Hybrid Laboratory", this.constructionTypes.HybridLab, {
                 bones: 75e6,
                 parts: 9e12
