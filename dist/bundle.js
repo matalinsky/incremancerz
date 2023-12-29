@@ -1411,6 +1411,8 @@ var Incremancer;
                 partsGainPC: "partsGainPC",
                 zombieDmgPC: "zombieDmgPC",
                 zombieHealthPC: "zombieHealthPC",
+                HstrengthDmgPC: "HstrengthDmgPC",
+                HshellHealthPC: "HshellHealthPC",                
                 golemHealthPC: "golemHealthPC",
                 golemDamagePC: "golemDamagePC",
                 startingPC: "startingPC",
@@ -1605,8 +1607,8 @@ var Incremancer;
                                  new le(48, "Bombs Away", this.types.harpyBombs, this.costs.bones, 5e5, 1.6, 1, 3, "Upgrade your harpies so they can carry more than just one bomb at a time.", null, 222),
                                  new le(60, "Extra Limbs", this.types.golemDamagePC, this.costs.parts, 900, 1.3, .02, 0, "Your golems gain +2% damage with each rank of Extra Limbs.", null, 220),
                                  new le(61, "Big Boned", this.types.golemHealthPC, this.costs.parts, 1e3, 1.31, .02, 0, "Your golems gain +2% health with each rank of Big Boned.", null, 220),
-                                 new le(62, "Hybrid Strength", this.types.zombieDmgPC, this.costs.parts, 1e3, 1.3, .01, 0, "Your zombies gain +1% damage with each rank of Hybrid Strength.", null, 220),
-                                 new le(63, "Hybrid Shell", this.types.zombieHealthPC, this.costs.parts, 1e3, 1.31, .01, 0, "Your zombies gain +1% health with each rank of Hybrid Shell.", null, 220)],
+                                 new le(62, "Hybrid Strength", this.types.HstrengthDmgPC, this.costs.parts, 1e3, 1.3, .01, 0, "Animating Golem parts fused with zombie flesh creates a terrifyingly strong Hybrid. Your zombies gain +1% damage with each rank of Hybrid Strength.", null, 220),
+                                 new le(63, "Hybrid Shell", this.types.HshellHealthPC, this.costs.parts, 1e3, 1.31, .01, 0, "Golem armor shell provides extra protection for your fleshy zombies. Your zombies gain +1% health with each rank of Hybrid Shell.", null, 220)],
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
                                          new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
@@ -1646,7 +1648,12 @@ var Incremancer;
             for (let e = 0; e < this.gameModel.persistentData.constructions.length; e++) this.applyConstructionUpgrade(this.gameModel.persistentData.constructions[e]);
             const e = (new de).getAquiredTrophyList();
             for (let t = 0; t < e.length; t++) this.applyUpgrade(e[t], e[t].rank);
-            this.skeleton.applyUpgrades(), this.gameModel.bloodMax *= this.gameModel.bloodStorePCMod, this.gameModel.brainsMax *= this.gameModel.brainsStorePCMod, this.gameModel.zombieDamage *= this.gameModel.zombieDamagePCMod, this.gameModel.zombieHealth *= this.gameModel.zombieHealthPCMod, this.gameModel.persistentData.runeshatter && (this.gameModel.zombieDamage *= this.shatterEffect(), this.gameModel.zombieHealth *= this.shatterEffect(), this.gameModel.zombieCost += this.gameModel.persistentData.runeshatter)
+            this.skeleton.applyUpgrades(), 
+                this.gameModel.bloodMax *= this.gameModel.bloodStorePCMod, 
+                this.gameModel.brainsMax *= this.gameModel.brainsStorePCMod, 
+                this.gameModel.zombieDamage *= this.gameModel.zombieDamagePCMod, 
+                this.gameModel.zombieHealth *= this.gameModel.zombieHealthPCMod, 
+            this.gameModel.persistentData.runeshatter && (this.gameModel.zombieDamage *= this.shatterEffect(),this.gameModel.zombieHealth *= this.shatterEffect(), this.gameModel.zombieCost += this.gameModel.persistentData.runeshatter)
         }
         applyUpgrade(e, t) {
             switch (e.type) {
@@ -1724,7 +1731,11 @@ var Incremancer;
                     return void (this.gameModel.zombieDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.zombieHealthPC:
                     return void (this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t));
-                case this.types.golemDamagePC:
+                case this.types.HstrengthDmgPC:
+                    return void (this.gameModel.HstrengthDmgPCMod *= Math.pow(1 + e.effect, t));
+                case this.types.HshellHealthPC:
+                    return void (this.gameModel.HshellHealthPCMod *= Math.pow(1 + e.effect, t));
+                case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
                     return void (this.gameModel.golemHealthPCMod *= Math.pow(1 + e.effect, t));
@@ -1830,7 +1841,11 @@ var Incremancer;
                 case this.types.zombieDmgPC:
                     return "Zombie Damage: " + Math.round(100 * this.gameModel.zombieDamagePCMod) + "%";
                 case this.types.zombieHealthPC:
-                    return "Zombie Health: " + Math.round(100 * this.gameModel.zombieHealthPCMod) + "%";
+                    return "Zombie Health: " + Math.round(100 * this.gameModel.zombieHealthPCMod) + "%";                
+                case this.types.HstrengthDmgPC:
+                    return "Zombie Damage: " + Math.round(100 * this.gameModel.HstrengthDmgPCMod) + "%";
+                case this.types.HshellHealthPC:
+                    return "Zombie Health: " + Math.round(100 * this.gameModel.HshellHealthPCMod) + "%";
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
