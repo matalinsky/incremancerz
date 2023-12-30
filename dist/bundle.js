@@ -1496,7 +1496,9 @@ var Incremancer;
                 pit: "pit",
                 harpy: "harpy",
                 HybridLab: "HybridLab",
-                AdvHybridLab: "AdvHybridLab"                
+                AdvHybridLab: "AdvHybridLab",
+                MiniAssembLine: "MiniAssembLine",
+                TechThinkTank: "TechThinkTank"                   
             }, this.constructionUpgrades = [new he(201, "Cursed Graveyard", this.constructionTypes.graveyard, {
                 blood: 1800
             }, 30, 1, 1, 1, null, "Construct a Cursed Graveyard in the town that will automatically spawn zombies when your energy is at its maximum!", "Graveyard menu now available!"), 
@@ -1596,8 +1598,16 @@ var Incremancer;
             }, 240, 1, 1, 1, 222, "Build a new laboratory to unlock the potential of Zombie-Golem Hybrids.  Deep storage tanks for Blood and Brains are needed for research, doubling storage", "New upgrades are available in the shop!"),
            new he(302, "Advanced Hybrid Laboratory", this.constructionTypes.AdvHybridLab, {
                 bones: 75e8,
-                parts: 9e13
-            }, 240, 1, 1, 1, 301, "Build an advanced laboratory to further unlock the secrets of Zombie-Golem Hybridization.  Even deeper storage tanks for Blood and Brains are needed for research, doubling storage", "New upgrades are available in the shop!")
+                parts: 7e13
+            }, 240, 1, 1, 1, 301, "Build a new way to create everything faster!  How deep can these storage tanks go? Doubles storage", "New upgrades are available in the shop!"),
+           new he(303, "Miniturized Assembly Lines", this.constructionTypes.MiniAssembLine, {
+                bones: 75e10,
+                parts: 4e16
+            }, 240, 1, 1, 1, 302, "Using all these stored brains allows us to harness their raw computational power for even more innovations!  Storage tanks resting on bedrock is as far as we can go. Doubles storage", "New upgrades are available in the shop!"),
+           new he(304, "Technical Think Tank", this.constructionTypes.TechThinkTank, {
+                bones: 75e12,
+                parts: 1e18
+            }, 240, 1, 1, 1, 303, "Build an advanced laboratory to further unlock the secrets of Zombie-Golem Hybridization.  Even deeper storage tanks for Blood and Brains are needed for research, doubling storage", "New upgrades are available in the shop!")
         ],
                 
                 this.upgrades = [new le(1, "Bloodthirst", this.types.damage, this.costs.blood, 50, 1.2, 1, 40, "Your zombies thirst for blood and do +1 damage for each rank of Bloodthirst.", null, null),
@@ -1830,7 +1840,11 @@ var Incremancer;
                 case this.constructionTypes.HybridLab:
                     return this.gameModel.constructions.HybridLab = 1, this.gameModel.brainsStorePCMod *= 2, void (this.gameModel.bloodStorePCMod *= 2);   
                 case this.constructionTypes.AdvHybridLab:
-                    return this.gameModel.constructions.AdvHybridLab = 1, this.gameModel.brainsStorePCMod *= 2, void (this.gameModel.bloodStorePCMod *= 2);                       
+                    return this.gameModel.constructions.AdvHybridLab = 1, this.gameModel.brainsStorePCMod *= 2, void (this.gameModel.bloodStorePCMod *= 2);
+                case this.constructionTypes.MiniAssembLine:
+                    return this.gameModel.constructions.MiniAssembLine = 1, this.gameModel.brainsStorePCMod *= 2, void (this.gameModel.bloodStorePCMod *= 2);   
+                case this.constructionTypes.AdvHybridLab:
+                    return this.gameModel.constructions.TechThinkTank = 1, this.gameModel.brainsStorePCMod *= 2, void (this.gameModel.bloodStorePCMod *= 2);                       
             }
         }
         displayStatValue(e) {
