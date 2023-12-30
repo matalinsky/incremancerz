@@ -982,7 +982,7 @@ var Incremancer;
     }
     class ne {
         constructor() {
-            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.HshellHealthPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.HstrengthDmgPCMod = 1, this.zombieSpeed = 10, this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
+            this.storageName = "ZombieData", this.kongregate = null, this.playFabId = null, this.titleId = "772D8", this.hidden = !1, this.autoShatter = !1, this.energy = 0, this.energyMax = 10, this.energyRate = 1, this.brainsRate = 0, this.bonesRate = 0, this.endLevelBones = 0, this.energySpellMultiplier = 1, this.prestigePointsEarned = 0, this.zombieCost = 10, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodMax = 1e3, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsMax = 50, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealth = 100, this.zombieHealthPCMod = 1, this.HshellHealthPCMod = 1, this.CyroVatPCMod = 1, this.PlagueVatPCMod = 1, this.zombieDamage = 10, this.zombieDamagePCMod = 1, this.HstrengthDmgPCMod = 1, this.zombieSpeed = 10, this.zombieCages = 0, this.zombiesInCages = 0, this.golemDamagePCMod = 1, this.golemHealthPCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.graveyardHealthMod = 1, this.burningSpeedMod = 1, this.startingResources = 0, this.blastHealing = 0, this.plagueDmgReduction = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.spitDistance = 0, this.spikeDelay = 5, this.startTimer = 0, this.fenceRadius = 50, this.constructions = {}, this.construction = 0, this.boneCollectorCapacity = 10, this.frameRate = 0, this.humanCount = 50, this.zombieCount = 0, this.creatureCount = 0, this.creatureLimit = 1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1, this.stats = null, this.runicSyphon = {
                 percentage: 0,
                 blood: 0,
                 bones: 0,
@@ -1071,7 +1071,7 @@ var Incremancer;
             return ne.instance || (ne.instance = new ne, ne.instance.particles = new Qe, ne.instance.trophies = new de, ne.instance.bones = new tt, ne.instance.creatureFactory = new ae, ne.instance.creatures = new Ue, ne.instance.boneCollectors = new Ve, ne.instance.graveyard = new Oe, ne.instance.spells = new q, ne.instance.partFactory = new se, ne.instance.skeleton = new Xe, ne.instance.upgrades = new oe, ne.instance.zombies = new Ae, ne.instance.humans = new Se, ne.instance.police = new ke, ne.instance.army = new Te), ne.instance
         }
         resetToBaseStats() {
-            this.energyRate = this.baseStats.energyRate, this.brainsRate = this.baseStats.brainsRate, this.bonesRate = this.baseStats.bonesRate, this.energyMax = this.baseStats.energyMax, this.bloodMax = this.baseStats.bloodMax, this.brainsMax = this.baseStats.brainsMax, this.zombieHealth = this.baseStats.zombieHealth, this.zombieDamage = this.baseStats.zombieDamage, this.zombieSpeed = this.baseStats.zombieSpeed, this.zombieCost = this.baseStats.zombieCost, this.zombieCages = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.construction = this.baseStats.construction, this.constructions = {}, this.boneCollectorCapacity = this.baseStats.boneCollectorCapacity, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealthPCMod = 1, this.zombieDamagePCMod = 1, this.HshellHealthPCMod = 1, this.HstrengthDmgPCMod = 1,  this.golemHealthPCMod = 1, this.golemDamagePCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.burningSpeedMod = 1, this.startingResources = 0, this.fenceRadius = 50, this.spitDistance = 0, this.spikeDelay = 5, this.blastHealing = 0, this.plagueDmgReduction = 1, this.creatureLimit = 1, this.runicSyphon.percentage = 0, this.autoconstructionUnlocked = !1, this.autoUpgrades = !1, this.graveyardHealthMod = 1, this.bulletproofChance = 0, this.gigazombies = !1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1
+            this.energyRate = this.baseStats.energyRate, this.brainsRate = this.baseStats.brainsRate, this.bonesRate = this.baseStats.bonesRate, this.energyMax = this.baseStats.energyMax, this.bloodMax = this.baseStats.bloodMax, this.brainsMax = this.baseStats.brainsMax, this.zombieHealth = this.baseStats.zombieHealth, this.zombieDamage = this.baseStats.zombieDamage, this.zombieSpeed = this.baseStats.zombieSpeed, this.zombieCost = this.baseStats.zombieCost, this.zombieCages = 0, this.brainRecoverChance = 0, this.riseFromTheDeadChance = 0, this.infectedBiteChance = 0, this.infectedBlastChance = 0, this.construction = this.baseStats.construction, this.constructions = {}, this.boneCollectorCapacity = this.baseStats.boneCollectorCapacity, this.bonesPCMod = 1, this.partsPCMod = 1, this.bloodPCMod = 1, this.bloodStorePCMod = 1, this.brainsPCMod = 1, this.brainsStorePCMod = 1, this.zombieHealthPCMod = 1, this.zombieDamagePCMod = 1, this.HshellHealthPCMod = 1, this.HstrengthDmgPCMod = 1, this.CyroVatPCMod = 1, this.PlagueVatPCMod = 1, this.golemHealthPCMod = 1, this.golemDamagePCMod = 1, this.plagueDamageMod = 0, this.plagueticks = 2, this.burningSpeedMod = 1, this.startingResources = 0, this.fenceRadius = 50, this.spitDistance = 0, this.spikeDelay = 5, this.blastHealing = 0, this.plagueDmgReduction = 1, this.creatureLimit = 1, this.runicSyphon.percentage = 0, this.autoconstructionUnlocked = !1, this.autoUpgrades = !1, this.graveyardHealthMod = 1, this.bulletproofChance = 0, this.gigazombies = !1, this.harpySpeed = 75, this.tankBuster = !1, this.harpyBombs = 1
         }
         addEnergy(e) {
             this.energy += e, this.energy > this.energyMax && (this.energy = this.energyMax)
@@ -1412,7 +1412,9 @@ var Incremancer;
                 zombieDmgPC: "zombieDmgPC",
                 zombieHealthPC: "zombieHealthPC",
                 HstrengthDmgPC: "HstrengthDmgPC",
-                HshellHealthPC: "HshellHealthPC",                
+                HshellHealthPC: "HshellHealthPC",
+                CyroVatPC: "CyroVatPC",
+                PlagueVatPC: "PlagueVatPC",
                 golemHealthPC: "golemHealthPC",
                 golemDamagePC: "golemDamagePC",
                 startingPC: "startingPC",
@@ -1652,6 +1654,8 @@ var Incremancer;
                                  new le(61, "Big Boned", this.types.golemHealthPC, this.costs.parts, 1e3, 1.31, .02, 0, "Your golems gain +2% health with each rank of Big Boned.", null, 220),
                                  new le(62, "Hybrid Strength", this.types.HstrengthDmgPC, this.costs.parts, 1e3, 1.3, .01, 0, "Animating Golem parts fused with zombie flesh creates a terrifyingly strong Hybrid. Your zombies gain +1% damage with each rank of Hybrid Strength.", null, 301),
                                  new le(63, "Hybrid Shell", this.types.HshellHealthPC, this.costs.parts, 1e3, 1.31, .01, 0, "Golem armor shell provides extra protection for your fleshy zombies. Your zombies gain +1% health with each rank of Hybrid Shell.", null, 301)],
+                                 new le(64, "Advanced Cyrogenic Vats", this.types.CyroVatPC, this.costs.parts, 1e3, 1.40, .1, 0, "Cooling these Brains further makes them last much longer. Your brain storage increases +10% with each rank of Advanced Cyrogenic Vats.", null, 302)],
+                                 new le(65, "Golem Part Plague Vats", this.types.PlagueVatPC, this.costs.parts, 1e3, 1.50, .01, 0, "Using specialized Golem Parts allows for advancements in plague research. Plague Damage increases +1% with each rank of Golem Part Plague Vats.", null, 302)],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
                                          new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
@@ -1778,6 +1782,10 @@ var Incremancer;
                     return void (this.gameModel.HstrengthDmgPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.HshellHealthPC:
                     return void (this.gameModel.HshellHealthPCMod *= Math.pow(1 + e.effect, t));
+                case this.types.CyroVatPC:
+                    return void (this.gameModel.CyroVatPCMod *= Math.pow(1 + e.effect, t));
+                case this.types.PlagueVatPC:
+                    return void (this.gameModel.PlagueVatPCMod *= Math.pow(1 + e.effect, t));                    
                 case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
@@ -1897,6 +1905,10 @@ var Incremancer;
                     return "Zombie Damage: " + Math.round(100 * this.gameModel.HstrengthDmgPCMod) + "%";
                 case this.types.HshellHealthPC:
                     return "Zombie Health: " + Math.round(100 * this.gameModel.HshellHealthPCMod) + "%";
+                case this.types.CyroVatDmgPC:
+                    return "Zombie Damage: " + Math.round(100 * this.gameModel.CyroVatPCMod) + "%";
+                case this.types.PlagueVatPC:
+                    return "Zombie Health: " + Math.round(100 * this.gameModel.PlagueVatPCMod) + "%";                    
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
