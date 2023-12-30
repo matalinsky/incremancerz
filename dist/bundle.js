@@ -1605,11 +1605,11 @@ var Incremancer;
            new he(303, "Miniturized Assembly Lines", this.constructionTypes.MiniAssembLine, {
                 bones: 75e10,
                 parts: 4e16
-            }, 240, 1, 1, 1, 302, "Using all these stored brains allows us to harness their raw computational power for even more innovations!  Storage tanks resting on bedrock is as far as we can go. Doubles storage", "New upgrades are available in the shop!"),
+            }, 240, 1, 1, 1, 302, "Using all these stored brains allows us to harness their raw computational power for even more innovations! Even deeper storage tanks for Blood and Brains are needed for research. Doubles storage", "New upgrades are available in the shop!"),
            new he(304, "Technical Think Tank", this.constructionTypes.TechThinkTank, {
                 bones: 75e12,
                 parts: 1e18
-            }, 240, 1, 1, 1, 303, "Build an advanced laboratory to further unlock the secrets of Zombie-Golem Hybridization.  Even deeper storage tanks for Blood and Brains are needed for research, doubling storage", "New upgrades are available in the shop!")
+            }, 240, 1, 1, 1, 303, "Build an advanced laboratory to further unlock the secrets of Zombie-Golem Hybridization.  Storage tanks resting on bedrock is as far as we can goEven deeper storage tanks for Blood and Brains are needed for research, doubling storage", "New upgrades are available in the shop!")
         ],
                 
                 this.upgrades = [new le(1, "Bloodthirst", this.types.damage, this.costs.blood, 50, 1.2, 1, 40, "Your zombies thirst for blood and do +1 damage for each rank of Bloodthirst.", null, null),
