@@ -1779,7 +1779,7 @@ var Incremancer;
                 case this.types.zombieHealthPC:
                     return void (this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.HstrengthDmgPC:
-                    return void (this.gameModel.HstrengthDmgPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.zombieDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.HshellHealthPC:
                     return void (this.gameModel.HshellHealthPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.CyroVatPC:
