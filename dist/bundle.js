@@ -1910,9 +1910,9 @@ var Incremancer;
                 case this.types.HshellHealthPC:
                     return "Zombie Health: " + Math.round(100 * this.gameModel.HshellHealthPCMod) + "%";
                 case this.types.CyroVatPC:
-                    return "Zombie Damage: " + Math.round(100 * this.gameModel.CyroVatPCMod) + "%";
+                    return "Brains Storage: " + Math.round(100 * this.gameModel.CyroVatPCMod) + "%";
                 case this.types.PlagueVatPC:
-                    return "Zombie Health: " + Math.round(100 * this.gameModel.PlagueVatPCMod) + "%";                    
+                    return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod) + "%";                    
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
