@@ -1782,11 +1782,14 @@ var Incremancer;
                     return void (this.gameModel.zombieDamagePCMod *= Math.pow(1 + e.effect, t)),
                                 (this.gameModel.HstrengthDmgPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.HshellHealthPC:
-                    return void (this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.zombieHealthPCMod *= Math.pow(1 + e.effect, t)),
+                                (this.gameModel.HshellHealthPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.CyroVatPC:
-                    return void (this.gameModel.brainsMax *= Math.pow(1 + e.effect, t));
+                    return void (this.gameModel.brainsMax *= Math.pow(1 + e.effect, t)),
+                                (this.gameModel.CyroVatPCMod *= Math.pow(1 + e.effect, t));
                 case this.types.PlagueVatPC:
-                    return void (this.gameModel.plagueDamageMod *= Math.pow(1 + e.effect, t));                    
+                    return void (this.gameModel.plagueDamageMod *= Math.pow(1 + e.effect, t)),
+                                (this.gameModel.PlagueVatPCMod *= Math.pow(1 + e.effect, t));                    
                 case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
