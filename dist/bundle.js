@@ -1170,6 +1170,8 @@ var Incremancer;
                 this.PlagueVatPCMod = 1,
                 this.CloningRep1PCMod = 1, 
                 this.BloodSynPCMod = 1, 
+                this.SynBonePCMod = 1,                 
+                this.SmolPartsPCMod = 1, 
                 this.golemHealthPCMod = 1, 
                 this.golemDamagePCMod = 1, 
                 this.plagueDamageMod = 0, 
