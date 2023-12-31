@@ -1014,6 +1014,9 @@ var Incremancer;
                 this.BloodSynPCMod = 1, 
                 this.SynBonePCMod = 1, 
                 this.SmolPartsPCMod = 1, 
+                this.AvionicsPCMod = 1, 
+                this.ShockPCMod = 1, 
+                this.EnergyCostMod = 0,                 
                 this.zombieDamage = 10, 
                 this.zombieDamagePCMod = 1, 
                 this.HstrengthDmgPCMod = 1, 
@@ -1172,6 +1175,9 @@ var Incremancer;
                 this.BloodSynPCMod = 1, 
                 this.SynBonePCMod = 1,                 
                 this.SmolPartsPCMod = 1, 
+                this.AvionicsPCMod = 1, 
+                this.ShockPCMod = 1,                 
+                this.EnergyCostMod = 0, 
                 this.golemHealthPCMod = 1, 
                 this.golemDamagePCMod = 1, 
                 this.plagueDamageMod = 0, 
@@ -1540,6 +1546,9 @@ var Incremancer;
                 BloodSynPC: "BloodSynPC",
                 SynBonePC: "SynBonePC",
                 SmolPartsPC: "SmolPartsPC",                
+                AvionicsPC: "AvionicsPC",
+                ShockPC: "ShockPC",
+                EnergyCost: "EnergyCost",   
                 golemHealthPC: "golemHealthPC",
                 golemDamagePC: "golemDamagePC",
                 startingPC: "startingPC",
@@ -1784,7 +1793,10 @@ var Incremancer;
                                  new le(66, "Cloning Replicator", this.types.CloningRep1PC, this.costs.parts, 1e12, 1.26, .05, 0, "Mass produced Cloning Replicators allows for much greater use out of each Brain obtained. Brain Income increases +5% with each rank of Cloning Replicator.", null, 303),
                                  new le(67, "Blood Synthezizer", this.types.BloodSynPC, this.costs.parts, 2e12, 1.25, .05, 0, "Artificial Blood can augment what we already get allowing for more of everything. Blood Income increases +5% with each rank of Blood Synthesizer.", null, 303),
                                  new le(68, "Synthetic Bone Fabricator", this.types.SynBonePC, this.costs.parts, 3e12, 1.24, .05, 0, "Synthetic Bones made from Golem Parts?  Genius! Bone Income increases +5% with each rank of Synthetic Bone Fabricator.", null, 303),
-                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 4e12, 1.23, .05, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303)],      
+                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 4e12, 1.23, .05, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303),
+                                 new le(70, "Golem Avionic", this.types.AvionicsPC, this.costs.parts, 2e17, 1.25, .05, 50, "Building on the success of hybrid zombies, small golem parts can enhance Harpy-Golem Hybrids. Harpy Speed +2 with each rank of Golem Avionics.", null, 304),
+                                 new le(71, "Electro-Shock Collars", this.types.ShockPC, this.costs.parts, 3e17, 1.20, .0025, 0, "Using shock collars tuned to the Hybrid Zombie's nervous system causes them to attack and blinding speeds! Attack Speed +0.25% with each rank of Electro-Shock Collars.", null, 303),
+                                 new le(72, "Power Regulators", this.types.EnergyCost, this.costs.parts, 1e18, 1.20, 1, 30, "Golem parts assembled around the graveyard can help regulate and attune necrotic power. Reduces zombie summoning cost by 1 with each rank of Insectoid Parts Assemblers.", null, 303)],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
                                          new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
@@ -1931,6 +1943,15 @@ var Incremancer;
                 case this.types.SmolPartsPC:
                     return void (this.gameModel.partsPCMod *= Math.pow(1 + e.effect, t)),
                                 (this.gameModel.SmolPartsPCMod *= Math.pow(1 + e.effect, t)); 
+                case this.types.AvionicsPC:
+                    return void (this.gameModel.harpySpeed += e.effect * t),
+                                (this.gameModel.AvionicsPCMod += e.effect * t);      
+                case this.types.ShockPC:
+                    return void (this.gameModel.runeEffects.attackSpeed *= Math.pow(1 + e.effect, t)),
+                                (this.gameModel.ShockPCMod *= Math.pow(1 + e.effect, t)); 
+                case this.types.EnergyCost:
+                    return void (this.gameModel.zombieCost -= e.effect * t),
+                                (this.gameModel.EnergyCost -= e.effect * t); 
                 case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
@@ -2060,8 +2081,14 @@ var Incremancer;
                     return "Additional Blood Income: " + Math.round(100 * this.gameModel.BloodSynPCMod) + "%";
                 case this.types.SynBonePC:
                     return "Additional Bone Income: " + Math.round(100 * this.gameModel.SynBonePCMod) + "%"; 
-                case this.types.SmolPartsPC:
-                    return "Additional Parts Income: " + Math.round(100 * this.gameModel.SmolPartsPCMod) + "%";   
+                case this.types.EnergyCost:
+                    return "Zombie Cost: " + this.gameModel.zombieCost + " energy";   
+                case this.types.AvionicsPC:
+                    return "Harpy speed: " + n(this.gameModel.harpySpeed)"%";
+                case this.types.ShockPC:
+                    return "Additional Attack Speed: " + Math.round(100 * this.gameModel.ShockPCMod) + "%"; 
+                case this.types.EnergyCost:
+                    return "Additional zombie cost reduction: " + Math.round(100 * this.gameModel.SmolPartsPCMod) + "%";   
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
