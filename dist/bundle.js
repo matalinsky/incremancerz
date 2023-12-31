@@ -1659,7 +1659,7 @@ var Incremancer;
             new he(221, "Bottomless Pit", this.constructionTypes.pit, {
                 bones: 75e3,
                 parts: 5e6
-            }, 50, 1, 1, 25, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), 
+            }, 50, 1, 1, 10, 219, "A bottomless pit with walls made from creature parts. Drastically increases your capacity to store blood and brains.", null), 
             new he(222, "Harpy Outfitter", this.constructionTypes.harpy, {
                 bones: 75e3,
                 brains: 75e3,
@@ -1730,9 +1730,7 @@ var Incremancer;
                                  new le(66, "Cloning Replicator", this.types.CloningRepPC, this.costs.parts, 1e12, 1.25, .05, 0, "Mass produced Cloning Replicators allows for much greater use out of each Brain obtained. Brain Income increases +5% with each rank of Cloning Replicator.", null, 303),
                                  new le(67, "Blood Synthezizer", this.types.BloodSynPC, this.costs.parts, 1e12, 1.25, .05, 0, "Artificial Blood can augment what we already get allowing for more of everything. Blood Income increases +5% with each rank of Blood Synthesizer.", null, 303),
                                  new le(68, "Synthetic Bone Fabricator", this.types.SynBonePC, this.costs.parts, 1e12, 1.25, .05, 0, "Synthetic Bones made from Golem Parts?  Genius! Bone Income increases +5% with each rank of Synthetic Bone Fabricator.", null, 303),
-                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 1e12, 1.25, .05, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303)                                
-                                
-                                ],      
+                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 1e12, 1.25, .05, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303)],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
                                          new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
@@ -2003,13 +2001,13 @@ var Incremancer;
                 case this.types.PlagueVatPC:
                     return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod) + "%";                    
                 case this.types.CloningRepPC:
-                    return "Brain Income: " + Math.round(100 * this.gameModel.CloningRepPCMod) + "%";         
+                    return "Additional Brain Income: " + Math.round(100 * this.gameModel.CloningRepPCMod) + "%";         
                 case this.types.BloodSynPC:
-                    return "Blood Income: " + Math.round(100 * this.gameModel.BloodSynPCMod) + "%";
+                    return "Additional Blood Income: " + Math.round(100 * this.gameModel.BloodSynPCMod) + "%";
                 case this.types.SynBonePC:
-                    return "Bone Income: " + Math.round(100 * this.gameModel.SynBonePCMod) + "%"; 
+                    return "Additional Bone Income: " + Math.round(100 * this.gameModel.SynBonePCMod) + "%"; 
                 case this.types.SmolPartsPC:
-                    return "Parts Income: " + Math.round(100 * this.gameModel.SmolPartsPCMod) + "%";   
+                    return "Additional Parts Income: " + Math.round(100 * this.gameModel.SmolPartsPCMod) + "%";   
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
