@@ -1727,10 +1727,10 @@ var Incremancer;
                                  new le(63, "Hybrid Shell", this.types.HshellHealthPC, this.costs.parts, 1e3, 1.31, .01, 0, "Golem armor shell provides extra protection for your fleshy zombies. Your zombies gain +1% health with each rank of Hybrid Shell.", null, 301),
                                  new le(64, "Advanced Cyrogenic Vats", this.types.CyroVatPC, this.costs.parts, 1e3, 1.40, .1, 0, "Cooling these Brains further makes them last much longer. Your brain storage increases +10% with each rank of Advanced Cyrogenic Vats.", null, 302),
                                  new le(65, "Golem Part Plague Vats", this.types.PlagueVatPC, this.costs.parts, 1e3, 1.50, .01, 0, "Using specialized Golem Parts allows for advancements in plague research. Plague Damage increases +1% with each rank of Golem Part Plague Vats.", null, 302),
-                                 new le(66, "Cloning Replicator", this.types.CloningRepPC, this.costs.parts, 1e12, 1.25, .01, 0, "Mass produced Cloning Replicators allows for much greater use out of each Brain obtained. Brain Income increases +5% with each rank of Cloning Replicator.", null, 303),
-                                 new le(67, "Blood Synthezizer", this.types.BloodSynPC, this.costs.parts, 1e12, 1.25, .01, 0, "Artificial Blood can augment what we already get allowing for more of everything. Blood Income increases +5% with each rank of Blood Synthesizer.", null, 303),
-                                 new le(68, "Synthetic Bone Fabricator", this.types.SynBonePC, this.costs.parts, 1e12, 1.25, .01, 0, "Synthetic Bones made from Golem Parts?  Genius! Bone Income increases +5% with each rank of Synthetic Bone Fabricator.", null, 303),
-                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 1e12, 1.25, .01, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303)                                
+                                 new le(66, "Cloning Replicator", this.types.CloningRepPC, this.costs.parts, 1e12, 1.25, .05, 0, "Mass produced Cloning Replicators allows for much greater use out of each Brain obtained. Brain Income increases +5% with each rank of Cloning Replicator.", null, 303),
+                                 new le(67, "Blood Synthezizer", this.types.BloodSynPC, this.costs.parts, 1e12, 1.25, .05, 0, "Artificial Blood can augment what we already get allowing for more of everything. Blood Income increases +5% with each rank of Blood Synthesizer.", null, 303),
+                                 new le(68, "Synthetic Bone Fabricator", this.types.SynBonePC, this.costs.parts, 1e12, 1.25, .05, 0, "Synthetic Bones made from Golem Parts?  Genius! Bone Income increases +5% with each rank of Synthetic Bone Fabricator.", null, 303),
+                                 new le(69, "Insectoid Parts Assemblers", this.types.SmolPartsPC, this.costs.parts, 1e12, 1.25, .05, 0, "Insect sized and shaped assemblers are far more efficient at maufacturing Golem parts. Parts Income increases +5% with each rank of Insectoid Parts Assemblers.", null, 303)                                
                                 
                                 ],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
@@ -1878,7 +1878,7 @@ var Incremancer;
                                 (this.gameModel.SynBonePCMod *= Math.pow(1 + e.effect, t)); 
                 case this.types.SmolPartsPC:
                     return void (this.gameModel.partsPCMod *= Math.pow(1 + e.effect, t)),
-                                (this.gameModel.SynBonePCMod *= Math.pow(1 + e.effect, t)); 
+                                (this.gameModel.SmolPartsPCMod *= Math.pow(1 + e.effect, t)); 
                 case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
