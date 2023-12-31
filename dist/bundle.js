@@ -1951,7 +1951,7 @@ var Incremancer;
                                 (this.gameModel.ShockPCMod *= Math.pow(1 + e.effect, t)); 
                 case this.types.EnergyCost:
                     return void (this.gameModel.zombieCost -= e.effect * t),
-                                (this.gameModel.EnergyCost -= e.effect * t); 
+                                (this.gameModel.EnergyCostMod -= e.effect * t); 
                 case this.types.golemDamagePC:                    
                     return void (this.gameModel.golemDamagePCMod *= Math.pow(1 + e.effect, t));
                 case this.types.golemHealthPC:
