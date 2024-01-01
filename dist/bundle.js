@@ -3238,7 +3238,7 @@ var Incremancer;
                 }
                 case be.attackingTarget: {
                     const s = this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y);
-                    s < this.attackDistance ? (e.scale.x = e.target.x > e.x ? e.scaling : -e.scaling, e.timer.attack < 0 && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.flags.dog && (e.target.timer.dogStun = 1), Math.random() < this.model.infectedBiteChance && this.inflictPlague(e.target), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod)), s > this.attackDistance / 2 && this.updateZombieSpeed(e, t)) : e.state = be.movingToTarget;
+                    s < this.attackDistance ? (e.scale.x = e.target.x > e.x ? e.scaling : -e.scaling, e.timer.attack < 0 && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.flags.dog && (e.target.timer.dogStun = 1), Math.random() < this.model.infectedBiteChance && this.inflictPlague(e.target), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * this.gameModel.ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod)), s > this.attackDistance / 2 && this.updateZombieSpeed(e, t)) : e.state = be.movingToTarget;
                     break
                 }
             }
@@ -3546,7 +3546,7 @@ var Incremancer;
                 case be.attackingTarget: {
                     const s = this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y);
                     if (s < this.attackDistance) {
-                        if (e.timer.attack < 0 && !e.target.flags.dead && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.target.flags.dead && this.killingBlow(e.target), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod), this.randomSpells.length > 0))
+                        if (e.timer.attack < 0 && !e.target.flags.dead && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.target.flags.dead && this.killingBlow(e.target), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * this.gameModel.ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod), this.randomSpells.length > 0))
                             for (let e = 0; e < this.randomSpells.length; e++) this.spellTimer < 0 && Math.random() < .07 + this.increaseChance && (this.spells.castSpellNoMana(this.randomSpells[e]), this.spellTimer = 3);
                         s > this.attackDistance / 2 && this.updateCreatureSpeed(e, t)
                     } else e.state = be.movingToTarget;
@@ -3913,7 +3913,7 @@ var Incremancer;
                 }
                 case be.attackingTarget: {
                     const s = this.fastDistance(e.position.x, e.position.y, e.target.x, e.target.y);
-                    s < this.attackDistance ? (e.scale.x = e.target.x > e.x ? e.scaling : -e.scaling, e.timer.attack < 0 && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.creatureType == this.creatureTypes.fireGolem && this.humans.burnHuman(e.target, e.attackDamage / 2), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod)), s > this.attackDistance / 2 && this.updateCreatureSpeed(e, t)) : e.state = be.movingToTarget;
+                    s < this.attackDistance ? (e.scale.x = e.target.x > e.x ? e.scaling : -e.scaling, e.timer.attack < 0 && (this.humans.damageHuman(e.target, this.calculateDamage(e)), e.creatureType == this.creatureTypes.fireGolem && this.humans.burnHuman(e.target, e.attackDamage / 2), e.timer.attack = this.attackSpeed * (1 / (this.model.runeEffects.attackSpeed * this.gameModel.ShockPCMod)), e.flags.burning && (e.timer.attack *= 1 / this.model.burningSpeedMod)), s > this.attackDistance / 2 && this.updateCreatureSpeed(e, t)) : e.state = be.movingToTarget;
                     break
                 }
             }
