@@ -1664,7 +1664,7 @@ var Incremancer;
             new he(203, "Bigger Fence", this.constructionTypes.fenceSize, {
                 bones: 880,
                 energy: 22
-            }, 44, 1, 10, 9, 202, "Enlarge the fence so a greater area is protected.", null), 
+            }, 44, 1, 10, 5, 202, "Enlarge the fence so a greater area is protected.", null), 
             new he(204, "Plague Workshop", this.constructionTypes.plagueWorkshop, {
                 blood: 10200,
                 brains: 600
