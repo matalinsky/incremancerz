@@ -2064,31 +2064,31 @@ var Incremancer;
                 case this.types.brainsStoragePC:
                     return "Brains Storage: " + n(100 * this.gameModel.brainsStorePCMod) + "%";
                 case this.types.zombieDmgPC:
-                    return "Zombie Damage: " + Math.round(100 * this.gameModel.zombieDamagePCMod) + "%";
+                    return "Zombie Damage: " + Math.round(100 * this.gameModel.zombieDamagePCMod - 100) + "%";
                 case this.types.zombieHealthPC:
-                    return "Zombie Health: " + Math.round(100 * this.gameModel.zombieHealthPCMod) + "%";                
+                    return "Zombie Health: " + Math.round(100 * this.gameModel.zombieHealthPCMod - 100) + "%";                
                 case this.types.HstrengthDmgPC:
-                    return "Zombie Damage: " + Math.round(100 * this.gameModel.HstrengthDmgPCMod) + "%";
+                    return "Zombie Damage: " + Math.round(100 * this.gameModel.HstrengthDmgPCMod - 100) + "%";
                 case this.types.HshellHealthPC:
-                    return "Zombie Health: " + Math.round(100 * this.gameModel.HshellHealthPCMod) + "%";
+                    return "Zombie Health: " + Math.round(100 * this.gameModel.HshellHealthPCMod - 100) + "%";
                 case this.types.CyroVatPC:
-                    return "Brains Storage: " + Math.round(100 * this.gameModel.CyroVatPCMod) + "%";
+                    return "Brains Storage: " + Math.round(100 * this.gameModel.CyroVatPCMod - 100) + "%";
                 case this.types.PlagueVatPC:
-                    return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod) + "%";                    
+                    return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod - 100) + "%";                    
                 case this.types.CloningRep1PC:
-                    return "Additional Brain Income: " + Math.round(100 * this.gameModel.CloningRep1PCMod) + "%";         
+                    return "Additional Brain Income: " + Math.round(100 * this.gameModel.CloningRep1PCMod - 100) + "%";         
                 case this.types.BloodSynPC:
-                    return "Additional Blood Income: " + Math.round(100 * this.gameModel.BloodSynPCMod) + "%";
+                    return "Additional Blood Income: " + Math.round(100 * this.gameModel.BloodSynPCMod - 100) + "%";
                 case this.types.SynBonePC:
-                    return "Additional Bone Income: " + Math.round(100 * this.gameModel.SynBonePCMod) + "%"; 
+                    return "Additional Bone Income: " + Math.round(100 * this.gameModel.SynBonePCMod - 100) + "%"; 
                 case this.types.SmolPartsPC:
-                    return "Additional Parts Income: " + Math.round(100 * this.gameModel.SmolPartsPCMod) + "%"; 
+                    return "Additional Parts Income: " + Math.round(100 * this.gameModel.SmolPartsPCMod - 100) + "%"; 
                 case this.types.EnergyCost:
                     return "Zombie Cost: " + this.gameModel.zombieCost + " energy";   
                 case this.types.AvionicsPC:
                     return "Harpy speed: " + n(this.gameModel.harpySpeed);
                 case this.types.ShockPC:
-                    return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod ) + "%";  
+                    return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod - 100) + "%";  
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
