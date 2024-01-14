@@ -3233,7 +3233,7 @@ var Incremancer;
                         e.state = be.attackingTarget;
                         break
                     }
-                    e.timer.attack < 0 && s < this.model.spitDistance && (this.bullets.newBullet(e, e.target, this.model.zombieDamage / 2, !0), e.timer.attack = this.attackSpeed * (1 / this.model.runeEffects.attackSpeed), s > 3 * this.attackDistance && e.timer.scan < 0 && this.searchClosestTarget(e), this.updateZombieSpeed(e, t);
+                    e.timer.attack < 0 && s < this.model.spitDistance && (this.bullets.newBullet(e, e.target, this.model.zombieDamage / 2, !0), e.timer.attack = this.attackSpeed * (1 / this.model.runeEffects.attackSpeed)), s > 3 * this.attackDistance && e.timer.scan < 0 && this.searchClosestTarget(e), this.updateZombieSpeed(e, t);
                     break
                 }
                 case be.attackingTarget: {
