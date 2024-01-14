@@ -2648,7 +2648,7 @@ var Incremancer;
             e && (e.flags.burning ? e.burnDamage += t : (e.timer.burnTick = this.burnTickTimer, e.timer.smoke = this.smokeTimer, this.exclamations.newFire(e), e.burnDamage = t), e.flags.burning = !0)
         }
         updatePlague(e, t) {
-            e.timer.plagueTick -= t, e.timer.plagueTick < 0 && (this.damageHuman(e, e.plagueDamage), e.timer.plagueTick = this.plagueTickTimer * (1 / (this.gameModel.runeEffects.attackSpeed * this.model.ShockPCMod)), this.exclamations.newPoison(e), e.plagueTicks--, this.pandemic && this.pandemicBullet(e), e.plagueTicks <= 0 && (e.flags.infected = !1, e.plagueDamage = 0))
+            e.timer.plagueTick -= t, e.timer.plagueTick < 0 && (this.damageHuman(e, e.plagueDamage), e.timer.plagueTick = this.plagueTickTimer * (1 / this.gameModel.runeEffects.attackSpeed), this.exclamations.newPoison(e), e.plagueTicks--, this.pandemic && this.pandemicBullet(e), e.plagueTicks <= 0 && (e.flags.infected = !1, e.plagueDamage = 0))
         }
         pandemicBullet(e) {
             for (let t = 0; t < this.aliveHumans.length; t++) Math.abs(this.aliveHumans[t].x - e.x) < 30 && Math.abs(this.aliveHumans[t].y - e.y) < 30 && Math.random() < .3 && this.bullets.newBullet(e, this.aliveHumans[t], this.gameModel.zombieDamage / 2, !0)
