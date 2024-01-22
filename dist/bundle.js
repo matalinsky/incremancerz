@@ -286,7 +286,7 @@ var Incremancer;
     class q {
         constructor() {
             if (this.cooldownReduction = 0, this.timeExtension = 0, this.costReduction = 0, this.skeleton = new Xe, this.zombies = new Ae, this.humans = new Se, this.spellMap = new Map, this.spells = [new W(1, "Time Warp", "Speed up the flow of time for 30 seconds", "", 90, 30, 0, (function () {
-                ne.getInstance().gameSpeed = (2 * this.gameModel.golemHealthPCMod)
+                ne.getInstance().gameSpeed = 2
             }), (function () {
                 ne.getInstance().gameSpeed = 1
             })), new W(2, "Energy Charge", "5x Energy rate for 20 seconds, cost 50 energy", "", 160, 20, 50, (function () {
