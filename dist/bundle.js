@@ -2075,7 +2075,7 @@ var Incremancer;
                 case this.types.CyroVatPC:
                     return "Brains Storage: " + Math.round(100 * this.gameModel.CyroVatPCMod - 100) + "%";
                 case this.types.PlagueVatPC:
-                    return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod * this.persistent.level - 100) + "%";                    
+                    return "Plague Damage: " + Math.round(100 * this.gameModel.PlagueVatPCMod - 100) + "%";                    
                 case this.types.CloningRep1PC:
                     return "Additional Brain Income: " + Math.round(100 * this.gameModel.CloningRep1PCMod - 100) + "%";         
                 case this.types.BloodSynPC:
