@@ -3504,7 +3504,7 @@ var Incremancer;
                     this.model.zombieDamagePCMod *= e,
                     this.model.zombieHealthPCMod *= e,
                     this.model.PlagueVatPCMod *= scalingFactor,
-                    this.model.plagueDamageMod *= scalingFactor
+                    this.gameModel.plagueDamageMod *= scalingFactor
             }
         }
         acceptOffer() {
