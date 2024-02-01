@@ -3258,7 +3258,7 @@ var Incremancer;
             return this.model.runeEffects.critChance > 0 && Math.random() < this.model.runeEffects.critChance && (t *= this.model.runeEffects.critDamage, He(e.x, e.y - 20, t)), this.bloodpact > 0 && this.model.addBlood(t * this.bloodpact), t
         }
         inflictPlague(e) {
-            e.flags.infected ? (e.plagueDamage += this.model.zombieDamage / 2 + this.model.plagueDamageMod * Math.pow(this.persistent.level, 1.0001), e.plagueTicks = this.model.plagueticks) : (this.exclamations.newPoison(e), e.plagueDamage = this.model.zombieDamage / 2 + this.model.plagueDamageMod * Math.pow(this.persistent.level, 1.0001), e.plagueTicks = this.model.plagueticks), e.flags.infected = !0
+            e.flags.infected ? (e.plagueDamage += this.model.zombieDamage / 2 + this.model.plagueDamageMod, e.plagueTicks = this.model.plagueticks) : (this.exclamations.newPoison(e), e.plagueDamage = this.model.zombieDamage / 2 + this.model.plagueDamageMod, e.plagueTicks = this.model.plagueticks), e.flags.infected = !0
         }
         updateBurns(e, t) {
             e.timer.burnTick -= t, e.timer.smoke -= t, e.timer.smoke < 0 && (this.smoke.newFireSmoke(e.x, e.y - 14), e.timer.smoke = this.smokeTimer), e.timer.burnTick < 0 && (this.damageZombie(e, e.burnDamage, null), e.timer.burnTick = this.burnTickTimer, this.exclamations.newFire(e))
