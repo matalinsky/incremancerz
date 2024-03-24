@@ -5143,8 +5143,17 @@ var Incremancer;
             acceptOffer() {
                 i.acceptOffer(), this.isShown = !1
             },
-            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= (i.persistent.xpRate < 15 ? 20 * i.persistent.xpRate : 160 + (Math.log2(i.persistent.xpRate)-3) * 80),
-            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 15 ? 20 * i.persistent.xpRate : 160 + (Math.log2(i.persistent.xpRate)-3) * 80 } Trophies` : "",
+            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= (i.persistent.xpRate < 8 ? 20 * i.persistent.xpRate : 
+                                                                                                         i.persistent.xpRate < 16 ? 130 :  
+                                                                                                         i.persistent.xpRate < 32 ? 190 : 
+                                                                                                         i.persistent.xpRate < 64 ? 260 : 
+                                                                                                         i.persistent.xpRate < 128 ? 340 : 
+                                                                                                         i.persistent.xpRate < 256 ? 430 :
+                                                                                                         i.persistent.xpRate < 512 ? 530 :
+                                                                                                         i.persistent.xpRate < 1024 ? 640 :
+                                                                                                         i.persistent.xpRate < 2048 ? 760 :
+                                                                                                         720 + ((Math.log2(i.persistent.xpRate)-7)*(Math.log2(i.persistent.xpRate)-7)) * 10),
+            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 7 ? 20 * i.persistent.xpRate : 160 + (Math.log2(i.persistent.xpRate)-3) * 80 } Trophies` : "",
             talentPoints: () => i.talentPoints,
             talentsAssigned: () => i.getUsedPoints(),
             talentValue: e => i.talents[e.id] + " / " + e.maxPoints,
