@@ -5158,7 +5158,7 @@ var Incremancer;
                                                                                                            i.persistent.xpRate < 32 ? 190:
                                                                                                            i.persistent.xpRate < 64 ? 260:
                                                                                                            i.persistent.xpRate < 128 ? 340:
-                                                                                                           i.persistent.xpRate < 265 ? 430:
+                                                                                                           i.persistent.xpRate < 256 ? 430:
                                                                                                            i.persistent.xpRate < 512 ? 530:
                                                                                                            i.persistent.xpRate < 1024 ? 640:
                                                                                                            i.persistent.xpRate < 2048 ? 760:
