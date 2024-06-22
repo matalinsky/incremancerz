@@ -1810,7 +1810,7 @@ var Incremancer;
                                          new le(112, "Auto Construction", this.types.autoconstruction, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically start construction of the cheapest available building option.", null, null),
                                          new le(114, "Auto Shop", this.types.autoshop, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically purchase items from the shop.", null, null),
                                          new le(113, "Graveyard Health", this.types.graveyardHealth, this.costs.prestigePoints, 10, 1.25, .1, 0, "Additional 10% graveyard health during boss levels with each rank.", null, null),
-                                         new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 100, 1.2, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
+                                         new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 100, 1.175, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
 
             oe.instance = this
         }
@@ -4635,35 +4635,35 @@ var Incremancer;
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Golem upgrade and summoning cost reduced by ${5 * e}%` : "Reduces golem upgrade and summoning cost by 5%"
-    })), new xt(2, "Thrifty", mt, 10, (function () {
+    })), new xt(2, "Thrifty", mt, 12, (function () {
         dt.killingBlowParts = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (dt.killingBlowParts = 10 * e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Skeleton killing blows reward ${10 * e}% of your current parts per second` : "Skeleton killing blows reward 10% of your current parts per second"
-    })), new xt(3, "Fatal Bargain", mt, 10, (function () {
+    })), new xt(3, "Fatal Bargain", mt, 12, (function () {
         ut.refundChance = 0, ct.refundChance = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (ut.refundChance = .08 * e, ct.refundChance = .08 * e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? 8 * e + "% parts refund on golem death" : "Grants 8% parts refund on golem death"
-    })), new xt(4, "Recovery", yt, 10, (function () {
+    })), new xt(4, "Recovery", yt, 12, (function () {
         gt.cooldownReduction = 1;
         const e = dt.talents[this.id];
         e && e > 0 && (gt.cooldownReduction = 1 - .05 * e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Spell cooldown time reduced by ${5 * e}%` : "Reduces spell cooldown time by 5%"
-    })), new xt(5, "Endurance", yt, 10, (function () {
+    })), new xt(5, "Endurance", yt, 12, (function () {
         gt.timeExtension = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (gt.timeExtension = e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Spell duration increased by ${e} seconds` : "Increases spell duration by 1 second"
-    })), new xt(6, "Opportunist", yt, 10, (function () {
+    })), new xt(6, "Opportunist", yt, 12, (function () {
         gt.costReduction = 0;
         dt.increaseChance = 0;
         const e = dt.talents[this.id];
@@ -4692,21 +4692,21 @@ var Incremancer;
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Gains a shield of ${e} bones every 10 seconds` : "Gain a shield of 1 bone to protect the skeleton every 10 seconds"
-    })), new xt(10, "Gigamutagen", bt, 10, (function () {
+    })), new xt(10, "Gigamutagen", bt, 12, (function () {
         ct.gigamutagen = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (ct.gigamutagen = 14 - e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Gigazombie mutation every ${14 - e} seconds` : "Mutates a random zombie into a gigazombie every 13 seconds"
-    })), new xt(11, "Blood Pact", bt, 10, (function () {
+    })), new xt(11, "Blood Pact", bt, 12, (function () {
         ct.bloodpact = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (ct.bloodpact = .05 * e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? 5 * e + "% of zombie damage converted to blood" : "Converts an additional 5% of zombie damage to blood"
-    })), new xt(12, "Blood Born", bt, 10, (function () {
+    })), new xt(12, "Blood Born", bt, 12, (function () {
         ct.bloodborn = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (ct.bloodborn = e)
@@ -5143,25 +5143,27 @@ var Incremancer;
             acceptOffer() {
                 i.acceptOffer(), this.isShown = !1
             },
-            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= (i.persistent.xpRate < 8 ? 20 * i.persistent.xpRate : 
-                                                                                                         i.persistent.xpRate < 16 ? 130 :  
-                                                                                                         i.persistent.xpRate < 32 ? 190 : 
-                                                                                                         i.persistent.xpRate < 64 ? 260 : 
-                                                                                                         i.persistent.xpRate < 128 ? 340 : 
-                                                                                                         i.persistent.xpRate < 256 ? 430 :
-                                                                                                         i.persistent.xpRate < 512 ? 530 :
-                                                                                                         i.persistent.xpRate < 1024 ? 640 :
-                                                                                                         i.persistent.xpRate < 2048 ? 760 :
+            anotherOffer: () => i.persistent.skeletons > 0 && c.model.persistentData.trophies.length >= (i.persistent.xpRate < 4 ? 20 * i.persistent.xpRate : 
+                                                                                                         i.persistent.xpRate < 8 ? 70 :
+                                                                                                         i.persistent.xpRate < 16 ? 110 :  
+                                                                                                         i.persistent.xpRate < 32 ? 160 : 
+                                                                                                         i.persistent.xpRate < 64 ? 220 : 
+                                                                                                         i.persistent.xpRate < 128 ? 290 : 
+                                                                                                         i.persistent.xpRate < 256 ? 370 :
+                                                                                                         i.persistent.xpRate < 512 ? 460 :
+                                                                                                         i.persistent.xpRate < 1024 ? 560 :
+                                                                                                         i.persistent.xpRate < 2048 ? 670 :
                                                                                                          720 + ((Math.log2(i.persistent.xpRate)-7)*(Math.log2(i.persistent.xpRate)-7)) * 10),
-            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 8 ? 20 * i.persistent.xpRate :
-                                                                                                           i.persistent.xpRate < 16 ? 130:
-                                                                                                           i.persistent.xpRate < 32 ? 190:
-                                                                                                           i.persistent.xpRate < 64 ? 260:
-                                                                                                           i.persistent.xpRate < 128 ? 340:
-                                                                                                           i.persistent.xpRate < 256 ? 430:
-                                                                                                           i.persistent.xpRate < 512 ? 530:
-                                                                                                           i.persistent.xpRate < 1024 ? 640:
-                                                                                                           i.persistent.xpRate < 2048 ? 760:
+            trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 4 ? 20 * i.persistent.xpRate :
+                                                                                                           i.persistent.xpRate < 8 ? 70:
+                                                                                                           i.persistent.xpRate < 16 ? 110:
+                                                                                                           i.persistent.xpRate < 32 ? 160:
+                                                                                                           i.persistent.xpRate < 64 ? 220:
+                                                                                                           i.persistent.xpRate < 128 ? 290:
+                                                                                                           i.persistent.xpRate < 256 ? 370:
+                                                                                                           i.persistent.xpRate < 512 ? 460:
+                                                                                                           i.persistent.xpRate < 1024 ? 560:
+                                                                                                           i.persistent.xpRate < 2048 ? 670:
                                                                                                            720 + ((Math.log2(i.persistent.xpRate)-7)*(Math.log2(i.persistent.xpRate)-7)) * 10 } Trophies` : "",
             talentPoints: () => i.talentPoints,
             talentsAssigned: () => i.getUsedPoints(),
