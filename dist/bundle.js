@@ -4628,7 +4628,7 @@ var Incremancer;
             this.talents = [], this.name = e, this.class = t
         }
     }
-    const St = [new xt(1, "Efficiency", mt, 10, (function () {
+    const St = [new xt(1, "Efficiency", mt, 12, (function () {
         pt.creatureCostReduction = 1;
         const e = dt.talents[this.id];
         e && e > 0 && (pt.creatureCostReduction -= .05 * e)
@@ -4671,7 +4671,7 @@ var Incremancer;
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Gear spell activation chance increased by ${2 * e}%` : "Increases spell activation chance by 2%"
-    })), new xt(7, "Shiny", ft, 10, (function () {
+    })), new xt(7, "Shiny", ft, 12, (function () {
         dt.lootChanceMod = 1;
         const e = dt.talents[this.id];
         e && e > 0 && (dt.lootChanceMod = 1 + .1 * e)
