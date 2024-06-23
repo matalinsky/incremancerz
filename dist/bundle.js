@@ -284,7 +284,7 @@ var Incremancer;
         }
     }
     class q {
-        constructor() {
+        constructor(this.persistent.level) {
             if (this.cooldownReduction = 0, this.timeExtension = 0, this.costReduction = 0, this.skeleton = new Xe, this.zombies = new Ae, this.humans = new Se, this.spellMap = new Map, this.spells = [new W(1, "Time Warp", "Speed up the flow of time for 30 seconds", "", 90, 30, 0, 
                 (function () {
                 ne.getInstance().gameSpeed = 2
