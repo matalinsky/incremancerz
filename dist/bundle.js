@@ -4641,7 +4641,7 @@ var Incremancer;
         e && e > 0 && (dt.killingBlowParts = 10 * e)
     }), (function () {
         const e = dt.talents[this.id];
-        return e && e > 0 ? `Skeleton killing blows reward ${10 * e}% of your current parts per second` : "Skeleton killing blows reward 10% of your current parts per second"
+        return e && e > 0 ? `Skeleton killing blows reward ${10 * e}x of your current parts per second` : "Skeleton killing blows reward 10x of your current parts per second"
     })), new xt(3, "Fatal Bargain", mt, 12, (function () {
         ut.refundChance = 0, ct.refundChance = 0;
         const e = dt.talents[this.id];
