@@ -4631,10 +4631,10 @@ var Incremancer;
     const St = [new xt(1, "Efficiency", mt, 12, (function () {
         pt.creatureCostReduction = 1;
         const e = dt.talents[this.id];
-        e && e > 0 && (pt.creatureCostReduction -= .05 * e)
+        e && e > 0 && (pt.creatureCostReduction -= .075 * e)
     }), (function () {
         const e = dt.talents[this.id];
-        return e && e > 0 ? `Golem upgrade and summoning cost reduced by ${5 * e}%` : "Reduces golem upgrade and summoning cost by 5%"
+        return e && e > 0 ? `Golem upgrade and summoning cost reduced by ${7.5 * e}%` : "Reduces golem upgrade and summoning cost by 7.5%"
     })), new xt(2, "Thrifty", mt, 12, (function () {
         dt.killingBlowParts = 0;
         const e = dt.talents[this.id];
