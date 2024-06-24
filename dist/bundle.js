@@ -903,7 +903,7 @@ var Incremancer;
                 airGolem: 2,
                 fireGolem: 3,
                 waterGolem: 4
-            }, this.creatures = [new re(1, this.types.earthGolem, "Earth Golem", 3e3, 75, 30, 800, "A golem born from rocks and mud, able to take a lot of punishment and taunt enemies to attack it"), new re(2, this.types.airGolem, "Air Golem", 1200, 110, 45, 900, "A fast moving golem able to cover large distances and chase targets down"), new re(3, this.types.fireGolem, "Fire Golem", 1200, 130, 32, 1e3, "A fireball spewing golem that ignites everything it touches"), new re(4, this.types.waterGolem, "Water Golem", 1500, 90, 30, 1100, "A calming golem that restores health to nearby units")], this.creatureScaling = 1.75, this.creatureCostScaling = 2, this.creatureCostReduction = 1, ae.instance) return ae.instance;
+            }, this.creatures = [new re(1, this.types.earthGolem, "Earth Golem", 3e3, 75, 30, 800, "A golem born from rocks and mud, able to take a lot of punishment and taunt enemies to attack it"), new re(2, this.types.airGolem, "Air Golem", 1200, 110, 45, 900, "A fast moving golem able to cover large distances and chase targets down"), new re(3, this.types.fireGolem, "Fire Golem", 1200, 130, 32, 1e3, "A fireball spewing golem that ignites everything it touches"), new re(4, this.types.waterGolem, "Water Golem", 1500, 90, 30, 1100, "A calming golem that restores health to nearby units")], this.creatureScaling = 1.75, this.creatureCostScaling = 1.8, this.creatureCostReduction = 1, ae.instance) return ae.instance;
             ae.instance = this
         }
         update(e) {
