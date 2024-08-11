@@ -1800,7 +1800,7 @@ var Incremancer;
                                  new le(70, "Golem Avionic", this.types.AvionicsPC, this.costs.parts, 2e17, 1.20, 2, 50, "Building on the success of hybrid zombies, small golem parts can enhance Harpy-Golem Hybrids. Harpy Speed +2 with each rank of Golem Avionics.", null, 304),
                                  new le(71, "Electro-Shock Collars", this.types.ShockPC, this.costs.parts, 3e14, 1.20, .0025, 0, "Using shock collars tuned to the Hybrid Zombie's nervous system causes them to attack at blinding speeds! Attack Speed +0.25% with each rank of Electro-Shock Collars.", null, 304),
                                  new le(72, "Power Regulators", this.types.EnergyCost, this.costs.parts, 1e18, 1.20, 1, 30, "Golem parts assembled around the graveyard can help regulate and attune necrotic power. Reduces zombie summoning cost by 1 with each rank of Power Regulators.", null, 304),
-                                 new le(73, "Abyssal Reputation", this.types.prest_multModPC, this.costs.blood, 1e20, 1.075, 1, 0, "Astouding levels of blood sacrificed can enhance your reputation. +3% Prestige point gain per level", null, 304)],      
+                                 new le(73, "Abyssal Reputation", this.types.prest_multModPC, this.costs.blood, 1e20, 1.25, 1, 0, "Astouding levels of blood sacrificed can enhance your reputation. +3% Prestige point gain per level", null, 304)],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
                                          new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
@@ -2095,6 +2095,8 @@ var Incremancer;
                     return "Harpy speed: " + n(this.gameModel.harpySpeed);
                 case this.types.ShockPC:
                     return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod - 100) + "%";  
+                case this.types.prest_multPC:
+                    return "Prestige per kill multiplier: " + Math.round(100 * this.gameModel.prest_multPCMod) + "%";                    
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
