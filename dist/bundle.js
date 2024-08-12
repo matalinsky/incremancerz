@@ -3571,7 +3571,7 @@ var Incremancer;
             }
         }
         killingBlow(e) {
-            this.killingBlowParts && (this.model.persistentData.parts += this.killingBlowParts * this.partFactory.factoryStats().partsPerSec), this.lastKillingBlow <= 0 && (this.model.addPrestigePoints(this.persistent.level), this.lastKillingBlow = 20, this.prestigePoints.newPart(e.x, e.y))
+            this.killingBlowParts && (this.model.persistentData.parts += this.killingBlowParts * this.partFactory.factoryStats().partsPerSec), this.lastKillingBlow <= 0 && (this.model.addPrestigePoints(this.persistent.level)*prest_multPCMod, this.lastKillingBlow = 20, this.prestigePoints.newPart(e.x, e.y))
         }
         orbHit(e) {
             if (e.flags.dead && this.killingBlow(e), this.randomSpells.length > 0)
