@@ -2096,7 +2096,7 @@ var Incremancer;
                 case this.types.ShockPC:
                     return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod - 100) + "%";  
                 case this.types.prest_multPC:
-                    return "Prestige per kill multiplier: " + Math.round(100 * this.gameModel.prest_multPCMod) + "%";                    
+                    return "Prestige per kill multiplier: " + Math.round(this.gameModel.prest_multPCMod) + "x";                    
                 case this.types.golemDamagePC:
                     return "Golem Damage: " + Math.round(100 * this.gameModel.golemDamagePCMod) + "%";
                 case this.types.golemHealthPC:
@@ -3571,7 +3571,7 @@ var Incremancer;
             }
         }
         killingBlow(e) {
-            this.killingBlowParts && (this.model.persistentData.parts += this.killingBlowParts * this.partFactory.factoryStats().partsPerSec), this.lastKillingBlow <= 0 && (this.model.addPrestigePoints(Math.round(this.persistent.level)), this.lastKillingBlow = 20, this.prestigePoints.newPart(e.x, e.y))
+            this.killingBlowParts && (this.model.persistentData.parts += this.killingBlowParts * this.partFactory.factoryStats().partsPerSec), this.lastKillingBlow <= 0 && (this.model.addPrestigePoints(Math.round(this.persistent.level*prest_multPCMod)), this.lastKillingBlow = 20, this.prestigePoints.newPart(e.x, e.y))
         }
         orbHit(e) {
             if (e.flags.dead && this.killingBlow(e), this.randomSpells.length > 0)
