@@ -2098,8 +2098,6 @@ var Incremancer;
                     return "Zombie Cost: " + this.gameModel.zombieCost + " energy";   
                 case this.types.AvionicsPC:
                     return "Harpy speed: " + n(this.gameModel.harpySpeed);
-                case this.types.SkeleMove:
-                    return "Additional Skeleton Movement: " + (this.gameModel.SkeleMoveMod);
                 case this.types.ShockPC:
                     return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod - 100) + "%";  
                 case this.types.prest_multPC:
