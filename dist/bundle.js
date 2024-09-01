@@ -1952,9 +1952,7 @@ var Incremancer;
                 case this.types.AvionicsPC:
                     return void (this.gameModel.harpySpeed += e.effect * t),
                                 (this.gameModel.AvionicsPCMod += e.effect * t);
-                case this.types.SkeleMove:
-                    return void (this.moveSpeed += e.effect * t),
-                                (this.gameModel.SkeleMoveMod += e.effect * t);      
+  
                 case this.types.ShockPC:
                     return void (this.attackSpeed *= Math.pow(1 + e.effect, t)),
                                 (this.gameModel.ShockPCMod *= Math.pow(1 + e.effect, t)); 
