@@ -2102,7 +2102,7 @@ var Incremancer;
                 case this.types.AvionicsPC:
                     return "Harpy speed: " + n(this.gameModel.harpySpeed);
                 case this.types.SkeleMove:
-                    return "Skeleton speed: " + n(this.MoveSpeed);
+                    return "Skeleton speed: " + n(this.gameModel.moveSpeed);
                 case this.types.ShockPC:
                     return "Attack Speed multiplier: " + Math.round(100 * this.gameModel.ShockPCMod - 100) + "%";  
                 case this.types.prest_multPC:
