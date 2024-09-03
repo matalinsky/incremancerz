@@ -1906,7 +1906,7 @@ var Incremancer;
                     return void (this.gameModel.harpySpeed += e.effect * t);
                 case this.types.SkeleMove:
                     return void (this.gameModel.SkeleMoveMod += e.effect * t),
-                    return void (this.gameModel.moveSpeed += e.effect * t);
+                    return void (this.skeleton.moveSpeed += e.effect * t);
                 case this.types.tankBuster:
                     return void (this.gameModel.tankBuster = !0);
                 case this.types.harpyBombs:
