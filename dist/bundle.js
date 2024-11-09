@@ -4714,7 +4714,7 @@ var Incremancer;
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Dark orb released every ${12 - e} seconds` : "Releases a dark orb of energy every 11 seconds"
-    })), new xt(9, "Bone Shield", ft, 10, (function () {
+    })), new xt(9, "Bone Shield", ft, 12, (function () {
         dt.boneshield = 0;
         const e = dt.talents[this.id];
         e && e > 0 && (dt.boneshield = e)
