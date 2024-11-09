@@ -5182,6 +5182,7 @@ var Incremancer;
                                                                                                          i.persistent.xpRate < 512 ? 460 :
                                                                                                          i.persistent.xpRate < 1024 ? 560 :
                                                                                                          i.persistent.xpRate < 2048 ? 670 :
+                                                                                                         i.persistent.xpRate < 4096 ? 790 :
                                                                                                          720 + ((Math.log2(i.persistent.xpRate)-7)*(Math.log2(i.persistent.xpRate)-7)) * 10),
             trophies: () => i.persistent.skeletons > 0 ? ` - ${c.model.persistentData.trophies.length} / ${i.persistent.xpRate < 4 ? 20 * i.persistent.xpRate :
                                                                                                            i.persistent.xpRate < 8 ? 70:
@@ -5193,6 +5194,7 @@ var Incremancer;
                                                                                                            i.persistent.xpRate < 512 ? 460:
                                                                                                            i.persistent.xpRate < 1024 ? 560:
                                                                                                            i.persistent.xpRate < 2048 ? 670:
+                                                                                                           i.persistent.xpRate < 4096 ? 790:
                                                                                                            720 + ((Math.log2(i.persistent.xpRate)-7)*(Math.log2(i.persistent.xpRate)-7)) * 10 } Trophies` : "",
             talentPoints: () => i.talentPoints,
             talentsAssigned: () => i.getUsedPoints(),
